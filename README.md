@@ -1,2 +1,2 @@
 # MCS-Trucking
-Программа автоперевозок для MArine Container Service
+Программа автоперевозок для Marine Container Service (Xamarin)
