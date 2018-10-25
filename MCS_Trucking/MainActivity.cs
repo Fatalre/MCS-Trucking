@@ -17,6 +17,7 @@ using Android.Content;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 using System.Reflection;
 using System.Net.NetworkInformation;
+using System.Text;
 
 namespace MCS_Trucking
 {
@@ -85,72 +86,8 @@ namespace MCS_Trucking
                 StartActivity(intent_no_internet);
             }
 
-
-
-            Version version = Assembly.GetExecutingAssembly().GetName().Version;
-            WebClient http = new WebClient();
-
-            Version latestVersion = version;
-
-            try
-            {
-                latestVersion = new Version(http.DownloadString("http://citg.at.ua/MCS_Trucking/version.txt"));
-            }
-            catch(Exception)
-            {
-
-            }
-
-            RootObject jsonNew = new RootObject();
-            try
-            {
-                WebRequest reqGET = WebRequest.Create(@"https://truck.mcs-bitrix.pp.ua/api/v1/transportations");
-                WebResponse resp = reqGET.GetResponse();
-                Stream stream = resp.GetResponseStream();
-                StreamReader sr = new StreamReader(stream);
-                string json = sr.ReadToEnd();
-
-                jsonNew = JsonConvert.DeserializeObject<RootObject>(json);
-
-                if (latestVersion != version)
-                {
-                    Intent intent_new_version = new Intent(this, typeof(Class_new_version));
-                    StartActivity(intent_new_version);
-                }
-            }
-            catch (Exception)
-            {
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Ошибка");
-                alert.SetMessage("Ошибка сервера. Попробуйте позже.");
-                alert.SetNeutralButton("OK", handllerNothingButton);
-                alert.Show();
-            }
-
-            void handllerNothingButton(object sender, DialogClickEventArgs e)
-            {
-                //Действие при нажатие "ОК"
-            }
-
-            string Date_auto_s="";
-            string Date_auto_do="";
-            string lot_s = "0";
-            string lot_do = "1000";
-            string ves_s = "0";
-            string ves_do = "1000";
-            string[] lines = new string[32];
-            string[] typesContainer = new string[32];
             string sort_po_chumu = "createdAt";
             string sort_voz_ub = "desc";
-
-            bool Date_auto_s_count = true;
-            bool Date_auto_do_count = true;
-            bool lot_s_count = true;
-            bool lot_do_count = true;
-            bool ves_s_count = true;
-            bool ves_do_count = true;
-            bool lines_count = true;
-            bool typeContainer_count = true;
 
             try
             {
@@ -227,6 +164,88 @@ namespace MCS_Trucking
             {
                 ex.ToString();
             }
+
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+            WebClient http = new WebClient();
+
+            Version latestVersion = version;
+
+            try
+            {
+                latestVersion = new Version(http.DownloadString("http://citg.at.ua/MCS_Trucking/version.txt"));
+            }
+            catch(Exception)
+            {
+
+            }
+
+            var baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/transportations";
+            Sortirovka sortirovka = new Sortirovka()
+            {
+                orderBy = sort_po_chumu,
+                sort = sort_voz_ub
+            };
+            RootObject jsonNew = new RootObject();
+
+            try
+            {
+                var http1 = (HttpWebRequest)WebRequest.Create(new System.Uri(baseAddress));
+                http1.ContentType = "application/json";
+                http1.Method = "POST";
+
+                string pasredContent = JsonConvert.SerializeObject(sortirovka);
+                UTF8Encoding encoding = new UTF8Encoding();
+                Byte[] bytes = encoding.GetBytes(pasredContent);
+
+                Stream newStream = http1.GetRequestStream();
+                newStream.Write(bytes, 0, bytes.Length);
+                newStream.Close();
+
+
+                var response = http1.GetResponse();
+
+                var stream = response.GetResponseStream();
+                var sr = new StreamReader(stream);
+                var content = sr.ReadToEnd();
+                jsonNew = JsonConvert.DeserializeObject<RootObject>(content);
+
+                if (latestVersion != version)
+                {
+                    Intent intent_new_version = new Intent(this, typeof(Class_new_version));
+                    StartActivity(intent_new_version);
+                }
+            }
+            catch (Exception)
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Ошибка");
+                alert.SetMessage("Ошибка сервера. Попробуйте позже.");
+                alert.SetNeutralButton("OK", handllerNothingButton);
+                alert.Show();
+            }
+
+            void handllerNothingButton(object sender, DialogClickEventArgs e)
+            {
+                //Действие при нажатие "ОК"
+            }
+
+            string Date_auto_s="";
+            string Date_auto_do="";
+            string lot_s = "0";
+            string lot_do = "1000";
+            string ves_s = "0";
+            string ves_do = "1000";
+            string[] lines = new string[32];
+            string[] typesContainer = new string[32];
+
+            bool Date_auto_s_count = true;
+            bool Date_auto_do_count = true;
+            bool lot_s_count = true;
+            bool lot_do_count = true;
+            bool ves_s_count = true;
+            bool ves_do_count = true;
+            bool lines_count = true;
+            bool typeContainer_count = true;
 
             try
             {
@@ -847,6 +866,12 @@ namespace MCS_Trucking
             public int code { get; set; }
             public Data1 data { get; set; }
             public List<object> errors { get; set; }
+        }
+
+        public class Sortirovka
+        {
+            public string orderBy { get; set; }
+            public string sort { get; set; }
         }
     }
 }
