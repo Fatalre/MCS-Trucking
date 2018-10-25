@@ -1,21 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 	<ScrollView
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:id="@+id/scrollView_Activity_moi_zayavki" >
+		android:id="@+id/scrollView1" >
 		<LinearLayout
 			android:orientation="vertical"
 			android:minWidth="25px"
 			android:minHeight="25px"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:id="@+id/linearLayout_Activity_moi_zayavki" />
+			android:id="@+id/linearLayout1" >
+			<Button
+				android:text="Все заявки"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Activity_moi_zayavki_osn0"
+				android:layout_marginBottom="10.0dp"/>
+			<Button
+				android:text="Принятые заявки"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Activity_moi_zayavki_osn1"
+				android:layout_marginBottom="10.0dp"/>
+			<Button
+				android:text="Не принятые заявки"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Activity_moi_zayavki_osn2"
+				android:layout_marginBottom="10.0dp"	/>
+			<Button
+				android:text="Не рассмотренные заявки"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Activity_moi_zayavki_osn3"
+				android:layout_marginBottom="10.0dp" />
+			<Button
+				android:text="Заявки на рассмотрение"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Activity_moi_zayavki_osn4" />
+			<LinearLayout
+				android:orientation="vertical"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="200.0dp"
+				android:id="@+id/linearLayout_Activity_moi_zayavki_dop"
+				android:visibility="invisible">
+				<Button
+					android:text="Ожидается перевозка"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/button_Activity_moi_zayavki_dop1"
+					android:layout_marginTop="18.5dp"
+					android:layout_marginBottom="15.0dp" />
+				<Button
+					android:text="Перевозка завершена"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/button_Activity_moi_zayavki_dop2"
+					android:layout_marginBottom="15.0dp"/>
+				<Button
+					android:text="Перевозка отменена"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/button_Activity_moi_zayavki_dop3"
+					android:layout_marginBottom="15.0dp"/>
+			</LinearLayout>
+		</LinearLayout>
 	</ScrollView>
+
 
 </LinearLayout>

@@ -62,6 +62,7 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\lay
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_new_version.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_no_internet.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_sortirovka.xml
+D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_prosmotr_napravleniia_os.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\R.cs.flag
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\R.txt
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\uploadflags.txt
@@ -102,7 +103,6 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\System.Web.Services.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\System.Xml.Linq.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\Mono.Security.pdb
-D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\MCS_Trucking.csprojAssemblyReference.cache
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\MCS_Trucking.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Mono.Android.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Mono.Security.pdb
