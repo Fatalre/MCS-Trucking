@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<ScrollView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollView1" >
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout_Activity_filtr">
+			<TextView
+				android:text="Text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView_Date_Auto_s"
+				android:textColor="#ff000000"
+				android:hint="Дата постановки машины с" />
+			<TextView
+				android:text="Text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView_Date_Auto_do"
+				android:textColor="#ff000000"
+				android:hint="Дата постановки машины до" />
+			<EditText
+				android:layout_width="125.0dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/editText_Lot_S_Filtr"
+				android:hint="Лот с"
+				android:inputType="none|number" />
+			<EditText
+				android:layout_width="127.0dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/editText_Lot_Do_Filtr"
+				android:hint="Лот до"
+				android:inputType="none|number" />
+			<EditText
+				android:layout_width="125.0dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/editText_Ves_S_Filtr"
+				android:hint="Вес с (т)"
+				android:inputType="none|number" />
+			<EditText
+				android:layout_width="127.0dp"
+				android:layout_height="wrap_content"
+				android:id="@+id/editText_Ves_Do_Filtr"
+				android:hint="Вес до (т)"
+				android:inputType="none|number" />
+			<Button
+				android:text="Выбрать линию"
+				android:layout_width="147.5dp"
+				android:layout_height="34.0dp"
+				android:id="@+id/button_Line_Filter"
+				android:background="#ffffd8d8" />
+			<Button
+				android:text="Выбрать тип контейнера"
+				android:layout_width="221.5dp"
+				android:layout_height="34.0dp"
+				android:id="@+id/button_Container_Filter"
+				android:background="#fff4ffd1" />
+			<Button
+				android:text="Применить фильтр"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Filtr_OK"
+				android:background="#ffb8f59e" />
+			<Button
+				android:text="очистить фильтр"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/button_Filtr_cancel"
+				android:background="#ffff3e45" />
+		</LinearLayout>
+	</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:enabled="false"
+		android:hint="Имя (обязательно)"
+		android:id="@+id/editText_First_Name_ActivityUpdateUser"
+		android:inputType="none|textPersonName" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Фамилия (обязательно)"
+		android:enabled="false"
+		android:id="@+id/editText_Last_Name_ActivityUpdateUser"
+		android:inputType="none|textPersonName" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="email (обязательно)"
+		android:id="@+id/editText_Email_ActivityUpdateUser"
+		android:inputType="none|textEmailAddress"
+		android:enabled="false" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Номер телефона (обязательно)"
+		android:id="@+id/editText_PhoneNumber_ActivityUpdateUser"
+		android:inputType="none|phone" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/editText_CompanyName_ActivityUpdateUser"
+		android:hint="Компания" />
+	<Button
+		android:text="Обновить информацию"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button_UpdateUser_Activity_UpdateUser"
+		android:background="#ffe1bdff" />
+
+</LinearLayout>
