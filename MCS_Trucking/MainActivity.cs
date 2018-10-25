@@ -13,10 +13,10 @@ using System.Net;
 using System.IO;
 using Android.Graphics;
 using Android.Util;
-using Android.Net;
 using Android.Content;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 using System.Reflection;
+using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
@@ -57,50 +57,48 @@ namespace MCS_Trucking
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
+
+
+            bool isConnected;
+            var ping = new Ping();
+            String host = "google.com";
+            byte[] buffer = new byte[32];
+            int timeout = 1000;
+            var options = new PingOptions();
+
             try
             {
-                Process p1 = Java.Lang.Runtime.GetRuntime().Exec("ping -c 1 www.google.com");
+                var reply = ping.Send(host, timeout, buffer, options);
+                var temp = reply.Status;
+                temp = IPStatus.Success;
+                isConnected = true;
             }
-            catch(Exception)
+            catch (Exception ex) when (ex is PingException || ex is Exception)
             {
-
+                isConnected = false;
             }
 
-
-
-            //bool isConnected;
-            //try
-            //{
-            //    var cm = (ConnectivityManager)GetSystemService(Application.ConnectivityService);
-            //    isConnected = cm.ActiveNetworkInfo.IsConnectedOrConnecting;
-            //}
-            //catch (Exception)
-            //{
-            //    isConnected = false;
-            //    //Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
-            //    ////Finish();
-            //    //StartActivity(intent_no_internet);
-            //}
-            //if (isConnected == false)
-            //{
-            //    try
-            //    {
-            //        Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
-            //        //Finish();
-            //        StartActivity(intent_no_internet);
-            //    }
-            //    catch (Exception)
-            //    {
-
-            //    }
-            //}
+            if (isConnected == false)
+            {
+                Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
+                StartActivity(intent_no_internet);
+            }
 
 
 
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             WebClient http = new WebClient();
 
-            Version latestVersion = new Version(http.DownloadString("http://citg.at.ua/MCS_Trucking/version.txt"));
+            Version latestVersion = version;
+
+            try
+            {
+                latestVersion = new Version(http.DownloadString("http://citg.at.ua/MCS_Trucking/version.txt"));
+            }
+            catch(Exception)
+            {
+
+            }
 
             RootObject jsonNew = new RootObject();
             try
@@ -355,28 +353,31 @@ namespace MCS_Trucking
 
             count = 0;
             string[] Id_napr = new string[100000];
-            for (int i = 0; i < jsonNew.data.transportations.Count; i++)
+            try
             {
-                for (int k = 0; k < lines.Length; k++)
+                for (int i = 0; i < jsonNew.data.transportations.Count; i++)
                 {
-                    if (jsonNew.data.transportations[i].line.name.ToUpper() == lines[k] || lines_count == false)
+                    for (int k = 0; k < lines.Length; k++)
                     {
-                        if (jsonNew.data.transportations[i].containerType.name.ToUpper() == typesContainer[k] || typeContainer_count == false)
+                        if (jsonNew.data.transportations[i].line.name.ToUpper() == lines[k] || lines_count == false)
                         {
-                            if (Convert.ToInt32(jsonNew.data.transportations[i].lot) >= Convert.ToInt32(lot_s) || lot_s_count == false)
+                            if (jsonNew.data.transportations[i].containerType.name.ToUpper() == typesContainer[k] || typeContainer_count == false)
                             {
-                                if (Convert.ToInt32(jsonNew.data.transportations[i].lot) <= Convert.ToInt32(lot_do) || lot_do_count == false)
+                                if (Convert.ToInt32(jsonNew.data.transportations[i].lot) >= Convert.ToInt32(lot_s) || lot_s_count == false)
                                 {
-                                    if (Convert.ToDouble(jsonNew.data.transportations[i].cargoWeightInContainer) >= Convert.ToDouble(ves_s) || ves_s_count == false)
+                                    if (Convert.ToInt32(jsonNew.data.transportations[i].lot) <= Convert.ToInt32(lot_do) || lot_do_count == false)
                                     {
-                                        if (Convert.ToDouble(jsonNew.data.transportations[i].cargoWeightInContainer) <= Convert.ToDouble(ves_do) || ves_do_count == false)
+                                        if (Convert.ToDouble(jsonNew.data.transportations[i].cargoWeightInContainer) >= Convert.ToDouble(ves_s) || ves_s_count == false)
                                         {
-                                            if (Convert.ToDateTime(Date_auto_s) <= Convert.ToDateTime(jsonNew.data.transportations[i].carDeliveryDate) || Date_auto_s_count == false)
+                                            if (Convert.ToDouble(jsonNew.data.transportations[i].cargoWeightInContainer) <= Convert.ToDouble(ves_do) || ves_do_count == false)
                                             {
-                                                if (Convert.ToDateTime(Date_auto_do) >= Convert.ToDateTime(jsonNew.data.transportations[i].carDeliveryDate) || Date_auto_do_count == false)
+                                                if (Convert.ToDateTime(Date_auto_s) <= Convert.ToDateTime(jsonNew.data.transportations[i].carDeliveryDate) || Date_auto_s_count == false)
                                                 {
-                                                    Id_napr[count] = jsonNew.data.transportations[i].id.ToString();
-                                                    count++;
+                                                    if (Convert.ToDateTime(Date_auto_do) >= Convert.ToDateTime(jsonNew.data.transportations[i].carDeliveryDate) || Date_auto_do_count == false)
+                                                    {
+                                                        Id_napr[count] = jsonNew.data.transportations[i].id.ToString();
+                                                        count++;
+                                                    }
                                                 }
                                             }
                                         }
@@ -386,6 +387,10 @@ namespace MCS_Trucking
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+
             }
 
             int v = 1;

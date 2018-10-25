@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Widget;
 using Android.Util;
 using Android.Content;
-using Android.Net;
+using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
@@ -24,16 +24,29 @@ namespace MCS_Trucking
 
             button_no_internet.Click += delegate
             {
+                bool isConnected;
+                var ping = new Ping();
+                String host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                var options = new PingOptions();
+
                 try
                 {
-                    var cm = (ConnectivityManager)GetSystemService(Application.ConnectivityService);
-                    var isConnected = cm.ActiveNetworkInfo.IsConnected;
+                    var reply = ping.Send(host, timeout, buffer, options);
+                    var temp = reply.Status;
+                    temp = IPStatus.Success;
+                    isConnected = true;
                 }
-                catch (Exception)
+                catch (Exception ex) when (ex is PingException || ex is Exception)
                 {
-                    Intent intent_to_start = new Intent(this, typeof(MainActivity));
-                    FinishAffinity();
-                    StartActivity(intent_to_start);
+                    isConnected = false;
+                }
+
+                if (isConnected == false)
+                {
+                    Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
+                    StartActivity(intent_no_internet);
                 }
             };
         }

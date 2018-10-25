@@ -10,7 +10,7 @@ using Path = System.IO.Path;
 using System.Net;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Android.Net;
+using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
@@ -27,15 +27,28 @@ namespace MCS_Trucking
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Activity_filtr_type_container);
 
+            bool isConnected;
+            var ping = new Ping();
+            String host = "google.com";
+            byte[] buffer = new byte[32];
+            int timeout = 1000;
+            var options = new PingOptions();
+
             try
             {
-                var cm = (ConnectivityManager)GetSystemService(Application.ConnectivityService);
-                var isConnected = cm.ActiveNetworkInfo.IsConnected;
+                var reply = ping.Send(host, timeout, buffer, options);
+                var temp = reply.Status;
+                temp = IPStatus.Success;
+                isConnected = true;
             }
-            catch (Exception)
+            catch (Exception ex) when (ex is PingException || ex is Exception)
+            {
+                isConnected = false;
+            }
+
+            if (isConnected == false)
             {
                 Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
-                Finish();
                 StartActivity(intent_no_internet);
             }
 
