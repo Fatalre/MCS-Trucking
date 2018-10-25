@@ -74,6 +74,7 @@
     <Compile Include="Class_LichKab.cs" />
     <Compile Include="Class_Prosmotr_napravleniia.cs" />
     <Compile Include="Class_restore_password.cs" />
+    <Compile Include="Class_sortirovka.cs" />
     <Compile Include="Class_UpdateUser.cs" />
     <Compile Include="Class_Vhod.cs" />
     <Compile Include="MainActivity.cs" />
@@ -223,6 +224,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_no_internet.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_sortirovka.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

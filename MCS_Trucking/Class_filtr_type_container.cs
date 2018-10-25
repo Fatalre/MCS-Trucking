@@ -14,7 +14,7 @@ using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Class_filtr_type_container : Activity
     {
         private string[] type_container = new string[] { "20'DV","20'FT","20'HC","20'OT","20'REF",

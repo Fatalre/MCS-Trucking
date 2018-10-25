@@ -20,7 +20,8 @@ using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true, ConfigurationChanges = 
+        Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
 
@@ -139,6 +140,8 @@ namespace MCS_Trucking
             string ves_do = "1000";
             string[] lines = new string[32];
             string[] typesContainer = new string[32];
+            string sort_po_chumu = "createdAt";
+            string sort_voz_ub = "desc";
 
             bool Date_auto_s_count = true;
             bool Date_auto_do_count = true;
@@ -148,6 +151,82 @@ namespace MCS_Trucking
             bool ves_do_count = true;
             bool lines_count = true;
             bool typeContainer_count = true;
+
+            try
+            {
+                var backingFile = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Sortirovka_po_chemu.txt");
+                string line = "";
+                using (var reader = new StreamReader(backingFile, true))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        sort_po_chumu = line;
+                    }
+                }
+
+                if (sort_po_chumu == "" || sort_po_chumu == null)
+                {
+                    sort_po_chumu = "createdAt";
+                }
+                else if (sort_po_chumu == "Дата добавления")
+                {
+                    sort_po_chumu = "createdAt";
+                }
+                else if (sort_po_chumu == "Дата постановки машины")
+                {
+                    sort_po_chumu = "carDeliveryDate";
+                }
+                else if (sort_po_chumu == "Лот")
+                {
+                    sort_po_chumu = "lot";
+                }
+                else if (sort_po_chumu == "Вес")
+                {
+                    sort_po_chumu = "cargoWeightInContainer";
+                }
+                else if (sort_po_chumu == "Город погрузки")
+                {
+                    sort_po_chumu = "cityOfLoading";
+                }
+                else if (sort_po_chumu == "Город доставки")
+                {
+                    sort_po_chumu = "deliveryCity";
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+            try
+            {
+                var backingFile = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Sortirovka_voz_ub.txt");
+                string line = "";
+                using (var reader = new StreamReader(backingFile, true))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        sort_voz_ub = line;
+                    }
+                }
+
+                if (sort_voz_ub == "" || sort_voz_ub == null)
+                {
+                    sort_voz_ub = "desc";
+                }
+                else if (sort_voz_ub == "По убыванию")
+                {
+                    sort_voz_ub = "desc";
+                }
+                else if (sort_voz_ub == "По возрастанию")
+                {
+                    sort_voz_ub = "asc";
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
 
             try
             {
@@ -542,11 +621,18 @@ namespace MCS_Trucking
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
+
             if (id == Resource.Id.filtr)
             {
                 Intent intent_filter = new Intent(this, typeof(Class_filtr));
                 StartActivity(intent_filter);
                 
+            }
+
+            if (id == Resource.Id.sortirovka)
+            {
+                Intent intent_sortirovka = new Intent(this, typeof(Class_sortirovka));
+                StartActivity(intent_sortirovka);
             }
 
             return base.OnOptionsItemSelected(item);

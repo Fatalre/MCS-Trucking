@@ -14,7 +14,7 @@ using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Class_filtr_line : Activity
     {
         private string[] lines = new string[] { "ADMIRAL","APL", "ARKAS", "CMA CGM", "COSCO", "EVERGREEN",

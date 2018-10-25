@@ -8,7 +8,7 @@ using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Class_filtr_auto_do_ok : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
