@@ -36,6 +36,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <service android:name="md5c75179d9735baaef1e6a3e99c47c2caa.Service_progress_bar" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="MCS_Trucking.MCS_Trucking.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

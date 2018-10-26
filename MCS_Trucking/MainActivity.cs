@@ -31,6 +31,12 @@ namespace MCS_Trucking
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.activity_main);
+
+            Intent intent_service = new Intent(this, typeof(Service_progress_bar));
+            StartService(intent_service);
+
 
             try
             {
@@ -55,9 +61,6 @@ namespace MCS_Trucking
             {
 
             }
-
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
 
 
 
