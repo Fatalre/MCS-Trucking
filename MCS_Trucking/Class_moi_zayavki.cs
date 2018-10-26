@@ -13,6 +13,8 @@ namespace MCS_Trucking
     [Activity(Label = "@string/app_name", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Class_moi_zayavki : Activity
     {
+        string Key1;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -62,11 +64,18 @@ namespace MCS_Trucking
                 StartActivity(intent_moi_zayavki_os);
             };
 
+            button_zayavki_na_rassmotrenie.Click += delegate
+            {
+                Intent intent_moi_zayavki_os = new Intent(this, typeof(Class_prosmotr_napravleniia_os));
+                intent_moi_zayavki_os.PutExtra("Key", button_zayavki_na_rassmotrenie.Text);
+                StartActivity(intent_moi_zayavki_os);
+            };
 
             button_prinyatue_zayavki.Click += delegate
             {
                 if (linearLayout_skr.Visibility == ViewStates.Invisible)
                 {
+                    Key1 = button_prinyatue_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Visible;
                     button_Vse_zayavki.Visibility = ViewStates.Invisible;
                     button_ne_prinyatue_zayavki.Visibility = ViewStates.Invisible;
@@ -75,6 +84,7 @@ namespace MCS_Trucking
                 }
                 else
                 {
+                    Key1 = button_prinyatue_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Invisible;
                     button_Vse_zayavki.Visibility = ViewStates.Visible;
                     button_ne_prinyatue_zayavki.Visibility = ViewStates.Visible;
@@ -87,6 +97,7 @@ namespace MCS_Trucking
             {
                 if (linearLayout_skr.Visibility == ViewStates.Invisible)
                 {
+                    Key1 = button_ne_prinyatue_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Visible;
                     button_Vse_zayavki.Visibility = ViewStates.Invisible;
                     button_prinyatue_zayavki.Visibility = ViewStates.Invisible;
@@ -95,6 +106,7 @@ namespace MCS_Trucking
                 }
                 else
                 {
+                    Key1 = button_ne_prinyatue_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Invisible;
                     button_Vse_zayavki.Visibility = ViewStates.Visible;
                     button_prinyatue_zayavki.Visibility = ViewStates.Visible;
@@ -107,162 +119,47 @@ namespace MCS_Trucking
             {
                 if (linearLayout_skr.Visibility == ViewStates.Invisible)
                 {
+                    Key1 = button_ne_rassmotr_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Visible;
                     button_Vse_zayavki.Visibility = ViewStates.Invisible;
+                    button_ne_prinyatue_zayavki.Visibility = ViewStates.Invisible;
                     button_prinyatue_zayavki.Visibility = ViewStates.Invisible;
-                    button_ne_rassmotr_zayavki.Visibility = ViewStates.Invisible;
                     button_zayavki_na_rassmotrenie.Visibility = ViewStates.Invisible;
                 }
                 else
                 {
+                    Key1 = button_ne_rassmotr_zayavki.Text;
                     linearLayout_skr.Visibility = ViewStates.Invisible;
                     button_Vse_zayavki.Visibility = ViewStates.Visible;
                     button_prinyatue_zayavki.Visibility = ViewStates.Visible;
-                    button_ne_rassmotr_zayavki.Visibility = ViewStates.Visible;
+                    button_ne_prinyatue_zayavki.Visibility = ViewStates.Visible;
                     button_zayavki_na_rassmotrenie.Visibility = ViewStates.Visible;
                 }
             };
-            //RootObject user = new RootObject();
 
-            //try
-            //{
-            //    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
-            //    httpWebRequest1.Headers.Add("userToken", userToken);
-            //    httpWebRequest1.Accept = "application/json";
-            //    httpWebRequest1.Method = "GET";
-            //    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
-            //    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
-            //    {
-            //        var result = streamReader.ReadToEnd();
-            //        user = JsonConvert.DeserializeObject<RootObject>(result);
-            //    }
+            button_dop1.Click += delegate
+            {
+                Intent intent_moi_zayavki_os = new Intent(this, typeof(Class_prosmotr_napravleniia_os));
+                intent_moi_zayavki_os.PutExtra("Key", Key1);
+                intent_moi_zayavki_os.PutExtra("Key2", button_dop1.Text);
+                StartActivity(intent_moi_zayavki_os);
+            };
 
-            //}
-            //catch
-            //{
-            //    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-            //    alert1.SetTitle("Ошибка");
-            //    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
-            //    alert1.SetNeutralButton("OK", handllerNothingButton);
-            //    alert1.Show();
-            //}
+            button_dop2.Click += delegate
+            {
+                Intent intent_moi_zayavki_os = new Intent(this, typeof(Class_prosmotr_napravleniia_os));
+                intent_moi_zayavki_os.PutExtra("Key", Key1);
+                intent_moi_zayavki_os.PutExtra("Key2", button_dop2.Text);
+                StartActivity(intent_moi_zayavki_os);
+            };
 
-            //void handllerNothingButton(object sender, DialogClickEventArgs e)
-            //{
-            //    Intent intent_to_main = new Intent(this, typeof(MainActivity));
-            //    Finish();
-            //    StartActivity(intent_to_main);
-            //}
-
-            //RootObject1 user_app = new RootObject1();
-
-            //try
-            //{
-            //    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/user/" + user.data.user.id.ToString() + "/apps");
-            //    httpWebRequest.Headers.Add("userToken", userToken);
-            //    httpWebRequest.Accept = "application/json";
-            //    httpWebRequest.Method = "GET";
-            //    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            //    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            //    {
-            //        var result = streamReader.ReadToEnd();
-            //        user_app = JsonConvert.DeserializeObject<RootObject1>(result);
-            //    }
-
-            //}
-            //catch
-            //{
-            //    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-            //    alert1.SetTitle("Ошибка");
-            //    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
-            //    alert1.SetNeutralButton("OK", handllerNothingButton);
-            //    alert1.Show();
-            //}
-
-            //LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_moi_zayavki);
-            //LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
-            //    (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-
-            //if (user_app.data.apps.Count != 0)
-            //{
-            //    for (int i = 0; i < user_app.data.apps.Count; i++)
-            //    {
-            //        Button button_napr = new Button(this);
-            //        button_napr.Text = user_app.data.apps[i].transportation.cityOfLoading + " - " + user_app.data.apps[i].transportation.deliveryCity;
-            //        button_napr.TextAlignment = Android.Views.TextAlignment.Center;
-            //        button_napr.SetTextColor(Color.ParseColor("#ff274284"));
-
-            //        if (user_app.data.apps[i].transportation.status.name == "Перевозка отменена")
-            //        {
-            //            button_napr.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
-            //        }
-            //        else if (user_app.data.apps[i].transportation.status.name == "Завершена")
-            //        {
-            //            button_napr.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
-            //        }
-            //        else if (user_app.data.apps[i].transportation.status.name == "Ожидания заявок")
-            //        {
-            //            button_napr.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
-            //        }
-            //        else if (user_app.data.apps[i].transportation.status.name == "Заявки рассмотрено")
-            //        {
-            //            button_napr.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
-            //        }
-            //        else
-            //        {
-            //            button_napr.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
-            //        }
-
-            //        button_napr.SetTextSize(ComplexUnitType.Dip, 19);
-            //        button_napr.Id = View.GenerateViewId();
-            //        button_napr.Click += OnButtonClick;
-
-            //        TextView textView_opis_napr = new TextView(this);
-            //        textView_opis_napr.Text = "Дата постановки машины: "
-            //        + user_app.data.apps[i].transportation.carDeliveryDate + "\n" + "Лот: "
-            //        + user_app.data.apps[i].transportation.lot + "\n" + "Вес контейнера: "
-            //        + user_app.data.apps[i].transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
-            //        + user_app.data.apps[i].transportation.containerType.name + "\n" + "Линия: "
-            //        + user_app.data.apps[i].transportation.line.name + "\n" + "Направление: "
-            //        + user_app.data.apps[i].transportation.transportationType.name + "\n" + "Статус: "
-            //        + user_app.data.apps[i].transportation.status.name;
-
-            //        textView_opis_napr.TextAlignment = TextAlignment.ViewStart;
-            //        textView_opis_napr.SetTextColor(Color.Black);
-            //        textView_opis_napr.SetTextSize(ComplexUnitType.Dip, 15);
-
-            //        TextView textView_apps_user = new TextView(this);
-            //        textView_apps_user.Text = "\nВаша заявка: " + "\n" + "Лот: " + user_app.data.apps[i].lot 
-            //            + "\n" + "Ваша ставка: " + user_app.data.apps[i].betPrice 
-            //            + "\n" + "Ваш комментарий: " + user_app.data.apps[i].comment;
-
-            //        textView_apps_user.TextAlignment = TextAlignment.ViewStart;
-            //        textView_apps_user.SetTextColor(Color.OrangeRed);
-            //        textView_apps_user.SetTextSize(ComplexUnitType.Dip, 15);
-
-            //        TextView textView_id_napr = new TextView(this);
-            //        textView_id_napr.Text = user_app.data.apps[i].transportationId.ToString();
-            //        textView_id_napr.SetTextColor(Color.White);
-            //        textView_id_napr.Id = View.GenerateViewId();
-
-            //        ll.AddView(button_napr, lp);
-            //        ll.AddView(textView_opis_napr, lp);
-            //        ll.AddView(textView_apps_user, lp);
-            //        ll.AddView(textView_id_napr, lp);
-            //    }
-                
-            //}
-            //else
-            //{
-            //    TextView textView_no_app = new TextView(this);
-            //    textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку";
-            //    textView_no_app.TextAlignment = TextAlignment.Center;
-            //    textView_no_app.SetTextColor(Color.DarkRed);
-            //    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
-
-            //    ll.AddView(textView_no_app, lp);
-            //}
-
+            button_dop3.Click += delegate
+            {
+                Intent intent_moi_zayavki_os = new Intent(this, typeof(Class_prosmotr_napravleniia_os));
+                intent_moi_zayavki_os.PutExtra("Key", Key1);
+                intent_moi_zayavki_os.PutExtra("Key2", button_dop3.Text);
+                StartActivity(intent_moi_zayavki_os);
+            };
         }
 
         private void OnButtonClick(object sender, System.EventArgs e)

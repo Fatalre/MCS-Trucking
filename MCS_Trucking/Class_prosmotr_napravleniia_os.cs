@@ -71,6 +71,22 @@ namespace MCS_Trucking
             }
 
             string key = Intent.GetStringExtra("Key" ?? "Key");
+            string key2 = Intent.GetStringExtra("Key2" ?? "Key2");
+
+            if (key2 == "Ожидается перевозка")
+            {
+                key2 = "Заявки рассмотрено";
+            }
+            else if (key2 == "Перевозка завершена")
+            {
+                key2 = "Завершена";
+            }
+            else if (key2 == "Перевозка отменена")
+            {
+                key2 = "Перевозка отменена";
+            }
+
+            int count = 0;
 
             if (key == "Все заявки")
             {
@@ -201,6 +217,615 @@ namespace MCS_Trucking
                 {
                     TextView textView_no_app = new TextView(this);
                     textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку по этому фильтру";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+            }
+            else if (key == "Заявки на рассмотрение")
+            {
+                RootObject user = new RootObject();
+
+                try
+                {
+                    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
+                    httpWebRequest1.Headers.Add("userToken", userToken);
+                    httpWebRequest1.Accept = "application/json";
+                    httpWebRequest1.Method = "GET";
+                    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user = JsonConvert.DeserializeObject<RootObject>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                RootObject1 user_app = new RootObject1();
+
+                try
+                {
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/user/" + user.data.user.id.ToString() + "/apps");
+                    httpWebRequest.Headers.Add("userToken", userToken);
+                    httpWebRequest.Accept = "application/json";
+                    httpWebRequest.Method = "GET";
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user_app = JsonConvert.DeserializeObject<RootObject1>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_moi_zayavki);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                    (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                if (user_app.data.apps.Count != 0)
+                {
+                    for (int i = 0; i < user_app.data.apps.Count; i++)
+                    {
+                        if(user_app.data.apps[i].accepted == null && user_app.data.apps[i].transportation.status.name == "Ожидания заявок")
+                        {
+                            Button button_napr = new Button(this);
+                            button_napr.Text = user_app.data.apps[i].transportation.cityOfLoading + " - " + user_app.data.apps[i].transportation.deliveryCity;
+                            button_napr.TextAlignment = Android.Views.TextAlignment.Center;
+                            button_napr.SetTextColor(Color.ParseColor("#ff274284"));
+
+                            if (user_app.data.apps[i].transportation.status.name == "Перевозка отменена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Завершена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Ожидания заявок")//null на рассмотрение
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Заявки рассмотрено")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                            }
+                            else
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                            }
+
+                            button_napr.SetTextSize(ComplexUnitType.Dip, 19);
+                            button_napr.Id = View.GenerateViewId();
+                            button_napr.Click += OnButtonClick;
+
+                            TextView textView_opis_napr = new TextView(this);
+                            textView_opis_napr.Text = "Дата постановки машины: "
+                            + user_app.data.apps[i].transportation.carDeliveryDate + "\n" + "Лот: "
+                            + user_app.data.apps[i].transportation.lot + "\n" + "Вес контейнера: "
+                            + user_app.data.apps[i].transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + user_app.data.apps[i].transportation.containerType.name + "\n" + "Линия: "
+                            + user_app.data.apps[i].transportation.line.name + "\n" + "Направление: "
+                            + user_app.data.apps[i].transportation.transportationType.name + "\n" + "Статус: "
+                            + user_app.data.apps[i].transportation.status.name;
+
+                            textView_opis_napr.TextAlignment = TextAlignment.ViewStart;
+                            textView_opis_napr.SetTextColor(Color.Black);
+                            textView_opis_napr.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_apps_user = new TextView(this);
+                            textView_apps_user.Text = "\nВаша заявка: " + "\n" + "Лот: " + user_app.data.apps[i].lot
+                                + "\n" + "Ваша ставка: " + user_app.data.apps[i].betPrice
+                                + "\n" + "Ваш комментарий: " + user_app.data.apps[i].comment;
+
+                            textView_apps_user.TextAlignment = TextAlignment.ViewStart;
+                            textView_apps_user.SetTextColor(Color.OrangeRed);
+                            textView_apps_user.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_id_napr = new TextView(this);
+                            textView_id_napr.Text = user_app.data.apps[i].transportationId.ToString();
+                            textView_id_napr.SetTextColor(Color.White);
+                            textView_id_napr.Id = View.GenerateViewId();
+
+                            ll.AddView(button_napr, lp);
+                            ll.AddView(textView_opis_napr, lp);
+                            ll.AddView(textView_apps_user, lp);
+                            ll.AddView(textView_id_napr, lp);
+
+                            count++;
+                        }
+                    }
+
+                }
+                else
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку по этому фильтру";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+
+                if (count == 0)
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "В данной категории у Вас нет заявок";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+            }
+            else if (key == "Не рассмотренные заявки")
+            {
+                RootObject user = new RootObject();
+
+                try
+                {
+                    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
+                    httpWebRequest1.Headers.Add("userToken", userToken);
+                    httpWebRequest1.Accept = "application/json";
+                    httpWebRequest1.Method = "GET";
+                    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user = JsonConvert.DeserializeObject<RootObject>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                RootObject1 user_app = new RootObject1();
+
+                try
+                {
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/user/" + user.data.user.id.ToString() + "/apps");
+                    httpWebRequest.Headers.Add("userToken", userToken);
+                    httpWebRequest.Accept = "application/json";
+                    httpWebRequest.Method = "GET";
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user_app = JsonConvert.DeserializeObject<RootObject1>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_moi_zayavki);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                    (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                if (user_app.data.apps.Count != 0)
+                {
+                    for (int i = 0; i < user_app.data.apps.Count; i++)
+                    {
+                        if (user_app.data.apps[i].accepted == null && user_app.data.apps[i].transportation.status.name == key2)
+                        {
+                            Button button_napr = new Button(this);
+                            button_napr.Text = user_app.data.apps[i].transportation.cityOfLoading + " - " + user_app.data.apps[i].transportation.deliveryCity;
+                            button_napr.TextAlignment = Android.Views.TextAlignment.Center;
+                            button_napr.SetTextColor(Color.ParseColor("#ff274284"));
+
+                            if (user_app.data.apps[i].transportation.status.name == "Перевозка отменена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Завершена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Ожидания заявок")//null на рассмотрение
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Заявки рассмотрено")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                            }
+                            else
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                            }
+
+                            button_napr.SetTextSize(ComplexUnitType.Dip, 19);
+                            button_napr.Id = View.GenerateViewId();
+                            button_napr.Click += OnButtonClick;
+
+                            TextView textView_opis_napr = new TextView(this);
+                            textView_opis_napr.Text = "Дата постановки машины: "
+                            + user_app.data.apps[i].transportation.carDeliveryDate + "\n" + "Лот: "
+                            + user_app.data.apps[i].transportation.lot + "\n" + "Вес контейнера: "
+                            + user_app.data.apps[i].transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + user_app.data.apps[i].transportation.containerType.name + "\n" + "Линия: "
+                            + user_app.data.apps[i].transportation.line.name + "\n" + "Направление: "
+                            + user_app.data.apps[i].transportation.transportationType.name + "\n" + "Статус: "
+                            + user_app.data.apps[i].transportation.status.name;
+
+                            textView_opis_napr.TextAlignment = TextAlignment.ViewStart;
+                            textView_opis_napr.SetTextColor(Color.Black);
+                            textView_opis_napr.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_apps_user = new TextView(this);
+                            textView_apps_user.Text = "\nВаша заявка: " + "\n" + "Лот: " + user_app.data.apps[i].lot
+                                + "\n" + "Ваша ставка: " + user_app.data.apps[i].betPrice
+                                + "\n" + "Ваш комментарий: " + user_app.data.apps[i].comment;
+
+                            textView_apps_user.TextAlignment = TextAlignment.ViewStart;
+                            textView_apps_user.SetTextColor(Color.OrangeRed);
+                            textView_apps_user.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_id_napr = new TextView(this);
+                            textView_id_napr.Text = user_app.data.apps[i].transportationId.ToString();
+                            textView_id_napr.SetTextColor(Color.White);
+                            textView_id_napr.Id = View.GenerateViewId();
+
+                            ll.AddView(button_napr, lp);
+                            ll.AddView(textView_opis_napr, lp);
+                            ll.AddView(textView_apps_user, lp);
+                            ll.AddView(textView_id_napr, lp);
+
+                            count++;
+                        }
+                    }
+
+                }
+                else
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку по этому фильтру";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+
+                if (count == 0)
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "В данной категории у Вас нет заявок";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+            }
+            else if (key == "Не принятые заявки")
+            {
+                RootObject user = new RootObject();
+
+                try
+                {
+                    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
+                    httpWebRequest1.Headers.Add("userToken", userToken);
+                    httpWebRequest1.Accept = "application/json";
+                    httpWebRequest1.Method = "GET";
+                    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user = JsonConvert.DeserializeObject<RootObject>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                RootObject1 user_app = new RootObject1();
+
+                try
+                {
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/user/" + user.data.user.id.ToString() + "/apps");
+                    httpWebRequest.Headers.Add("userToken", userToken);
+                    httpWebRequest.Accept = "application/json";
+                    httpWebRequest.Method = "GET";
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user_app = JsonConvert.DeserializeObject<RootObject1>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_moi_zayavki);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                    (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                if (user_app.data.apps.Count != 0)
+                {
+                    for (int i = 0; i < user_app.data.apps.Count; i++)
+                    {
+                        if (Convert.ToInt32(user_app.data.apps[i].accepted) == 0 && user_app.data.apps[i].transportation.status.name == key2)
+                        {
+                            Button button_napr = new Button(this);
+                            button_napr.Text = user_app.data.apps[i].transportation.cityOfLoading + " - " + user_app.data.apps[i].transportation.deliveryCity;
+                            button_napr.TextAlignment = Android.Views.TextAlignment.Center;
+                            button_napr.SetTextColor(Color.ParseColor("#ff274284"));
+
+                            if (user_app.data.apps[i].transportation.status.name == "Перевозка отменена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Завершена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Ожидания заявок")//null на рассмотрение
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Заявки рассмотрено")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                            }
+                            else
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                            }
+
+                            button_napr.SetTextSize(ComplexUnitType.Dip, 19);
+                            button_napr.Id = View.GenerateViewId();
+                            button_napr.Click += OnButtonClick;
+
+                            TextView textView_opis_napr = new TextView(this);
+                            textView_opis_napr.Text = "Дата постановки машины: "
+                            + user_app.data.apps[i].transportation.carDeliveryDate + "\n" + "Лот: "
+                            + user_app.data.apps[i].transportation.lot + "\n" + "Вес контейнера: "
+                            + user_app.data.apps[i].transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + user_app.data.apps[i].transportation.containerType.name + "\n" + "Линия: "
+                            + user_app.data.apps[i].transportation.line.name + "\n" + "Направление: "
+                            + user_app.data.apps[i].transportation.transportationType.name + "\n" + "Статус: "
+                            + user_app.data.apps[i].transportation.status.name;
+
+                            textView_opis_napr.TextAlignment = TextAlignment.ViewStart;
+                            textView_opis_napr.SetTextColor(Color.Black);
+                            textView_opis_napr.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_apps_user = new TextView(this);
+                            textView_apps_user.Text = "\nВаша заявка: " + "\n" + "Лот: " + user_app.data.apps[i].lot
+                                + "\n" + "Ваша ставка: " + user_app.data.apps[i].betPrice
+                                + "\n" + "Ваш комментарий: " + user_app.data.apps[i].comment;
+
+                            textView_apps_user.TextAlignment = TextAlignment.ViewStart;
+                            textView_apps_user.SetTextColor(Color.OrangeRed);
+                            textView_apps_user.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_id_napr = new TextView(this);
+                            textView_id_napr.Text = user_app.data.apps[i].transportationId.ToString();
+                            textView_id_napr.SetTextColor(Color.White);
+                            textView_id_napr.Id = View.GenerateViewId();
+
+                            ll.AddView(button_napr, lp);
+                            ll.AddView(textView_opis_napr, lp);
+                            ll.AddView(textView_apps_user, lp);
+                            ll.AddView(textView_id_napr, lp);
+
+                            count++;
+                        }
+                    }
+
+                }
+                else
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку по этому фильтру";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+
+                if (count == 0)
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "В данной категории у Вас нет заявок";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+            }
+            else if (key == "Принятые заявки")
+            {
+                RootObject user = new RootObject();
+
+                try
+                {
+                    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
+                    httpWebRequest1.Headers.Add("userToken", userToken);
+                    httpWebRequest1.Accept = "application/json";
+                    httpWebRequest1.Method = "GET";
+                    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user = JsonConvert.DeserializeObject<RootObject>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                RootObject1 user_app = new RootObject1();
+
+                try
+                {
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/user/" + user.data.user.id.ToString() + "/apps");
+                    httpWebRequest.Headers.Add("userToken", userToken);
+                    httpWebRequest.Accept = "application/json";
+                    httpWebRequest.Method = "GET";
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        user_app = JsonConvert.DeserializeObject<RootObject1>(result);
+                    }
+
+                }
+                catch
+                {
+                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                    alert1.SetTitle("Ошибка");
+                    alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
+                    alert1.SetNeutralButton("OK", handllerNothingButton);
+                    alert1.Show();
+                }
+
+                LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_moi_zayavki);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                    (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                if (user_app.data.apps.Count != 0)
+                {
+                    for (int i = 0; i < user_app.data.apps.Count; i++)
+                    {
+                        if (Convert.ToInt32(user_app.data.apps[i].accepted) == 1 && user_app.data.apps[i].transportation.status.name == key2)
+                        {
+                            Button button_napr = new Button(this);
+                            button_napr.Text = user_app.data.apps[i].transportation.cityOfLoading + " - " + user_app.data.apps[i].transportation.deliveryCity;
+                            button_napr.TextAlignment = Android.Views.TextAlignment.Center;
+                            button_napr.SetTextColor(Color.ParseColor("#ff274284"));
+
+                            if (user_app.data.apps[i].transportation.status.name == "Перевозка отменена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Завершена")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Ожидания заявок")//null на рассмотрение
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                            }
+                            else if (user_app.data.apps[i].transportation.status.name == "Заявки рассмотрено")
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                            }
+                            else
+                            {
+                                button_napr.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                            }
+
+                            button_napr.SetTextSize(ComplexUnitType.Dip, 19);
+                            button_napr.Id = View.GenerateViewId();
+                            button_napr.Click += OnButtonClick;
+
+                            TextView textView_opis_napr = new TextView(this);
+                            textView_opis_napr.Text = "Дата постановки машины: "
+                            + user_app.data.apps[i].transportation.carDeliveryDate + "\n" + "Лот: "
+                            + user_app.data.apps[i].transportation.lot + "\n" + "Лотов подтверждено: " 
+                            + user_app.data.apps[i].lotAccepted.ToString() + "\n" + "Вес контейнера: "
+                            + user_app.data.apps[i].transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + user_app.data.apps[i].transportation.containerType.name + "\n" + "Линия: "
+                            + user_app.data.apps[i].transportation.line.name + "\n" + "Направление: "
+                            + user_app.data.apps[i].transportation.transportationType.name + "\n" + "Статус: "
+                            + user_app.data.apps[i].transportation.status.name;
+
+                            textView_opis_napr.TextAlignment = TextAlignment.ViewStart;
+                            textView_opis_napr.SetTextColor(Color.Black);
+                            textView_opis_napr.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_apps_user = new TextView(this);
+                            textView_apps_user.Text = "\nВаша заявка: " + "\n" + "Лот: " + user_app.data.apps[i].lot
+                                + "\n" + "Ваша ставка: " + user_app.data.apps[i].betPrice
+                                + "\n" + "Ваш комментарий: " + user_app.data.apps[i].comment;
+
+                            textView_apps_user.TextAlignment = TextAlignment.ViewStart;
+                            textView_apps_user.SetTextColor(Color.OrangeRed);
+                            textView_apps_user.SetTextSize(ComplexUnitType.Dip, 15);
+
+                            TextView textView_id_napr = new TextView(this);
+                            textView_id_napr.Text = user_app.data.apps[i].transportationId.ToString();
+                            textView_id_napr.SetTextColor(Color.White);
+                            textView_id_napr.Id = View.GenerateViewId();
+
+                            ll.AddView(button_napr, lp);
+                            ll.AddView(textView_opis_napr, lp);
+                            ll.AddView(textView_apps_user, lp);
+                            ll.AddView(textView_id_napr, lp);
+
+                            count++;
+                        }
+                    }
+
+                }
+                else
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "У Вас пока нет ни одной заявки на превозку по этому фильтру";
+                    textView_no_app.TextAlignment = TextAlignment.Center;
+                    textView_no_app.SetTextColor(Color.DarkRed);
+                    textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);
+
+                    ll.AddView(textView_no_app, lp);
+                }
+
+                if (count == 0)
+                {
+                    TextView textView_no_app = new TextView(this);
+                    textView_no_app.Text = "В данной категории у Вас нет заявок";
                     textView_no_app.TextAlignment = TextAlignment.Center;
                     textView_no_app.SetTextColor(Color.DarkRed);
                     textView_no_app.SetTextSize(ComplexUnitType.Dip, 20);

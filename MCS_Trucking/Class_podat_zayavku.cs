@@ -178,6 +178,7 @@ namespace MCS_Trucking
                 {
                     Intent intent_to_prosmotr_napr = new Intent(this, typeof(Class_Prosmotr_napravleniia));
                     intent_to_prosmotr_napr.PutExtra("Id_napr", id_napr);
+                    Finish();
                     StartActivity(intent_to_prosmotr_napr);
                 }
 

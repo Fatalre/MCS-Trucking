@@ -121,6 +121,7 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\System.Web.Services.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\System.Xml.Linq.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\System.Xml.pdb
+D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\MCS_Trucking.csprojAssemblyReference.cache
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\MCS_Trucking.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\Mono.Android.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\linksrc\mscorlib.pdb
