@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 namespace MCS_Trucking
 {
     [Service]
-    class Service_progress_bar:Service
+    class Service_notific_new_transportation:Service
     {
         public override IBinder OnBind(Intent intent)
         {

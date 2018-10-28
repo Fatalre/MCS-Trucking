@@ -34,7 +34,7 @@ namespace MCS_Trucking
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Intent intent_service = new Intent(this, typeof(Service_progress_bar));
+            Intent intent_service = new Intent(this, typeof(Service_notific_new_transportation));
             StartService(intent_service);
 
 
