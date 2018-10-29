@@ -15,9 +15,9 @@ using Android.Graphics;
 using Android.Util;
 using Android.Content;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
-using System.Reflection;
 using System.Net.NetworkInformation;
 using System.Text;
+using Android;
 
 namespace MCS_Trucking
 {
@@ -34,34 +34,18 @@ namespace MCS_Trucking
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            Intent intent_service = new Intent(this, typeof(Service_notific_new_transportation));
-            StartService(intent_service);
+            Intent intent_service_transportationNew = new Intent(this, typeof(Service_notific_new_transportation));
+            StartService(intent_service_transportationNew);
 
+            Intent intent_service_new_version = new Intent(this, typeof(Service_new_version));
+            StartService(intent_service_new_version);
 
-            try
+            if (PackageManager.CheckPermission(Manifest.Permission.ReadExternalStorage, PackageName) != Android.Content.PM.Permission.Granted
+                && PackageManager.CheckPermission(Manifest.Permission.WriteExternalStorage, PackageName) != Android.Content.PM.Permission.Granted)
             {
-                var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "userToken.txt");
-                string userToken="";
-                using (var reader = new StreamReader(backingFile1, true))
-                {
-                    string line1;
-                    while ((line1 = reader.ReadLine()) != null)
-                    {
-                        userToken = line1;
-                    }
-                }
-
-                Vhod = true;
-                if (userToken == "")
-                {
-                    Vhod = false;
-                }
+                var permissions = new string[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage };
+                RequestPermissions(permissions, 1);
             }
-            catch (Exception)
-            {
-
-            }
-
 
 
             bool isConnected;
@@ -87,6 +71,30 @@ namespace MCS_Trucking
             {
                 Intent intent_no_internet = new Intent(this, typeof(Class_no_internet));
                 StartActivity(intent_no_internet);
+            }
+
+            try
+            {
+                var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "userToken.txt");
+                string userToken="";
+                using (var reader = new StreamReader(backingFile1, true))
+                {
+                    string line1;
+                    while ((line1 = reader.ReadLine()) != null)
+                    {
+                        userToken = line1;
+                    }
+                }
+
+                Vhod = true;
+                if (userToken == "")
+                {
+                    Vhod = false;
+                }
+            }
+            catch (Exception)
+            {
+
             }
 
             string sort_po_chumu = "createdAt";
@@ -168,20 +176,6 @@ namespace MCS_Trucking
                 ex.ToString();
             }
 
-            Version version = Assembly.GetExecutingAssembly().GetName().Version;
-            WebClient http = new WebClient();
-
-            Version latestVersion = version;
-
-            try
-            {
-                latestVersion = new Version(http.DownloadString("http://citg.at.ua/MCS_Trucking/version.txt"));
-            }
-            catch(Exception)
-            {
-
-            }
-
             var baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/transportations";
             Sortirovka sortirovka = new Sortirovka()
             {
@@ -211,12 +205,6 @@ namespace MCS_Trucking
                 var sr = new StreamReader(stream);
                 var content = sr.ReadToEnd();
                 jsonNew = JsonConvert.DeserializeObject<RootObject>(content);
-
-                if (latestVersion != version)
-                {
-                    Intent intent_new_version = new Intent(this, typeof(Class_new_version));
-                    StartActivity(intent_new_version);
-                }
             }
             catch (Exception)
             {
@@ -619,6 +607,13 @@ namespace MCS_Trucking
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            Intent intent_service_new_version = new Intent(this, typeof(Service_new_version));
+            StopService(intent_service_new_version);
         }
 
         public override void OnBackPressed()

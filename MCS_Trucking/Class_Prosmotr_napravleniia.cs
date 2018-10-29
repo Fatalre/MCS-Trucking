@@ -185,7 +185,7 @@ namespace MCS_Trucking
         private void OnButtonClick1(object sender, System.EventArgs e)
         {
             Intent intent_to_start = new Intent(this, typeof(MainActivity));
-            FinishAffinity();
+            Finish();
             StartActivity(intent_to_start);
         }
 

@@ -55,13 +55,6 @@ namespace MCS_Trucking
             {
                 Android.Net.Uri uri = Android.Net.Uri.Parse("http://citg.at.ua/MCS_Trucking/MCS_Trucking_new_version.apk.txt");
 
-                if (PackageManager.CheckPermission(Manifest.Permission.ReadExternalStorage, PackageName) != Android.Content.PM.Permission.Granted 
-                    && PackageManager.CheckPermission(Manifest.Permission.WriteExternalStorage, PackageName) != Android.Content.PM.Permission.Granted)
-                {
-                    var permissions = new string[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage };
-                    RequestPermissions(permissions, 1);
-                }
-
                 try
                 {
                     DownloadManager.Request request = new DownloadManager.Request(uri);

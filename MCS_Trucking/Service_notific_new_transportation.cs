@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
+using System.Threading;
 
 using Android.App;
 using Android.Content;
+using Android.Media;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.App;
-using Android.Views;
-using Android.Widget;
 using Newtonsoft.Json;
 
 namespace MCS_Trucking
@@ -26,54 +23,98 @@ namespace MCS_Trucking
 
         private static readonly int BTC = 9999;
 
-        [return: GeneratedEnum]
-        public override StartCommandResult OnStartCommand(Intent intent, [GeneratedEnum] StartCommandFlags flags, int startId)
+        public override void OnCreate()
         {
+            base.OnCreate();
+            Thread mythread = new Thread(Testik);
+            mythread.IsBackground = true;
+            mythread.Start();
+        }
 
+        public void Testik()
+        {
             int count_old = 0;
             int count_new = 0;
+            int id_last_new = 0;
 
-            RootObject jsonNew = new RootObject();
+            M1: RootObject jsonNew = new RootObject();
+
+            try
+            {
+                var backingFile = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Count_old.txt");
+                string line = "";
+                using (var reader = new StreamReader(backingFile, true))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        count_old = Convert.ToInt32(line);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
 
             try
             {
                 WebRequest reqGET = WebRequest.Create(@"https://truck.mcs-bitrix.pp.ua/api/v1/transportations");
                 WebResponse resp = reqGET.GetResponse();
-                Stream stream = resp.GetResponseStream();
+                System.IO.Stream stream = resp.GetResponseStream();
                 StreamReader sr = new StreamReader(stream);
                 string json = sr.ReadToEnd();
 
                 jsonNew = JsonConvert.DeserializeObject<RootObject>(json);
+
+                count_new = jsonNew.data.transportations.Count;
+                id_last_new = jsonNew.data.transportations[count_new-1].id;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                count_new = count_old;
+                ex.ToString();
+                count_new = 0;
+                count_old = 0;
             }
 
-            Bundle valuesSand = new Bundle();
-            valuesSand.PutString("sendContent","test string");
+            if (count_new > count_old)
+            {
+                var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Count_old.txt");
+                using (var writer = File.CreateText(backingFile))
+                {
+                    writer.WriteLine(count_new);
+                }
 
-            Intent newIntent = new Intent(this, typeof(MainActivity));
-            newIntent.PutExtras(valuesSand);
+                count_old = count_new;
 
-            Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
-            stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(MainActivity)));
-            stackBuilder.AddNextIntent(newIntent);
+                Bundle valuesSand = new Bundle();
+                valuesSand.PutString("Id_napr", id_last_new.ToString());
 
-            PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+                Intent newIntent = new Intent(this, typeof(Class_Prosmotr_napravleniia));
+                newIntent.PutExtras(valuesSand);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-                .SetAutoCancel(true)
-                .SetContentIntent(resultPendingIntent)
-                .SetContentTitle("Test Title")
-                .SetSmallIcon(Resource.Mipmap.ic_launcher_round)
-                .SetContentText("Click me!");
+                Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
+                stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(Class_Prosmotr_napravleniia)));
+                stackBuilder.AddNextIntent(newIntent);
 
-            NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
-            notificationManager.Notify(BTC,builder.Build());
+                PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                    .SetAutoCancel(true)
+                    .SetContentIntent(resultPendingIntent)
+                    .SetContentTitle("Добавлена новая перевозка!")
+                    .SetSmallIcon(Resource.Mipmap.ic_launcher_round)
+                    .SetContentText(jsonNew.data.transportations[count_new-1].cityOfLoading + " - " 
+                    + jsonNew.data.transportations[count_new-1].deliveryCity)
+                    .SetVibrate(new long[] { 1000, 1000 })
+                    .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification));
+
+                NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
+                notificationManager.Notify(BTC, builder.Build());
+            }
 
 
-            return base.OnStartCommand(intent, flags, startId);
+            Thread.Sleep(900000);
+            goto M1;
         }
 
         public class ContainerType

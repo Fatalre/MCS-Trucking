@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="MCS_Trucking.MCS_Trucking" android:installLocation="auto">
-  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="MCS_Trucking.MCS_Trucking" android:installLocation="internalOnly">
+  <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="27" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
@@ -36,7 +36,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <service android:name="md5c75179d9735baaef1e6a3e99c47c2caa.Service_progress_bar" />
+    <service android:name="md5c75179d9735baaef1e6a3e99c47c2caa.Service_new_version" />
+    <service android:name="md5c75179d9735baaef1e6a3e99c47c2caa.Service_notific_new_transportation" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="MCS_Trucking.MCS_Trucking.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
