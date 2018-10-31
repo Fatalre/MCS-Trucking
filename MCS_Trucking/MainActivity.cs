@@ -50,7 +50,7 @@ namespace MCS_Trucking
 
             bool isConnected;
             var ping = new Ping();
-            String host = "google.com";
+            string host = "google.com";
             byte[] buffer = new byte[32];
             int timeout = 1000;
             var options = new PingOptions();
@@ -76,7 +76,7 @@ namespace MCS_Trucking
             try
             {
                 var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "userToken.txt");
-                string userToken="";
+                string userToken = "";
                 using (var reader = new StreamReader(backingFile1, true))
                 {
                     string line1;
@@ -220,8 +220,8 @@ namespace MCS_Trucking
                 //Действие при нажатие "ОК"
             }
 
-            string Date_auto_s="";
-            string Date_auto_do="";
+            string Date_auto_s = "";
+            string Date_auto_do = "";
             string lot_s = "0";
             string lot_do = "1000";
             string ves_s = "0";
@@ -325,8 +325,8 @@ namespace MCS_Trucking
 
             try
             {
-               var backingFile = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Ves_do.txt");
-               string line = "";
+                var backingFile = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Ves_do.txt");
+                string line = "";
                 using (var reader = new StreamReader(backingFile, true))
                 {
                     while ((line = reader.ReadLine()) != null)
@@ -379,7 +379,7 @@ namespace MCS_Trucking
             }
 
             int count = 0;
-            for(int i=0; i < lines.Length; i++)
+            for (int i = 0; i < lines.Length; i++)
             {
                 if (lines[i] == "" || lines[i] == null)
                 {
@@ -392,7 +392,7 @@ namespace MCS_Trucking
             }
 
             count = 0;
-            for(int i = 0; i < typesContainer.Length; i++)
+            for (int i = 0; i < typesContainer.Length; i++)
             {
                 if (typesContainer[i] == "" || typesContainer[i] == null)
                 {
@@ -485,9 +485,9 @@ namespace MCS_Trucking
             int v = 1;
             string[] Id_naprNew = new string[Id_napr.Length];
             Id_naprNew[0] = Id_napr[0];
-            for (int i=1; i < Id_napr.Length; i++)
+            for (int i = 1; i < Id_napr.Length; i++)
             {
-                if (Id_napr[i-1] != Id_napr[i])
+                if (Id_napr[i - 1] != Id_napr[i])
                 {
                     Id_naprNew[v] = Id_napr[i];
                     v++;
@@ -501,7 +501,7 @@ namespace MCS_Trucking
             {
                 if (Id_naprNew[i] == "" || Id_naprNew[i] == null)
                 {
-                    
+
                 }
                 else
                 {
@@ -516,9 +516,9 @@ namespace MCS_Trucking
 
                 RootObject1 napr_new = new RootObject1();
 
-                try
+                M2:  try
                 {
-                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/transportation/"+Id_naprNew[i]);
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/transportation/" + Id_naprNew[i]);
                     httpWebRequest.Accept = "application/json";
                     httpWebRequest.Method = "GET";
                     var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
@@ -530,13 +530,17 @@ namespace MCS_Trucking
                 }
                 catch (Exception)
                 {
+                    if (napr_new.data == null)
+                    {
+                        goto M2;
+                    }
+
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Ошибка");
                     alert.SetMessage("Ошибка сервера. Попробуйте позже.");
                     alert.SetNeutralButton("OK", handllerNothingButton);
                     alert.Show();
                 }
-
 
                 Button myButton = new Button(this);
                 myButton.Text = napr_new.data.transportation.cityOfLoading + " - " + napr_new.data.transportation.deliveryCity;

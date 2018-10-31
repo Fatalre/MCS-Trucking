@@ -92,7 +92,7 @@ namespace MCS_Trucking
             {
                 RootObject user = new RootObject();
 
-                try
+                M1: try
                 {
                     var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
                     httpWebRequest1.Headers.Add("userToken", userToken);
@@ -108,6 +108,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if(user.data.user == null)
+                    {
+                        goto M1;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -133,6 +138,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user_app.data.apps == null)
+                    {
+                        goto M1;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -228,7 +238,7 @@ namespace MCS_Trucking
             {
                 RootObject user = new RootObject();
 
-                try
+                M2:  try
                 {
                     var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
                     httpWebRequest1.Headers.Add("userToken", userToken);
@@ -244,6 +254,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user.data.user == null)
+                    {
+                        goto M2;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -269,6 +284,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if(user_app.data.apps == null)
+                    {
+                        goto M2;
+                    }
+                    
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -380,7 +400,7 @@ namespace MCS_Trucking
             {
                 RootObject user = new RootObject();
 
-                try
+                M3:  try
                 {
                     var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
                     httpWebRequest1.Headers.Add("userToken", userToken);
@@ -396,6 +416,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user.data.user == null)
+                    {
+                        goto M3;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -421,6 +446,10 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user_app.data.apps == null)
+                    {
+                        goto M3;
+                    }
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -532,7 +561,7 @@ namespace MCS_Trucking
             {
                 RootObject user = new RootObject();
 
-                try
+                M4:  try
                 {
                     var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
                     httpWebRequest1.Headers.Add("userToken", userToken);
@@ -548,6 +577,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user.data.user == null)
+                    {
+                        goto M4;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -573,6 +607,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if(user_app.data.apps == null)
+                    {
+                        goto M4;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -684,7 +723,7 @@ namespace MCS_Trucking
             {
                 RootObject user = new RootObject();
 
-                try
+               M5: try
                 {
                     var httpWebRequest1 = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/session");
                     httpWebRequest1.Headers.Add("userToken", userToken);
@@ -700,6 +739,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if (user.data.user == null)
+                    {
+                        goto M5;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");
@@ -725,6 +769,11 @@ namespace MCS_Trucking
                 }
                 catch
                 {
+                    if(user_app.data.apps == null)
+                    {
+                        goto M5;
+                    }
+
                     AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
                     alert1.SetTitle("Ошибка");
                     alert1.SetMessage("Произошла непредвиденая ошибка. Попробуйте позже");

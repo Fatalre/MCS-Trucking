@@ -3,8 +3,6 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using System.Collections.Generic;
-using System.IO;
 using Android.Content;
 using System.Net.NetworkInformation;
 
@@ -171,115 +169,6 @@ namespace MCS_Trucking
             intent_prosmotr_napr.PutExtra("Id_napr", textView_id_napr.Text);
             StartActivity(intent_prosmotr_napr);
 
-        }
-
-        public class Roles
-        {
-            public string carrier { get; set; }
-        }
-
-        public class User
-        {
-            public int id { get; set; }
-            public string firstName { get; set; }
-            public string lastName { get; set; }
-            public string email { get; set; }
-            public string phoneNumber { get; set; }
-            public object rememberToken { get; set; }
-            public int isCompany { get; set; }
-            public string companyName { get; set; }
-            public string createdAt { get; set; }
-            public string updatedAt { get; set; }
-            public Roles roles { get; set; }
-        }
-
-        public class Data
-        {
-            public User user { get; set; }
-        }
-
-        public class RootObject
-        {
-            public bool success { get; set; }
-            public int code { get; set; }
-            public Data data { get; set; }
-            public List<object> errors { get; set; }
-        }
-
-
-
-
-        public class ContainerType1
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string slug { get; set; }
-        }
-
-        public class Line1
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string slug { get; set; }
-        }
-
-        public class TransportationType1
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string slug { get; set; }
-        }
-
-        public class Status1
-        {
-            public int id { get; set; }
-            public string name { get; set; }
-            public string slug { get; set; }
-        }
-
-        public class Transportation1
-        {
-            public int id { get; set; }
-            public string cityOfLoading { get; set; }
-            public string deliveryCity { get; set; }
-            public string carDeliveryDate { get; set; }
-            public int lot { get; set; }
-            public int cargoWeightInContainer { get; set; }
-            public ContainerType1 containerType { get; set; }
-            public Line1 line { get; set; }
-            public TransportationType1 transportationType { get; set; }
-            public Status1 status { get; set; }
-            public string updatedAt { get; set; }
-            public string createdAt { get; set; }
-            public int userId { get; set; }
-        }
-
-        public class App1
-        {
-            public int id { get; set; }
-            public int userId { get; set; }
-            public int transportationId { get; set; }
-            public int lot { get; set; }
-            public int betPrice { get; set; }
-            public string comment { get; set; }
-            public object accepted { get; set; }
-            public int lotAccepted { get; set; }
-            public string createdAt { get; set; }
-            public string updatedAt { get; set; }
-            public Transportation1 transportation { get; set; }
-        }
-
-        public class Data1
-        {
-            public List<App1> apps { get; set; }
-        }
-
-        public class RootObject1
-        {
-            public bool success { get; set; }
-            public int code { get; set; }
-            public Data1 data { get; set; }
-            public List<object> errors { get; set; }
         }
     }
 }

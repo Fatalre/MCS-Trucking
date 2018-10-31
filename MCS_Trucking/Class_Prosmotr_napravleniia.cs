@@ -82,6 +82,7 @@ namespace MCS_Trucking
                 //Действие при нажатие "ОК"
             }
 
+
             TextView textView_Napravlenie = new TextView(this);
             textView_Napravlenie.Text = napr_new.data.transportation.cityOfLoading + " - " + napr_new.data.transportation.deliveryCity;
             textView_Napravlenie.SetTextColor(Color.ParseColor("#ff274284"));
@@ -98,6 +99,10 @@ namespace MCS_Trucking
                     + napr_new.data.transportation.transportationType.name + "\n" + "Статус: "
                     + napr_new.data.transportation.status.name;
             textView_opisanie.SetTextColor(Color.Black);
+
+            TextView textView_status_transport = FindViewById<TextView>(Resource.Id.textView_status_perevozki);
+            textView_status_transport.Text = napr_new.data.transportation.status.name;
+            textView_status_transport.SetTextColor(Color.White);
 
             LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_Activity_Prosmotr_Napravleniia);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
@@ -192,11 +197,13 @@ namespace MCS_Trucking
         private void OnButtonClick(object sender, System.EventArgs e)
         {
             TextView id_napr = (TextView)FindViewById<TextView>(Resource.Id.textView_idnapr_activity_prosmotr_napr);
+            TextView textView = FindViewById<TextView>(Resource.Id.textView_status_perevozki);
             Button myButton = (Button)sender;
             if (myButton.Text == "Изменить заявку")
             {
                 Intent intent_izm_zayavky = new Intent(this, typeof(Class_izm_zayavku));
                 intent_izm_zayavky.PutExtra("Id_napr", id_napr.Text.ToString());
+                intent_izm_zayavky.PutExtra("Status_transport", textView.Text);
                 Finish();
                 StartActivity(intent_izm_zayavky);
                 

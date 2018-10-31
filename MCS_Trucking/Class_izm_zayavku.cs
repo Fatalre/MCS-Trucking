@@ -48,6 +48,7 @@ namespace MCS_Trucking
             }
 
             string Id_napr = Intent.GetStringExtra("Id_napr" ?? "Id_napr");
+            string status_transport = Intent.GetStringExtra("Status_transport" ?? "Status_transport");
 
             EditText editText_lot = FindViewById<EditText>(Resource.Id.editText_lot_Activity_izm_zayavku);
             EditText editText_betPrice = FindViewById<EditText>(Resource.Id.editText_betPrice_Activity_izm_zayavku);
@@ -116,83 +117,93 @@ namespace MCS_Trucking
 
             button_update_zayavku.Click += delegate
             {
-
-                if(editText_lot.Text == "")
+                if(status_transport == "Ожидания заявок")
                 {
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-                    alert1.SetTitle("Ошибка");
-                    alert1.SetMessage("Поле 'Лот' не может быть пустым");
-                    alert1.SetNeutralButton("OK", handllerNothingButton1);
-                    alert1.Show();
+                    if (editText_lot.Text == "")
+                    {
+                        AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                        alert1.SetTitle("Ошибка");
+                        alert1.SetMessage("Поле 'Лот' не может быть пустым");
+                        alert1.SetNeutralButton("OK", handllerNothingButton1);
+                        alert1.Show();
+                    }
+                    if (editText_betPrice.Text == "")
+                    {
+                        AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                        alert1.SetTitle("Ошибка");
+                        alert1.SetMessage("Поле 'Ваша ставка' не может быть пустой");
+                        alert1.SetNeutralButton("OK", handllerNothingButton1);
+                        alert1.Show();
+                    }
+                    if (Convert.ToInt32(editText_lot.Text) > user_zayavki.data.app.lot)
+                    {
+                        AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                        alert1.SetTitle("Ошибка");
+                        alert1.SetMessage("Невозможно указать большее значение лот, чем есть в перевозке");
+                        alert1.SetNeutralButton("OK", handllerNothingButton1);
+                        alert1.Show();
+                    }
+                    if (Convert.ToInt32(editText_betPrice.Text) > 9999)
+                    {
+                        AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
+                        alert1.SetTitle("Ошибка");
+                        alert1.SetMessage("Цена не может превышать 9999 ");
+                        alert1.SetNeutralButton("OK", handllerNothingButton1);
+                        alert1.Show();
+                    }
+
+                    IzmZayavku izmZayavku = new IzmZayavku()
+                    {
+                        lot = editText_lot.Text,
+                        comment = editText_comment.Text,
+                        betPrice = editText_betPrice.Text
+                    };
+
+                    string baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/app/" + user_zayavki.data.app.id;
+
+                    try
+                    {
+                        var http = (HttpWebRequest)WebRequest.Create(new System.Uri(baseAddress));
+                        http.ContentType = "application/json";
+                        http.Accept = "application/json";
+                        http.Headers.Add("userToken", userToken);
+                        http.Method = "PUT";
+
+                        string pasredContent = JsonConvert.SerializeObject(izmZayavku);
+                        UTF8Encoding encoding = new UTF8Encoding();
+                        Byte[] bytes = encoding.GetBytes(pasredContent);
+
+                        Stream newStream = http.GetRequestStream();
+                        newStream.Write(bytes, 0, bytes.Length);
+                        newStream.Close();
+
+
+                        var response = http.GetResponse();
+
+                        var stream = response.GetResponseStream();
+                        var sr = new StreamReader(stream);
+                        var content = sr.ReadToEnd();
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Успешно");
+                        alert.SetMessage("Заявка обновлена успешно!");
+                        alert.SetNeutralButton("OK", handllerNothingButton);
+                        alert.Show();
+                    }
+                    catch (WebException)
+                    {
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Ошибка");
+                        alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                        alert.SetNeutralButton("OK", handllerNothingButton);
+                        alert.Show();
+                    }
                 }
-                if(editText_betPrice.Text == "")
-                {
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-                    alert1.SetTitle("Ошибка");
-                    alert1.SetMessage("Поле 'Ваша ставка' не может быть пустой");
-                    alert1.SetNeutralButton("OK", handllerNothingButton1);
-                    alert1.Show();
-                }
-                if(Convert.ToInt32(editText_lot.Text) > user_zayavki.data.app.lot)
-                {
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-                    alert1.SetTitle("Ошибка");
-                    alert1.SetMessage("Невозможно указать большее значение лот, чем есть в перевозке");
-                    alert1.SetNeutralButton("OK", handllerNothingButton1);
-                    alert1.Show();
-                }
-                if(Convert.ToInt32(editText_betPrice.Text) > 9999)
-                {
-                    AlertDialog.Builder alert1 = new AlertDialog.Builder(this);
-                    alert1.SetTitle("Ошибка");
-                    alert1.SetMessage("Цена не может превышать 9999 ");
-                    alert1.SetNeutralButton("OK", handllerNothingButton1);
-                    alert1.Show();
-                }
-
-                IzmZayavku izmZayavku = new IzmZayavku()
-                {
-                    lot = editText_lot.Text,
-                    comment = editText_comment.Text,
-                    betPrice = editText_betPrice.Text
-                };
-
-                string baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/app/" + user_zayavki.data.app.id;
-
-                try
-                {
-                    var http = (HttpWebRequest)WebRequest.Create(new System.Uri(baseAddress));
-                    http.ContentType = "application/json";
-                    http.Accept = "application/json";
-                    http.Headers.Add("userToken", userToken);
-                    http.Method = "PUT";
-
-                    string pasredContent = JsonConvert.SerializeObject(izmZayavku);
-                    UTF8Encoding encoding = new UTF8Encoding();
-                    Byte[] bytes = encoding.GetBytes(pasredContent);
-
-                    Stream newStream = http.GetRequestStream();
-                    newStream.Write(bytes, 0, bytes.Length);
-                    newStream.Close();
-
-
-                    var response = http.GetResponse();
-
-                    var stream = response.GetResponseStream();
-                    var sr = new StreamReader(stream);
-                    var content = sr.ReadToEnd();
-
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    alert.SetTitle("Успешно");
-                    alert.SetMessage("Заявка обновлена успешно!");
-                    alert.SetNeutralButton("OK", handllerNothingButton);
-                    alert.Show();
-                }
-                catch (WebException)
+                else
                 {
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Ошибка");
-                    alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                    alert.SetMessage("Нельзя изменять заявку, если заявка уже рассмотрена или ожидает рассмотрения");
                     alert.SetNeutralButton("OK", handllerNothingButton);
                     alert.Show();
                 }
@@ -203,31 +214,43 @@ namespace MCS_Trucking
 
             button_delete_zayavku.Click += delegate
             {
-                string baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/app/" + user_zayavki.data.app.id;
-
-                try
+                if(status_transport == "Ожидания заявок")
                 {
-                    var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(baseAddress);
-                    httpWebRequest1.Headers.Add("userToken", userToken);
-                    httpWebRequest1.Accept = "application/json";
-                    httpWebRequest1.Method = "DELETE";
-                    var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
-                    using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
-                    {
-                        var result = streamReader.ReadToEnd();
-                    }
+                    string baseAddress = "https://truck.mcs-bitrix.pp.ua/api/v1/app/" + user_zayavki.data.app.id;
 
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    alert.SetTitle("Успешно");
-                    alert.SetMessage("Заявка удалена успешно!");
-                    alert.SetNeutralButton("OK", handllerNothingButton);
-                    alert.Show();
+                    try
+                    {
+                        var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(baseAddress);
+                        httpWebRequest1.Headers.Add("userToken", userToken);
+                        httpWebRequest1.Accept = "application/json";
+                        httpWebRequest1.Method = "DELETE";
+                        var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                        using (var streamReader = new StreamReader(httpResponse1.GetResponseStream()))
+                        {
+                            var result = streamReader.ReadToEnd();
+                        }
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Успешно");
+                        alert.SetMessage("Заявка удалена успешно!");
+                        alert.SetNeutralButton("OK", handllerNothingButton);
+                        alert.Show();
+                    }
+                    catch (WebException ex)
+                    {
+                        ex.ToString();
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Ошибка");
+                        alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                        alert.SetNeutralButton("OK", handllerNothingButton);
+                        alert.Show();
+                    }
                 }
-                catch (WebException)
+                else
                 {
                     AlertDialog.Builder alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Ошибка");
-                    alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                    alert.SetMessage("Нельзя удалять заявку, если заявка уже рассмотрена или ожидает рассмотрения");
                     alert.SetNeutralButton("OK", handllerNothingButton);
                     alert.Show();
                 }

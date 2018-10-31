@@ -2475,23 +2475,23 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020041
 			public const int button_Activity_moi_zayavki_osn4 = 2130837569;
 			
-			// aapt resource value: 0x7F020070
-			public const int button_Activity_Reg_Reg = 2130837616;
+			// aapt resource value: 0x7F020071
+			public const int button_Activity_Reg_Reg = 2130837617;
 			
-			// aapt resource value: 0x7F020072
-			public const int button_Activity_Restore_paswword = 2130837618;
+			// aapt resource value: 0x7F020073
+			public const int button_Activity_Restore_paswword = 2130837619;
 			
-			// aapt resource value: 0x7F020075
-			public const int button_Activity_sortirovka_sortirovka = 2130837621;
-			
-			// aapt resource value: 0x7F020085
-			public const int button_Activity_Vhod_Reg = 2130837637;
+			// aapt resource value: 0x7F020076
+			public const int button_Activity_sortirovka_sortirovka = 2130837622;
 			
 			// aapt resource value: 0x7F020086
-			public const int button_Activity_Vhod_Restore_Password = 2130837638;
+			public const int button_Activity_Vhod_Reg = 2130837638;
 			
-			// aapt resource value: 0x7F020084
-			public const int button_Activity_Vhod_Vhod = 2130837636;
+			// aapt resource value: 0x7F020087
+			public const int button_Activity_Vhod_Restore_Password = 2130837639;
+			
+			// aapt resource value: 0x7F020085
+			public const int button_Activity_Vhod_Vhod = 2130837637;
 			
 			// aapt resource value: 0x7F020011
 			public const int button_Container_Filter = 2130837521;
@@ -2532,8 +2532,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020032
 			public const int button_UpdateUser_Activity_LichKab = 2130837554;
 			
-			// aapt resource value: 0x7F020081
-			public const int button_UpdateUser_Activity_UpdateUser = 2130837633;
+			// aapt resource value: 0x7F020082
+			public const int button_UpdateUser_Activity_UpdateUser = 2130837634;
 			
 			// aapt resource value: 0x7F0C001C
 			public const int cancel_action = 2131492892;
@@ -2592,35 +2592,35 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020034
 			public const int drawer_layout = 2130837556;
 			
-			// aapt resource value: 0x7F020069
-			public const int editText_Activity_Reg_Company = 2130837609;
-			
-			// aapt resource value: 0x7F020065
-			public const int editText_Activity_Reg_Email = 2130837605;
-			
-			// aapt resource value: 0x7F020063
-			public const int editText_Activity_Reg_FirstName = 2130837603;
-			
-			// aapt resource value: 0x7F020064
-			public const int editText_Activity_Reg_LastName = 2130837604;
+			// aapt resource value: 0x7F020070
+			public const int editText_Activity_Reg_Company = 2130837616;
 			
 			// aapt resource value: 0x7F020066
-			public const int editText_Activity_Reg_Password = 2130837606;
+			public const int editText_Activity_Reg_Email = 2130837606;
 			
-			// aapt resource value: 0x7F020068
-			public const int editText_Activity_Reg_Phone = 2130837608;
+			// aapt resource value: 0x7F020064
+			public const int editText_Activity_Reg_FirstName = 2130837604;
+			
+			// aapt resource value: 0x7F020065
+			public const int editText_Activity_Reg_LastName = 2130837605;
 			
 			// aapt resource value: 0x7F020067
-			public const int editText_Activity_Reg_ReapetPassword = 2130837607;
+			public const int editText_Activity_Reg_Password = 2130837607;
 			
-			// aapt resource value: 0x7F020071
-			public const int editText_Activity_Restore_paswword = 2130837617;
+			// aapt resource value: 0x7F020069
+			public const int editText_Activity_Reg_Phone = 2130837609;
 			
-			// aapt resource value: 0x7F020082
-			public const int editText_Activity_Vhod_Email = 2130837634;
+			// aapt resource value: 0x7F020068
+			public const int editText_Activity_Reg_ReapetPassword = 2130837608;
+			
+			// aapt resource value: 0x7F020072
+			public const int editText_Activity_Restore_paswword = 2130837618;
 			
 			// aapt resource value: 0x7F020083
-			public const int editText_Activity_Vhod_Password = 2130837635;
+			public const int editText_Activity_Vhod_Email = 2130837635;
+			
+			// aapt resource value: 0x7F020084
+			public const int editText_Activity_Vhod_Password = 2130837636;
 			
 			// aapt resource value: 0x7F020022
 			public const int editText_betPrice_Activity_izm_zayavku = 2130837538;
@@ -2634,17 +2634,17 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020056
 			public const int editText_comment_Activity_podat_zayavku = 2130837590;
 			
-			// aapt resource value: 0x7F020080
-			public const int editText_CompanyName_ActivityUpdateUser = 2130837632;
+			// aapt resource value: 0x7F020081
+			public const int editText_CompanyName_ActivityUpdateUser = 2130837633;
 			
-			// aapt resource value: 0x7F020078
-			public const int editText_Email_ActivityUpdateUser = 2130837624;
-			
-			// aapt resource value: 0x7F020076
-			public const int editText_First_Name_ActivityUpdateUser = 2130837622;
+			// aapt resource value: 0x7F020079
+			public const int editText_Email_ActivityUpdateUser = 2130837625;
 			
 			// aapt resource value: 0x7F020077
-			public const int editText_Last_Name_ActivityUpdateUser = 2130837623;
+			public const int editText_First_Name_ActivityUpdateUser = 2130837623;
+			
+			// aapt resource value: 0x7F020078
+			public const int editText_Last_Name_ActivityUpdateUser = 2130837624;
 			
 			// aapt resource value: 0x7F020021
 			public const int editText_lot_Activity_izm_zayavku = 2130837537;
@@ -2664,8 +2664,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020046
 			public const int editText_OldPassword_Activity_New_Password = 2130837574;
 			
-			// aapt resource value: 0x7F020079
-			public const int editText_PhoneNumber_ActivityUpdateUser = 2130837625;
+			// aapt resource value: 0x7F020080
+			public const int editText_PhoneNumber_ActivityUpdateUser = 2130837632;
 			
 			// aapt resource value: 0x7F020009
 			public const int editText_Ves_Do_Filtr = 2130837513;
@@ -2688,14 +2688,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C002F
 			public const int expand_activities_button = 2131492911;
 			
-			// aapt resource value: 0x7F020088
-			public const int fab = 2130837640;
+			// aapt resource value: 0x7F020089
+			public const int fab = 2130837641;
 			
 			// aapt resource value: 0x7F0C0031
 			public const int fill = 2131492913;
 			
-			// aapt resource value: 0x7F020094
-			public const int filtr = 2130837652;
+			// aapt resource value: 0x7F020095
+			public const int filtr = 2130837653;
 			
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
@@ -2718,8 +2718,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0038
 			public const int image = 2131492920;
 			
-			// aapt resource value: 0x7F020091
-			public const int imageView = 2130837649;
+			// aapt resource value: 0x7F020092
+			public const int imageView = 2130837650;
 			
 			// aapt resource value: 0x7F0C000C
 			public const int info = 2131492876;
@@ -2751,14 +2751,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020020
 			public const int linearLayout_ActivityFiltrTypeContainer = 2130837536;
 			
-			// aapt resource value: 0x7F020090
-			public const int linearLayout_ActivityStart = 2130837648;
+			// aapt resource value: 0x7F020091
+			public const int linearLayout_ActivityStart = 2130837649;
 			
 			// aapt resource value: 0x7F020003
 			public const int linearLayout_Activity_filtr = 2130837507;
 			
-			// aapt resource value: 0x7F020062
-			public const int linearLayout_Activity_moi_zayavki = 2130837602;
+			// aapt resource value: 0x7F020063
+			public const int linearLayout_Activity_moi_zayavki = 2130837603;
 			
 			// aapt resource value: 0x7F020042
 			public const int linearLayout_Activity_moi_zayavki_dop = 2130837570;
@@ -2784,8 +2784,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0045
 			public const int mini = 2131492933;
 			
-			// aapt resource value: 0x7F020093
-			public const int Moi_zayavki = 2130837651;
+			// aapt resource value: 0x7F020094
+			public const int Moi_zayavki = 2130837652;
 			
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
@@ -2871,11 +2871,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020019
 			public const int scrollView8 = 2130837529;
 			
-			// aapt resource value: 0x7F020089
-			public const int scrollView_ActivityStart = 2130837641;
+			// aapt resource value: 0x7F020090
+			public const int scrollView_ActivityStart = 2130837648;
 			
-			// aapt resource value: 0x7F020061
-			public const int scrollView_Activity_moi_zayavki = 2130837601;
+			// aapt resource value: 0x7F020062
+			public const int scrollView_Activity_moi_zayavki = 2130837602;
 			
 			// aapt resource value: 0x7F020058
 			public const int scrollView_Activity_Prosmotr_Napravleniia = 2130837592;
@@ -2928,17 +2928,17 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C006D
 			public const int snackbar_text = 2131492973;
 			
-			// aapt resource value: 0x7F020095
-			public const int sortirovka = 2130837653;
+			// aapt resource value: 0x7F020096
+			public const int sortirovka = 2130837654;
 			
 			// aapt resource value: 0x7F0C006E
 			public const int spacer = 2131492974;
 			
-			// aapt resource value: 0x7F020073
-			public const int spinner_Activity_sortirovka_po_chemu = 2130837619;
-			
 			// aapt resource value: 0x7F020074
-			public const int spinner_Activity_sortirovka_ub_voz = 2130837620;
+			public const int spinner_Activity_sortirovka_po_chemu = 2130837620;
+			
+			// aapt resource value: 0x7F020075
+			public const int spinner_Activity_sortirovka_ub_voz = 2130837621;
 			
 			// aapt resource value: 0x7F0C006F
 			public const int split_action_bar = 2131492975;
@@ -3018,6 +3018,9 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020029
 			public const int textView_PhoneNumber_Activity_LichKab = 2130837545;
 			
+			// aapt resource value: 0x7F020061
+			public const int textView_status_perevozki = 2130837601;
+			
 			// aapt resource value: 0x7F0C007D
 			public const int text_input_password_toggle = 2131492989;
 			
@@ -3033,8 +3036,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0083
 			public const int title_template = 2131492995;
 			
-			// aapt resource value: 0x7F020087
-			public const int toolbar = 2130837639;
+			// aapt resource value: 0x7F020088
+			public const int toolbar = 2130837640;
 			
 			// aapt resource value: 0x7F0C0084
 			public const int top = 2131492996;
@@ -3066,8 +3069,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C008D
 			public const int up = 2131493005;
 			
-			// aapt resource value: 0x7F020092
-			public const int Vhod_LichKab = 2130837650;
+			// aapt resource value: 0x7F020093
+			public const int Vhod_LichKab = 2130837651;
 			
 			// aapt resource value: 0x7F0C008E
 			public const int view_offset_helper = 2131493006;

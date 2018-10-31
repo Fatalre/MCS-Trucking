@@ -553,35 +553,35 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F04008E
 			public const int fastScrollVerticalTrackDrawable = 2130968718;
 			
-			// aapt resource value: 0x7F04008F
-			public const int font = 2130968719;
+			// aapt resource value: 0x7F040001
+			public const int font = 2130968577;
 			
 			// aapt resource value: 0x7F040090
 			public const int fontFamily = 2130968720;
 			
-			// aapt resource value: 0x7F040091
-			public const int fontProviderAuthority = 2130968721;
+			// aapt resource value: 0x7F040002
+			public const int fontProviderAuthority = 2130968578;
 			
-			// aapt resource value: 0x7F040092
-			public const int fontProviderCerts = 2130968722;
+			// aapt resource value: 0x7F040003
+			public const int fontProviderCerts = 2130968579;
 			
-			// aapt resource value: 0x7F040093
-			public const int fontProviderFetchStrategy = 2130968723;
+			// aapt resource value: 0x7F040004
+			public const int fontProviderFetchStrategy = 2130968580;
 			
-			// aapt resource value: 0x7F040094
-			public const int fontProviderFetchTimeout = 2130968724;
+			// aapt resource value: 0x7F040005
+			public const int fontProviderFetchTimeout = 2130968581;
 			
-			// aapt resource value: 0x7F040095
-			public const int fontProviderPackage = 2130968725;
+			// aapt resource value: 0x7F040006
+			public const int fontProviderPackage = 2130968582;
 			
-			// aapt resource value: 0x7F040096
-			public const int fontProviderQuery = 2130968726;
+			// aapt resource value: 0x7F040007
+			public const int fontProviderQuery = 2130968583;
 			
-			// aapt resource value: 0x7F040097
-			public const int fontStyle = 2130968727;
+			// aapt resource value: 0x7F040008
+			public const int fontStyle = 2130968584;
 			
-			// aapt resource value: 0x7F040098
-			public const int fontWeight = 2130968728;
+			// aapt resource value: 0x7F040009
+			public const int fontWeight = 2130968585;
 			
 			// aapt resource value: 0x7F040099
 			public const int foregroundInsidePadding = 2130968729;
@@ -1275,9 +1275,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F060017
 			public const int abc_tint_spinner = 2131099671;
 			
-			// aapt resource value: 0x7F09004E
-			public const int abc_tint_switch_thumb = 2131296334;
-			
 			// aapt resource value: 0x7F060018
 			public const int abc_tint_switch_track = 2131099672;
 			
@@ -1431,11 +1428,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F060046
 			public const int material_grey_900 = 2131099718;
 			
-			// aapt resource value: 0x7F060047
-			public const int notification_action_color_filter = 2131099719;
+			// aapt resource value: 0x7F060001
+			public const int notification_action_color_filter = 2131099649;
 			
-			// aapt resource value: 0x7F060048
-			public const int notification_icon_bg_color = 2131099720;
+			// aapt resource value: 0x7F060002
+			public const int notification_icon_bg_color = 2131099650;
 			
 			// aapt resource value: 0x7F060049
 			public const int notification_material_background_media_default_color = 2131099721;
@@ -1467,14 +1464,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F060052
 			public const int ripple_material_dark = 2131099730;
 			
-			// aapt resource value: 0x7F060053
-			public const int ripple_material_light = 2131099731;
+			// aapt resource value: 0x7F060003
+			public const int ripple_material_light = 2131099651;
 			
 			// aapt resource value: 0x7F060054
 			public const int secondary_text_default_material_dark = 2131099732;
 			
-			// aapt resource value: 0x7F060055
-			public const int secondary_text_default_material_light = 2131099733;
+			// aapt resource value: 0x7F060004
+			public const int secondary_text_default_material_light = 2131099652;
 			
 			// aapt resource value: 0x7F060056
 			public const int secondary_text_disabled_material_dark = 2131099734;
@@ -1747,20 +1744,20 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F070003
 			public const int activity_vertical_margin = 2131165187;
 			
-			// aapt resource value: 0x7F08004B
-			public const int compat_button_inset_horizontal_material = 2131230795;
+			// aapt resource value: 0x7F080001
+			public const int compat_button_inset_horizontal_material = 2131230721;
 			
-			// aapt resource value: 0x7F08004C
-			public const int compat_button_inset_vertical_material = 2131230796;
+			// aapt resource value: 0x7F080002
+			public const int compat_button_inset_vertical_material = 2131230722;
 			
-			// aapt resource value: 0x7F08004D
-			public const int compat_button_padding_horizontal_material = 2131230797;
+			// aapt resource value: 0x7F080003
+			public const int compat_button_padding_horizontal_material = 2131230723;
 			
-			// aapt resource value: 0x7F08004E
-			public const int compat_button_padding_vertical_material = 2131230798;
+			// aapt resource value: 0x7F080004
+			public const int compat_button_padding_vertical_material = 2131230724;
 			
-			// aapt resource value: 0x7F08004F
-			public const int compat_control_corner_material = 2131230799;
+			// aapt resource value: 0x7F080005
+			public const int compat_control_corner_material = 2131230725;
 			
 			// aapt resource value: 0x7F080050
 			public const int design_appbar_elevation = 2131230800;
@@ -1930,50 +1927,50 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F070004
 			public const int nav_header_vertical_spacing = 2131165188;
 			
-			// aapt resource value: 0x7F080085
-			public const int notification_action_icon_size = 2131230853;
+			// aapt resource value: 0x7F080006
+			public const int notification_action_icon_size = 2131230726;
 			
-			// aapt resource value: 0x7F080086
-			public const int notification_action_text_size = 2131230854;
+			// aapt resource value: 0x7F080007
+			public const int notification_action_text_size = 2131230727;
 			
-			// aapt resource value: 0x7F080087
-			public const int notification_big_circle_margin = 2131230855;
+			// aapt resource value: 0x7F080008
+			public const int notification_big_circle_margin = 2131230728;
 			
-			// aapt resource value: 0x7F080088
-			public const int notification_content_margin_start = 2131230856;
+			// aapt resource value: 0x7F080009
+			public const int notification_content_margin_start = 2131230729;
 			
-			// aapt resource value: 0x7F080089
-			public const int notification_large_icon_height = 2131230857;
+			// aapt resource value: 0x7F08000A
+			public const int notification_large_icon_height = 2131230730;
 			
-			// aapt resource value: 0x7F08008A
-			public const int notification_large_icon_width = 2131230858;
+			// aapt resource value: 0x7F08000B
+			public const int notification_large_icon_width = 2131230731;
 			
-			// aapt resource value: 0x7F08008B
-			public const int notification_main_column_padding_top = 2131230859;
+			// aapt resource value: 0x7F08000C
+			public const int notification_main_column_padding_top = 2131230732;
 			
-			// aapt resource value: 0x7F08008C
-			public const int notification_media_narrow_margin = 2131230860;
+			// aapt resource value: 0x7F08000D
+			public const int notification_media_narrow_margin = 2131230733;
 			
-			// aapt resource value: 0x7F08008D
-			public const int notification_right_icon_size = 2131230861;
+			// aapt resource value: 0x7F08000E
+			public const int notification_right_icon_size = 2131230734;
 			
-			// aapt resource value: 0x7F08008E
-			public const int notification_right_side_padding_top = 2131230862;
+			// aapt resource value: 0x7F08000F
+			public const int notification_right_side_padding_top = 2131230735;
 			
-			// aapt resource value: 0x7F08008F
-			public const int notification_small_icon_background_padding = 2131230863;
+			// aapt resource value: 0x7F080010
+			public const int notification_small_icon_background_padding = 2131230736;
 			
-			// aapt resource value: 0x7F080090
-			public const int notification_small_icon_size_as_large = 2131230864;
+			// aapt resource value: 0x7F080011
+			public const int notification_small_icon_size_as_large = 2131230737;
 			
-			// aapt resource value: 0x7F080091
-			public const int notification_subtext_size = 2131230865;
+			// aapt resource value: 0x7F080012
+			public const int notification_subtext_size = 2131230738;
 			
-			// aapt resource value: 0x7F080092
-			public const int notification_top_pad = 2131230866;
+			// aapt resource value: 0x7F080013
+			public const int notification_top_pad = 2131230739;
 			
-			// aapt resource value: 0x7F080093
-			public const int notification_top_pad_large_text = 2131230867;
+			// aapt resource value: 0x7F080014
+			public const int notification_top_pad_large_text = 2131230740;
 			
 			// aapt resource value: 0x7F080094
 			public const int tooltip_corner_radius = 2131230868;
@@ -2309,41 +2306,41 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
 			
-			// aapt resource value: 0x7F09005D
-			public const int notification_action_background = 2131296349;
+			// aapt resource value: 0x7F090001
+			public const int notification_action_background = 2131296257;
 			
-			// aapt resource value: 0x7F09005E
-			public const int notification_bg = 2131296350;
+			// aapt resource value: 0x7F090002
+			public const int notification_bg = 2131296258;
 			
-			// aapt resource value: 0x7F09005F
-			public const int notification_bg_low = 2131296351;
+			// aapt resource value: 0x7F090003
+			public const int notification_bg_low = 2131296259;
 			
-			// aapt resource value: 0x7F090060
-			public const int notification_bg_low_normal = 2131296352;
+			// aapt resource value: 0x7F090004
+			public const int notification_bg_low_normal = 2131296260;
 			
-			// aapt resource value: 0x7F090061
-			public const int notification_bg_low_pressed = 2131296353;
+			// aapt resource value: 0x7F090005
+			public const int notification_bg_low_pressed = 2131296261;
 			
-			// aapt resource value: 0x7F090062
-			public const int notification_bg_normal = 2131296354;
+			// aapt resource value: 0x7F090006
+			public const int notification_bg_normal = 2131296262;
 			
-			// aapt resource value: 0x7F090063
-			public const int notification_bg_normal_pressed = 2131296355;
+			// aapt resource value: 0x7F090007
+			public const int notification_bg_normal_pressed = 2131296263;
 			
-			// aapt resource value: 0x7F090064
-			public const int notification_icon_background = 2131296356;
+			// aapt resource value: 0x7F090008
+			public const int notification_icon_background = 2131296264;
 			
-			// aapt resource value: 0x7F090065
-			public const int notification_template_icon_bg = 2131296357;
+			// aapt resource value: 0x7F090009
+			public const int notification_template_icon_bg = 2131296265;
 			
-			// aapt resource value: 0x7F090066
-			public const int notification_template_icon_low_bg = 2131296358;
+			// aapt resource value: 0x7F09000A
+			public const int notification_template_icon_low_bg = 2131296266;
 			
-			// aapt resource value: 0x7F090067
-			public const int notification_tile_bg = 2131296359;
+			// aapt resource value: 0x7F09000B
+			public const int notification_tile_bg = 2131296267;
 			
-			// aapt resource value: 0x7F090068
-			public const int notify_panel_notification_icon_bg = 2131296360;
+			// aapt resource value: 0x7F09000C
+			public const int notify_panel_notification_icon_bg = 2131296268;
 			
 			// aapt resource value: 0x7F010002
 			public const int side_nav_bar = 2130771970;
@@ -2370,8 +2367,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0001
 			public const int action0 = 2131492865;
 			
-			// aapt resource value: 0x7F0C0013
-			public const int actions = 2131492883;
+			// aapt resource value: 0x7F0C0005
+			public const int actions = 2131492869;
 			
 			// aapt resource value: 0x7F0C0002
 			public const int action_bar = 2131492866;
@@ -2394,17 +2391,17 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0008
 			public const int action_bar_title = 2131492872;
 			
-			// aapt resource value: 0x7F0C0009
-			public const int action_container = 2131492873;
+			// aapt resource value: 0x7F0C0001
+			public const int action_container = 2131492865;
 			
 			// aapt resource value: 0x7F0C000A
 			public const int action_context_bar = 2131492874;
 			
-			// aapt resource value: 0x7F0C000B
-			public const int action_divider = 2131492875;
+			// aapt resource value: 0x7F0C0002
+			public const int action_divider = 2131492866;
 			
-			// aapt resource value: 0x7F0C000C
-			public const int action_image = 2131492876;
+			// aapt resource value: 0x7F0C0003
+			public const int action_image = 2131492867;
 			
 			// aapt resource value: 0x7F0C000D
 			public const int action_menu_divider = 2131492877;
@@ -2421,8 +2418,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0011
 			public const int action_mode_close_button = 2131492881;
 			
-			// aapt resource value: 0x7F0C0012
-			public const int action_text = 2131492882;
+			// aapt resource value: 0x7F0C0004
+			public const int action_text = 2131492868;
 			
 			// aapt resource value: 0x7F0C0014
 			public const int activity_chooser_view_content = 2131492884;
@@ -2433,20 +2430,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0016
 			public const int alertTitle = 2131492886;
 			
-			// aapt resource value: 0x7F0A001D
-			public const int always = 2131361821;
-			
-			// aapt resource value: 0x7F0C0017
-			public const int async = 2131492887;
+			// aapt resource value: 0x7F0C0006
+			public const int async = 2131492870;
 			
 			// aapt resource value: 0x7F0C0018
 			public const int auto = 2131492888;
 			
-			// aapt resource value: 0x7F0A001A
-			public const int beginning = 2131361818;
-			
-			// aapt resource value: 0x7F0C0019
-			public const int blocking = 2131492889;
+			// aapt resource value: 0x7F0C0007
+			public const int blocking = 2131492871;
 			
 			// aapt resource value: 0x7F0C001A
 			public const int bottom = 2131492890;
@@ -2553,11 +2544,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C001E
 			public const int checkbox = 2131492894;
 			
-			// aapt resource value: 0x7F0C001F
-			public const int chronometer = 2131492895;
-			
-			// aapt resource value: 0x7F0A001E
-			public const int collapseActionView = 2131361822;
+			// aapt resource value: 0x7F0C0008
+			public const int chronometer = 2131492872;
 			
 			// aapt resource value: 0x7F0C0020
 			public const int container = 2131492896;
@@ -2600,9 +2588,6 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0C002B
 			public const int design_navigation_view = 2131492907;
-			
-			// aapt resource value: 0x7F0A000C
-			public const int disableHome = 2131361804;
 			
 			// aapt resource value: 0x7F020034
 			public const int drawer_layout = 2130837556;
@@ -2715,8 +2700,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
 			
-			// aapt resource value: 0x7F0C0033
-			public const int forever = 2131492915;
+			// aapt resource value: 0x7F0C0009
+			public const int forever = 2131492873;
 			
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
@@ -2724,17 +2709,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0035
 			public const int home = 2131492917;
 			
-			// aapt resource value: 0x7F0A000D
-			public const int homeAsUp = 2131361805;
+			// aapt resource value: 0x7F0C000A
+			public const int icon = 2131492874;
 			
-			// aapt resource value: 0x7F0C0036
-			public const int icon = 2131492918;
-			
-			// aapt resource value: 0x7F0C0037
-			public const int icon_group = 2131492919;
-			
-			// aapt resource value: 0x7F0A001F
-			public const int ifRoom = 2131361823;
+			// aapt resource value: 0x7F0C000B
+			public const int icon_group = 2131492875;
 			
 			// aapt resource value: 0x7F0C0038
 			public const int image = 2131492920;
@@ -2742,11 +2721,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020091
 			public const int imageView = 2130837649;
 			
-			// aapt resource value: 0x7F0C0039
-			public const int info = 2131492921;
+			// aapt resource value: 0x7F0C000C
+			public const int info = 2131492876;
 			
-			// aapt resource value: 0x7F0C003A
-			public const int italic = 2131492922;
+			// aapt resource value: 0x7F0C000D
+			public const int italic = 2131492877;
 			
 			// aapt resource value: 0x7F0C003B
 			public const int item_touch_helper_previous_elevation = 2131492923;
@@ -2757,11 +2736,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C003D
 			public const int left = 2131492925;
 			
-			// aapt resource value: 0x7F0C003E
-			public const int line1 = 2131492926;
+			// aapt resource value: 0x7F0C000E
+			public const int line1 = 2131492878;
 			
-			// aapt resource value: 0x7F0C003F
-			public const int line3 = 2131492927;
+			// aapt resource value: 0x7F0C000F
+			public const int line3 = 2131492879;
 			
 			// aapt resource value: 0x7F020036
 			public const int linearLayout1 = 2130837558;
@@ -2802,9 +2781,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0044
 			public const int message = 2131492932;
 			
-			// aapt resource value: 0x7F0A001C
-			public const int middle = 2131361820;
-			
 			// aapt resource value: 0x7F0C0045
 			public const int mini = 2131492933;
 			
@@ -2820,23 +2796,20 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020035
 			public const int nav_view = 2130837557;
 			
-			// aapt resource value: 0x7F0A0020
-			public const int never = 2131361824;
-			
 			// aapt resource value: 0x7F0C0048
 			public const int none = 2131492936;
 			
-			// aapt resource value: 0x7F0C0049
-			public const int normal = 2131492937;
+			// aapt resource value: 0x7F0C0010
+			public const int normal = 2131492880;
 			
-			// aapt resource value: 0x7F0C004A
-			public const int notification_background = 2131492938;
+			// aapt resource value: 0x7F0C0011
+			public const int notification_background = 2131492881;
 			
-			// aapt resource value: 0x7F0C004B
-			public const int notification_main_column = 2131492939;
+			// aapt resource value: 0x7F0C0012
+			public const int notification_main_column = 2131492882;
 			
-			// aapt resource value: 0x7F0C004C
-			public const int notification_main_column_container = 2131492940;
+			// aapt resource value: 0x7F0C0013
+			public const int notification_main_column_container = 2131492883;
 			
 			// aapt resource value: 0x7F0C004D
 			public const int parallax = 2131492941;
@@ -2862,11 +2835,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
 			
-			// aapt resource value: 0x7F0C0055
-			public const int right_icon = 2131492949;
+			// aapt resource value: 0x7F0C0014
+			public const int right_icon = 2131492884;
 			
-			// aapt resource value: 0x7F0C0056
-			public const int right_side = 2131492950;
+			// aapt resource value: 0x7F0C0015
+			public const int right_side = 2131492885;
 			
 			// aapt resource value: 0x7F0C0057
 			public const int save_image_matrix = 2131492951;
@@ -2946,15 +2919,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C006A
 			public const int shortcut = 2131492970;
 			
-			// aapt resource value: 0x7F0A000F
-			public const int showCustom = 2131361807;
-			
-			// aapt resource value: 0x7F0A0010
-			public const int showHome = 2131361808;
-			
-			// aapt resource value: 0x7F0A0011
-			public const int showTitle = 2131361809;
-			
 			// aapt resource value: 0x7F0C006B
 			public const int smallLabel = 2131492971;
 			
@@ -3003,14 +2967,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0077
 			public const int tabMode = 2131492983;
 			
-			// aapt resource value: 0x7F0C0078
-			public const int tag_transition_group = 2131492984;
+			// aapt resource value: 0x7F0C0016
+			public const int tag_transition_group = 2131492886;
 			
-			// aapt resource value: 0x7F0C0079
-			public const int text = 2131492985;
+			// aapt resource value: 0x7F0C0017
+			public const int text = 2131492887;
 			
-			// aapt resource value: 0x7F0C007A
-			public const int text2 = 2131492986;
+			// aapt resource value: 0x7F0C0018
+			public const int text2 = 2131492888;
 			
 			// aapt resource value: 0x7F0C007E
 			public const int textinput_counter = 2131492990;
@@ -3057,11 +3021,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C007D
 			public const int text_input_password_toggle = 2131492989;
 			
-			// aapt resource value: 0x7F0C0080
-			public const int time = 2131492992;
+			// aapt resource value: 0x7F0C0019
+			public const int time = 2131492889;
 			
-			// aapt resource value: 0x7F0C0081
-			public const int title = 2131492993;
+			// aapt resource value: 0x7F0C001A
+			public const int title = 2131492890;
 			
 			// aapt resource value: 0x7F0C0082
 			public const int titleDividerNoCustom = 2131492994;
@@ -3102,9 +3066,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C008D
 			public const int up = 2131493005;
 			
-			// aapt resource value: 0x7F0A0012
-			public const int useLogo = 2131361810;
-			
 			// aapt resource value: 0x7F020092
 			public const int Vhod_LichKab = 2130837650;
 			
@@ -3113,9 +3074,6 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0C008F
 			public const int visible = 2131493007;
-			
-			// aapt resource value: 0x7F0A0021
-			public const int withText = 2131361825;
 			
 			// aapt resource value: 0x7F0C0090
 			public const int wrap_content = 2131493008;
@@ -3160,8 +3118,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0D0009
 			public const int show_password_duration = 2131558409;
 			
-			// aapt resource value: 0x7F0D000A
-			public const int status_bar_notification_info_maxnum = 2131558410;
+			// aapt resource value: 0x7F0D0001
+			public const int status_bar_notification_info_maxnum = 2131558401;
 			
 			static Integer()
 			{
@@ -3181,9 +3139,6 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0F0002
 			public const int abc_action_bar_up_container = 2131689474;
-			
-			// aapt resource value: 0x7F030002
-			public const int abc_action_bar_view_list_nav_layout = 2130903042;
 			
 			// aapt resource value: 0x7F0F0003
 			public const int abc_action_menu_item_layout = 2131689475;
@@ -3368,11 +3323,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F030024
 			public const int nav_header_main = 2130903076;
 			
-			// aapt resource value: 0x7F0F0029
-			public const int notification_action = 2131689513;
+			// aapt resource value: 0x7F0F0001
+			public const int notification_action = 2131689473;
 			
-			// aapt resource value: 0x7F0F002A
-			public const int notification_action_tombstone = 2131689514;
+			// aapt resource value: 0x7F0F0002
+			public const int notification_action_tombstone = 2131689474;
 			
 			// aapt resource value: 0x7F0F002B
 			public const int notification_media_action = 2131689515;
@@ -3392,11 +3347,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0F0030
 			public const int notification_template_big_media_narrow_custom = 2131689520;
 			
-			// aapt resource value: 0x7F0F0031
-			public const int notification_template_custom_big = 2131689521;
+			// aapt resource value: 0x7F0F0003
+			public const int notification_template_custom_big = 2131689475;
 			
-			// aapt resource value: 0x7F0F0032
-			public const int notification_template_icon_group = 2131689522;
+			// aapt resource value: 0x7F0F0004
+			public const int notification_template_icon_group = 2131689476;
 			
 			// aapt resource value: 0x7F0F0033
 			public const int notification_template_lines_media = 2131689523;
@@ -3407,11 +3362,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0F0035
 			public const int notification_template_media_custom = 2131689525;
 			
-			// aapt resource value: 0x7F0F0036
-			public const int notification_template_part_chronometer = 2131689526;
+			// aapt resource value: 0x7F0F0005
+			public const int notification_template_part_chronometer = 2131689477;
 			
-			// aapt resource value: 0x7F0F0037
-			public const int notification_template_part_time = 2131689527;
+			// aapt resource value: 0x7F0F0006
+			public const int notification_template_part_time = 2131689478;
 			
 			// aapt resource value: 0x7F0F0038
 			public const int select_dialog_item_material = 2131689528;
@@ -3484,12 +3439,6 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F150001
 			public const int abc_action_bar_home_description = 2132082689;
-			
-			// aapt resource value: 0x7F050001
-			public const int abc_action_bar_home_description_format = 2131034113;
-			
-			// aapt resource value: 0x7F050002
-			public const int abc_action_bar_home_subtitle_description_format = 2131034114;
 			
 			// aapt resource value: 0x7F150002
 			public const int abc_action_bar_up_description = 2132082690;
@@ -3614,8 +3563,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F150026
 			public const int search_menu_title = 2132082726;
 			
-			// aapt resource value: 0x7F150027
-			public const int status_bar_notification_info_overflow = 2132082727;
+			// aapt resource value: 0x7F150001
+			public const int status_bar_notification_info_overflow = 2132082689;
 			
 			static String()
 			{
@@ -4293,36 +4242,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F1600D9
 			public const int TextAppearance_AppCompat_Menu = 2132148441;
 			
-			// aapt resource value: 0x7F07002A
-			public const int TextAppearance_AppCompat_Notification = 2131165226;
-			
-			// aapt resource value: 0x7F07008A
-			public const int TextAppearance_AppCompat_Notification_Info = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int TextAppearance_AppCompat_Notification_Info_Media = 2131165323;
-			
-			// aapt resource value: 0x7F0700E2
-			public const int TextAppearance_AppCompat_Notification_Line2 = 2131165410;
-			
-			// aapt resource value: 0x7F0700E3
-			public const int TextAppearance_AppCompat_Notification_Line2_Media = 2131165411;
-			
-			// aapt resource value: 0x7F07008C
-			public const int TextAppearance_AppCompat_Notification_Media = 2131165324;
-			
-			// aapt resource value: 0x7F07008D
-			public const int TextAppearance_AppCompat_Notification_Time = 2131165325;
-			
-			// aapt resource value: 0x7F07008E
-			public const int TextAppearance_AppCompat_Notification_Time_Media = 2131165326;
-			
-			// aapt resource value: 0x7F07002B
-			public const int TextAppearance_AppCompat_Notification_Title = 2131165227;
-			
-			// aapt resource value: 0x7F07008F
-			public const int TextAppearance_AppCompat_Notification_Title_Media = 2131165327;
-			
 			// aapt resource value: 0x7F1600DA
 			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2132148442;
 			
@@ -4407,17 +4326,17 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F1600F5
 			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2132148469;
 			
-			// aapt resource value: 0x7F1600F6
-			public const int TextAppearance_Compat_Notification = 2132148470;
+			// aapt resource value: 0x7F160001
+			public const int TextAppearance_Compat_Notification = 2132148225;
 			
-			// aapt resource value: 0x7F1600F7
-			public const int TextAppearance_Compat_Notification_Info = 2132148471;
+			// aapt resource value: 0x7F160002
+			public const int TextAppearance_Compat_Notification_Info = 2132148226;
 			
 			// aapt resource value: 0x7F1600F8
 			public const int TextAppearance_Compat_Notification_Info_Media = 2132148472;
 			
-			// aapt resource value: 0x7F1600F9
-			public const int TextAppearance_Compat_Notification_Line2 = 2132148473;
+			// aapt resource value: 0x7F160003
+			public const int TextAppearance_Compat_Notification_Line2 = 2132148227;
 			
 			// aapt resource value: 0x7F1600FA
 			public const int TextAppearance_Compat_Notification_Line2_Media = 2132148474;
@@ -4425,14 +4344,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F1600FB
 			public const int TextAppearance_Compat_Notification_Media = 2132148475;
 			
-			// aapt resource value: 0x7F1600FC
-			public const int TextAppearance_Compat_Notification_Time = 2132148476;
+			// aapt resource value: 0x7F160004
+			public const int TextAppearance_Compat_Notification_Time = 2132148228;
 			
 			// aapt resource value: 0x7F1600FD
 			public const int TextAppearance_Compat_Notification_Time_Media = 2132148477;
 			
-			// aapt resource value: 0x7F1600FE
-			public const int TextAppearance_Compat_Notification_Title = 2132148478;
+			// aapt resource value: 0x7F160005
+			public const int TextAppearance_Compat_Notification_Title = 2132148229;
 			
 			// aapt resource value: 0x7F1600FF
 			public const int TextAppearance_Compat_Notification_Title_Media = 2132148479;
@@ -4457,21 +4376,6 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F160106
 			public const int TextAppearance_Design_Tab = 2132148486;
-			
-			// aapt resource value: 0x7F07002C
-			public const int TextAppearance_StatusBar_EventContent = 2131165228;
-			
-			// aapt resource value: 0x7F07002D
-			public const int TextAppearance_StatusBar_EventContent_Info = 2131165229;
-			
-			// aapt resource value: 0x7F07002E
-			public const int TextAppearance_StatusBar_EventContent_Line2 = 2131165230;
-			
-			// aapt resource value: 0x7F07002F
-			public const int TextAppearance_StatusBar_EventContent_Time = 2131165231;
-			
-			// aapt resource value: 0x7F070030
-			public const int TextAppearance_StatusBar_EventContent_Title = 2131165232;
 			
 			// aapt resource value: 0x7F160107
 			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2132148487;
@@ -4743,12 +4647,6 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F160160
 			public const int Widget_AppCompat_ListView_Menu = 2132148576;
 			
-			// aapt resource value: 0x7F070090
-			public const int Widget_AppCompat_NotificationActionContainer = 2131165328;
-			
-			// aapt resource value: 0x7F070091
-			public const int Widget_AppCompat_NotificationActionText = 2131165329;
-			
 			// aapt resource value: 0x7F160161
 			public const int Widget_AppCompat_PopupMenu = 2132148577;
 			
@@ -4806,11 +4704,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F160173
 			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2132148595;
 			
-			// aapt resource value: 0x7F160174
-			public const int Widget_Compat_NotificationActionContainer = 2132148596;
+			// aapt resource value: 0x7F160006
+			public const int Widget_Compat_NotificationActionContainer = 2132148230;
 			
-			// aapt resource value: 0x7F160175
-			public const int Widget_Compat_NotificationActionText = 2132148597;
+			// aapt resource value: 0x7F160007
+			public const int Widget_Compat_NotificationActionText = 2132148231;
 			
 			// aapt resource value: 0x7F160176
 			public const int Widget_Design_AppBarLayout = 2132148598;
@@ -4892,11 +4790,11 @@ namespace MCS_Trucking
 			public static int[] ActionBarLayout = new int[] {
 					16842931};
 			
-			// aapt resource value: 0x7F110033
-			public const int ActionBarLayout_android_layout_gravity = 2131820595;
+			// aapt resource value: 0x7F110047
+			public const int ActionBarLayout_android_layout_gravity = 2131820615;
 			
-			// aapt resource value: 0x7F110003
-			public const int ActionBar_background = 2131820547;
+			// aapt resource value: 0x7F110017
+			public const int ActionBar_background = 2131820567;
 			
 			// aapt resource value: 0x1
 			public const int ActionBar_backgroundSplit = 1;
@@ -4985,11 +4883,8 @@ namespace MCS_Trucking
 			public static int[] ActionMenuItemView = new int[] {
 					16843071};
 			
-			// aapt resource value: 0x7F110035
-			public const int ActionMenuItemView_android_minWidth = 2131820597;
-			
-			public static int[] ActionMenuView = new int[] {
-					0};
+			// aapt resource value: 0x7F110049
+			public const int ActionMenuItemView_android_minWidth = 2131820617;
 			
 			public static int[] ActionMode = new int[] {
 					2130968626,
@@ -4999,8 +4894,8 @@ namespace MCS_Trucking
 					2130968847,
 					2130968901};
 			
-			// aapt resource value: 0x7F110037
-			public const int ActionMode_background = 2131820599;
+			// aapt resource value: 0x7F110051
+			public const int ActionMode_background = 2131820625;
 			
 			// aapt resource value: 0x1
 			public const int ActionMode_backgroundSplit = 1;
@@ -5021,8 +4916,8 @@ namespace MCS_Trucking
 					2130968704,
 					2130968746};
 			
-			// aapt resource value: 0x7F110044
-			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131820612;
+			// aapt resource value: 0x7F110058
+			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131820632;
 			
 			// aapt resource value: 0x1
 			public const int ActivityChooserView_initialActivityCount = 1;
@@ -5036,8 +4931,8 @@ namespace MCS_Trucking
 					2130968828,
 					2130968829};
 			
-			// aapt resource value: 0x7F110047
-			public const int AlertDialog_android_layout = 2131820615;
+			// aapt resource value: 0x7F110061
+			public const int AlertDialog_android_layout = 2131820641;
 			
 			// aapt resource value: 0x1
 			public const int AlertDialog_buttonPanelSideLayout = 1;
@@ -5068,14 +4963,14 @@ namespace MCS_Trucking
 					2130968838,
 					2130968839};
 			
-			// aapt resource value: 0x7F110061
-			public const int AppBarLayoutStates_state_collapsed = 2131820641;
+			// aapt resource value: 0x7F110075
+			public const int AppBarLayoutStates_state_collapsed = 2131820661;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayoutStates_state_collapsible = 1;
 			
-			// aapt resource value: 0x7F110055
-			public const int AppBarLayout_android_background = 2131820629;
+			// aapt resource value: 0x7F110069
+			public const int AppBarLayout_android_background = 2131820649;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_android_keyboardNavigationCluster = 1;
@@ -5093,8 +4988,8 @@ namespace MCS_Trucking
 					2130968765,
 					2130968766};
 			
-			// aapt resource value: 0x7F110064
-			public const int AppBarLayout_Layout_layout_scrollFlags = 2131820644;
+			// aapt resource value: 0x7F110078
+			public const int AppBarLayout_Layout_layout_scrollFlags = 2131820664;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_Layout_layout_scrollInterpolator = 1;
@@ -5105,8 +5000,8 @@ namespace MCS_Trucking
 					2130968889,
 					2130968890};
 			
-			// aapt resource value: 0x7F110067
-			public const int AppCompatImageView_android_src = 2131820647;
+			// aapt resource value: 0x7F110081
+			public const int AppCompatImageView_android_src = 2131820673;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatImageView_srcCompat = 1;
@@ -5123,8 +5018,8 @@ namespace MCS_Trucking
 					2130968887,
 					2130968888};
 			
-			// aapt resource value: 0x7F110072
-			public const int AppCompatSeekBar_android_thumb = 2131820658;
+			// aapt resource value: 0x7F110086
+			public const int AppCompatSeekBar_android_thumb = 2131820678;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatSeekBar_tickMark = 1;
@@ -5144,8 +5039,8 @@ namespace MCS_Trucking
 					16843117,
 					16842804};
 			
-			// aapt resource value: 0x7F110077
-			public const int AppCompatTextHelper_android_drawableBottom = 2131820663;
+			// aapt resource value: 0x7F110091
+			public const int AppCompatTextHelper_android_drawableBottom = 2131820689;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextHelper_android_drawableEnd = 1;
@@ -5175,8 +5070,8 @@ namespace MCS_Trucking
 					2130968720,
 					2130968869};
 			
-			// aapt resource value: 0x7F110085
-			public const int AppCompatTextView_android_textAppearance = 2131820677;
+			// aapt resource value: 0x7F110099
+			public const int AppCompatTextView_android_textAppearance = 2131820697;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextView_autoSizeMaxTextSize = 1;
@@ -5320,8 +5215,8 @@ namespace MCS_Trucking
 					2130968921,
 					2130968922};
 			
-			// aapt resource value: 0x7F110094
-			public const int AppCompatTheme_actionBarDivider = 2131820692;
+			// aapt resource value: 0x7F110108
+			public const int AppCompatTheme_actionBarDivider = 2131820808;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTheme_actionBarItemBackground = 1;
@@ -5684,8 +5579,8 @@ namespace MCS_Trucking
 					2130968753,
 					2130968783};
 			
-			// aapt resource value: 0x7F110214
-			public const int BottomNavigationView_elevation = 2131821076;
+			// aapt resource value: 0x7F110228
+			public const int BottomNavigationView_elevation = 2131821096;
 			
 			// aapt resource value: 0x1
 			public const int BottomNavigationView_itemBackground = 1;
@@ -5704,8 +5599,8 @@ namespace MCS_Trucking
 					2130968635,
 					2130968636};
 			
-			// aapt resource value: 0x7F110220
-			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131821088;
+			// aapt resource value: 0x7F110234
+			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131821108;
 			
 			// aapt resource value: 0x1
 			public const int BottomSheetBehavior_Layout_behavior_peekHeight = 1;
@@ -5716,8 +5611,8 @@ namespace MCS_Trucking
 			public static int[] ButtonBarLayout = new int[] {
 					2130968615};
 			
-			// aapt resource value: 0x7F110224
-			public const int ButtonBarLayout_allowStacking = 2131821092;
+			// aapt resource value: 0x7F110238
+			public const int ButtonBarLayout_allowStacking = 2131821112;
 			
 			public static int[] CollapsingToolbarLayout = new int[] {
 					2130968658,
@@ -5737,8 +5632,8 @@ namespace MCS_Trucking
 					2130968892,
 					2130968902};
 			
-			// aapt resource value: 0x7F110226
-			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131821094;
+			// aapt resource value: 0x7F110240
+			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131821120;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_collapsedTitleTextAppearance = 1;
@@ -5771,8 +5666,8 @@ namespace MCS_Trucking
 					2130968760,
 					2130968761};
 			
-			// aapt resource value: 0x7F110243
-			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131821123;
+			// aapt resource value: 0x7F110257
+			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131821143;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = 1;
@@ -5800,8 +5695,8 @@ namespace MCS_Trucking
 					16843551,
 					16843173};
 			
-			// aapt resource value: 0x7F110246
-			public const int ColorStateListItem_alpha = 2131821126;
+			// aapt resource value: 0x7F110260
+			public const int ColorStateListItem_alpha = 2131821152;
 			
 			// aapt resource value: 0x1
 			public const int ColorStateListItem_android_alpha = 1;
@@ -5814,8 +5709,8 @@ namespace MCS_Trucking
 					2130968650,
 					2130968651};
 			
-			// aapt resource value: 0x7F110250
-			public const int CompoundButton_android_button = 2131821136;
+			// aapt resource value: 0x7F110264
+			public const int CompoundButton_android_button = 2131821156;
 			
 			// aapt resource value: 0x1
 			public const int CompoundButton_buttonTint = 1;
@@ -5827,8 +5722,8 @@ namespace MCS_Trucking
 					2130968754,
 					2130968840};
 			
-			// aapt resource value: 0x7F110254
-			public const int CoordinatorLayout_keylines = 2131821140;
+			// aapt resource value: 0x7F110268
+			public const int CoordinatorLayout_keylines = 2131821160;
 			
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
@@ -5839,8 +5734,8 @@ namespace MCS_Trucking
 					2130968763,
 					2130968764};
 			
-			// aapt resource value: 0x7F110257
-			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131821143;
+			// aapt resource value: 0x7F110271
+			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131821169;
 			
 			// aapt resource value: 0x1
 			public const int CoordinatorLayout_Layout_layout_anchor = 1;
@@ -5868,8 +5763,8 @@ namespace MCS_Trucking
 					2130968640,
 					2130968879};
 			
-			// aapt resource value: 0x7F110265
-			public const int DesignTheme_bottomSheetDialogTheme = 2131821157;
+			// aapt resource value: 0x7F110279
+			public const int DesignTheme_bottomSheetDialogTheme = 2131821177;
 			
 			// aapt resource value: 0x1
 			public const int DesignTheme_bottomSheetStyle = 1;
@@ -5887,8 +5782,8 @@ namespace MCS_Trucking
 					2130968831,
 					2130968882};
 			
-			// aapt resource value: 0x7F110269
-			public const int DrawerArrowToggle_arrowHeadLength = 2131821161;
+			// aapt resource value: 0x7F110283
+			public const int DrawerArrowToggle_arrowHeadLength = 2131821187;
 			
 			// aapt resource value: 0x1
 			public const int DrawerArrowToggle_arrowShaftLength = 1;
@@ -5921,8 +5816,8 @@ namespace MCS_Trucking
 					2130968816,
 					2130968911};
 			
-			// aapt resource value: 0x7F110278
-			public const int FloatingActionButton_backgroundTint = 2131821176;
+			// aapt resource value: 0x7F110292
+			public const int FloatingActionButton_backgroundTint = 2131821202;
 			
 			// aapt resource value: 0x1
 			public const int FloatingActionButton_backgroundTintMode = 1;
@@ -5930,8 +5825,8 @@ namespace MCS_Trucking
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
 					2130968632};
 			
-			// aapt resource value: 0x7F110287
-			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131821191;
+			// aapt resource value: 0x7F110301
+			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131821313;
 			
 			// aapt resource value: 0x2
 			public const int FloatingActionButton_borderWidth = 2;
@@ -5952,23 +5847,23 @@ namespace MCS_Trucking
 			public const int FloatingActionButton_useCompatPadding = 7;
 			
 			public static int[] FontFamily = new int[] {
-					2130968721,
-					2130968722,
-					2130968723,
-					2130968724,
-					2130968725,
-					2130968726};
+					2130968578,
+					2130968579,
+					2130968580,
+					2130968581,
+					2130968582,
+					2130968583};
 			
 			public static int[] FontFamilyFont = new int[] {
 					16844082,
 					16844095,
 					16844083,
-					2130968719,
-					2130968727,
-					2130968728};
+					2130968577,
+					2130968584,
+					2130968585};
 			
-			// aapt resource value: 0x7F110296
-			public const int FontFamilyFont_android_font = 2131821206;
+			// aapt resource value: 0x7F110010
+			public const int FontFamilyFont_android_font = 2131820560;
 			
 			// aapt resource value: 0x1
 			public const int FontFamilyFont_android_fontStyle = 1;
@@ -5985,8 +5880,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x5
 			public const int FontFamilyFont_fontWeight = 5;
 			
-			// aapt resource value: 0x7F110289
-			public const int FontFamily_fontProviderAuthority = 2131821193;
+			// aapt resource value: 0x7F110003
+			public const int FontFamily_fontProviderAuthority = 2131820547;
 			
 			// aapt resource value: 0x1
 			public const int FontFamily_fontProviderCerts = 1;

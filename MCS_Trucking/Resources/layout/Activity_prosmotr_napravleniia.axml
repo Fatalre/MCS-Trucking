@@ -21,6 +21,10 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/textView_idnapr_activity_prosmotr_napr" />
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView_status_perevozki" />
 		</LinearLayout>
 	</ScrollView>
 

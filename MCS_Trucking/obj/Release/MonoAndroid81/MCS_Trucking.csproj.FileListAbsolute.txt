@@ -113,6 +113,7 @@ D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Runtime.Serialization.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Xml.Linq.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Xml.pdb
+D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.csprojAssemblyReference.cache
 D:\1\MCS_Trucking\bin\Release\MCS_Trucking.dll
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\linksrc\Mono.Android.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\linksrc\mscorlib.pdb
