@@ -81,6 +81,7 @@
     <Compile Include="Class_sortirovka.cs" />
     <Compile Include="Class_UpdateUser.cs" />
     <Compile Include="Class_Vhod.cs" />
+    <Compile Include="Class_Vid_Calendar.cs" />
     <Compile Include="MainActivity_old.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -247,6 +248,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_vid_calendar.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

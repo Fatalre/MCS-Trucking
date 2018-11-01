@@ -18,7 +18,6 @@ using AlertDialog = Android.Support.V7.App.AlertDialog;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.ComponentModel;
-using System.Threading;
 
 namespace MCS_Trucking
 {
@@ -32,6 +31,7 @@ namespace MCS_Trucking
         int count = 0;
         string[] id_ID = new string[100000];
         string refresh_ = "";
+        string vid = "Список";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -193,11 +193,6 @@ namespace MCS_Trucking
                             i++;
                         }
                     }
-
-
-
-
-
                 }
                 catch (Exception ex)
                 {
@@ -206,10 +201,14 @@ namespace MCS_Trucking
             }
             else
             {
+                mySwipeRefreshLayout.Refreshing = true;
                 mySwipeRefreshLayout.PerformClick();
             }
 
-
+            Spinner spinner_vid = FindViewById<Spinner>(Resource.Id.spinner_ActivityStart);
+            spinner_vid.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var adapter_vid = ArrayAdapter.CreateFromResource(this, Resource.Array.vid, Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinner_vid.Adapter = adapter_vid;
 
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -224,6 +223,25 @@ namespace MCS_Trucking
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+
+            void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+            {
+                Spinner spinner = (Spinner)sender;
+
+                var po_chemu_vubranVAR = spinner.GetItemAtPosition(e.Position);
+
+                vid = po_chemu_vubranVAR.ToString();
+                if (vid == "Список")
+                {
+
+                }
+                else
+                {
+                    Intent intent_vid_calendar = new Intent(this, typeof(Class_Vid_Calendar));
+                    Finish();
+                    StartActivity(intent_vid_calendar);
+                }
+            }
         }
 
         private void MySwipeRefreshLayout_Refresh(object sender, EventArgs e)
@@ -347,7 +365,6 @@ namespace MCS_Trucking
                 }
 
                 mySwipeRefreshLayout.Refreshing = false;
-
             });
         }
 
@@ -776,6 +793,14 @@ namespace MCS_Trucking
         protected override void OnDestroy()
         {
             base.OnDestroy();
+            var backingFile6 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh.txt");
+            using (var writer = File.CreateText(backingFile6))
+            {
+
+                writer.WriteLine("");
+
+            }
+
             Intent intent_service_new_version = new Intent(this, typeof(Service_new_version));
             StopService(intent_service_new_version);
         }

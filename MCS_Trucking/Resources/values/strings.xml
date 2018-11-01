@@ -15,4 +15,12 @@
     <item>По убыванию</item>
     <item>По возрастанию</item>
   </string-array>
+  <string-array name="vid">
+    <item>Список</item>
+    <item>Календарь</item>
+  </string-array>
+  <string-array name="vid1">
+    <item>Календарь</item>
+    <item>Список</item>
+  </string-array>
 </resources>

@@ -567,11 +567,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\1\\MCS_Trucking\\MCS_Trucking.csproj",
+      "projectUniqueName": "D:\\Личное\\GitHub\\MCS-Trucking\\MCS_Trucking\\MCS_Trucking.csproj",
       "projectName": "MCS_Trucking",
-      "projectPath": "D:\\1\\MCS_Trucking\\MCS_Trucking.csproj",
+      "projectPath": "D:\\Личное\\GitHub\\MCS-Trucking\\MCS_Trucking\\MCS_Trucking.csproj",
       "packagesPath": "C:\\Users\\Игорь\\.nuget\\packages\\",
-      "outputPath": "D:\\1\\MCS_Trucking\\obj\\",
+      "outputPath": "D:\\Личное\\GitHub\\MCS-Trucking\\MCS_Trucking\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
