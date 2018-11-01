@@ -57,6 +57,14 @@ namespace MCS_Trucking
             Button button_sortirovka = FindViewById<Button>(Resource.Id.button_Activity_sortirovka_sortirovka);
             button_sortirovka.Click += delegate
             {
+                var backingFile6 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh.txt");
+                using (var writer = File.CreateText(backingFile6))
+                {
+
+                    writer.WriteLine("");
+
+                }
+
                 var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Sortirovka_po_chemu.txt");
                 using (var writer = File.CreateText(backingFile))
                 {
@@ -69,7 +77,7 @@ namespace MCS_Trucking
                     writer.WriteLine(ub_vozr);
                 }
 
-                Intent intent_to_start = new Intent(this, typeof(MainActivity));
+                Intent intent_to_start = new Intent(this, typeof(MainActivity_old));
                 Finish();
                 StartActivity(intent_to_start);
 

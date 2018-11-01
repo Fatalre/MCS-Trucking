@@ -24,6 +24,13 @@ namespace MCS_Trucking
             int timeout = 1000;
             var options = new PingOptions();
 
+            if (PackageManager.CheckPermission(Manifest.Permission.ReadExternalStorage, PackageName) != Android.Content.PM.Permission.Granted
+                 && PackageManager.CheckPermission(Manifest.Permission.WriteExternalStorage, PackageName) != Android.Content.PM.Permission.Granted)
+            {
+                var permissions = new string[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage };
+                RequestPermissions(permissions, 1);
+            }
+
             try
             {
                 var reply = ping.Send(host, timeout, buffer, options);

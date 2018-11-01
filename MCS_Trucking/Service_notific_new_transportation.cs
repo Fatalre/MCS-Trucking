@@ -112,7 +112,7 @@ namespace MCS_Trucking
                 notificationManager.Notify(BTC, builder.Build());
             }
 
-
+            //Thread.Sleep(5000);
             Thread.Sleep(900000);
             goto M1;
         }

@@ -77,7 +77,7 @@ namespace MCS_Trucking
 
                 void handllerNothingButton1(object sender, DialogClickEventArgs e)
                 {
-                    Intent Intent_Activity_Start = new Intent(this, typeof(MainActivity));
+                    Intent Intent_Activity_Start = new Intent(this, typeof(MainActivity_old));
                     StartActivity(Intent_Activity_Start);
                 }
 

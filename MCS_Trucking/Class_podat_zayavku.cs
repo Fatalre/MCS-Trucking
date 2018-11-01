@@ -167,11 +167,11 @@ namespace MCS_Trucking
                 }
                 catch (WebException)
                 {
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                    alert.SetTitle("Ошибка");
-                    alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
-                    alert.SetNeutralButton("OK", handllerNothingButton1);
-                    alert.Show();
+                    //AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    //alert.SetTitle("Ошибка");
+                    //alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                    //alert.SetNeutralButton("OK", handllerNothingButton1);
+                    //alert.Show();
                 }
 
                 void handllerNothingButton(object sender, DialogClickEventArgs e)

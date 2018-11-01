@@ -108,7 +108,7 @@ namespace MCS_Trucking
                 }
                 catch
                 {
-                    if(user.data.user == null)
+                    if(user.data == null)
                     {
                         goto M1;
                     }
@@ -254,7 +254,7 @@ namespace MCS_Trucking
                 }
                 catch
                 {
-                    if (user.data.user == null)
+                    if (user.data == null)
                     {
                         goto M2;
                     }
@@ -416,7 +416,7 @@ namespace MCS_Trucking
                 }
                 catch
                 {
-                    if (user.data.user == null)
+                    if (user.data == null)
                     {
                         goto M3;
                     }
@@ -577,7 +577,7 @@ namespace MCS_Trucking
                 }
                 catch
                 {
-                    if (user.data.user == null)
+                    if (user.data == null)
                     {
                         goto M4;
                     }
@@ -739,7 +739,7 @@ namespace MCS_Trucking
                 }
                 catch
                 {
-                    if (user.data.user == null)
+                    if (user.data == null)
                     {
                         goto M5;
                     }
@@ -885,7 +885,7 @@ namespace MCS_Trucking
 
             void handllerNothingButton(object sender, DialogClickEventArgs e)
             {
-                Intent intent_to_main = new Intent(this, typeof(MainActivity));
+                Intent intent_to_main = new Intent(this, typeof(MainActivity_old));
                 Finish();
                 StartActivity(intent_to_main);
             }

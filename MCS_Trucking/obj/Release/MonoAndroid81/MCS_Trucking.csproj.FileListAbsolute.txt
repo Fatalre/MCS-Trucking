@@ -2,11 +2,13 @@ D:\1\MCS_Trucking\bin\Release\MCS_Trucking.dll
 D:\1\MCS_Trucking\bin\Release\MCS_Trucking.pdb
 D:\1\MCS_Trucking\bin\Release\MCS_Trucking.MCS_Trucking.apk
 D:\1\MCS_Trucking\bin\Release\MCS_Trucking.MCS_Trucking-Signed.apk
+D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.csprojAssemblyReference.cache
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res.flag
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.csproj.CoreCompileInputs.cache
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.dll
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\bin\MCS_Trucking.MCS_Trucking.apk
+D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\drawable\splash_logo
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\activity_main.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\app_bar_main.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\content_main.xml
@@ -63,6 +65,7 @@ D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\activity_new_version.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\activity_no_internet.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\activity_sortirovka.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\layout\activity_prosmotr_napravleniia_os.xml
+D:\1\MCS_Trucking\obj\Release\MonoAndroid81\res\drawable\splash_screen.xml
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\R.cs.flag
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\R.txt
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\uploadflags.txt
@@ -113,7 +116,6 @@ D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Runtime.Serialization.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Xml.Linq.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\android\assets\System.Xml.pdb
-D:\1\MCS_Trucking\obj\Release\MonoAndroid81\MCS_Trucking.csprojAssemblyReference.cache
 D:\1\MCS_Trucking\bin\Release\MCS_Trucking.dll
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\linksrc\Mono.Android.pdb
 D:\1\MCS_Trucking\obj\Release\MonoAndroid81\linksrc\mscorlib.pdb

@@ -7,6 +7,7 @@ D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\MCS_Trucking.csproj.CoreCompileInputs.
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\MCS_Trucking.dll
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\MCS_Trucking.pdb
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\android\bin\MCS_Trucking.MCS_Trucking.apk
+D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\drawable\splash_logo
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_main.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\app_bar_main.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\content_main.xml
@@ -63,6 +64,7 @@ D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_new_version.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_no_internet.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_sortirovka.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_prosmotr_napravleniia_os.xml
+D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\res\drawable\splash_screen.xml
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\R.cs.flag
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\R.txt
 D:\1\MCS_Trucking\obj\Debug\MonoAndroid81\uploadflags.txt

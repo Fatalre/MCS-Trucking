@@ -91,7 +91,7 @@ namespace MCS_Trucking
                     }
 
 
-                    Intent intent_to_first_Activity = new Intent(this, typeof(MainActivity));
+                    Intent intent_to_first_Activity = new Intent(this, typeof(MainActivity_old));
                     Finish();
                     StartActivity(intent_to_first_Activity);
                 }

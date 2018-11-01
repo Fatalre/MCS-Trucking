@@ -52,7 +52,7 @@ namespace MCS_Trucking
 
             TextView textView_id_napr = FindViewById<TextView>(Resource.Id.textView_idnapr_activity_prosmotr_napr);
             textView_id_napr.Text = Id_napr;
-            textView_id_napr.SetTextColor(Color.White);
+            textView_id_napr.SetTextColor(Color.ParseColor("#F5F5F5"));
 
             RootObject napr_new = new RootObject();
 
@@ -189,7 +189,7 @@ namespace MCS_Trucking
 
         private void OnButtonClick1(object sender, System.EventArgs e)
         {
-            Intent intent_to_start = new Intent(this, typeof(MainActivity));
+            Intent intent_to_start = new Intent(this, typeof(MainActivity_old));
             Finish();
             StartActivity(intent_to_start);
         }

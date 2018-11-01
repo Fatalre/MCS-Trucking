@@ -102,10 +102,18 @@ namespace MCS_Trucking
 
             void handllerNothingButton(object sender, DialogClickEventArgs e)
             {
-                Intent intent_to_prosmotr_napr = new Intent(this, typeof(Class_Prosmotr_napravleniia));
-                intent_to_prosmotr_napr.PutExtra("Id_napr", Id_napr);
-                Finish();
-                StartActivity(intent_to_prosmotr_napr);
+                //Intent intent_to_prosmotr_napr = new Intent(this, typeof(Class_Prosmotr_napravleniia));
+                //intent_to_prosmotr_napr.PutExtra("Id_napr", Id_napr);
+                //Finish();
+                //StartActivity(intent_to_prosmotr_napr);
+            }
+
+            void handllerNothingButton3(object sender, DialogClickEventArgs e)
+            {
+                //Intent intent_to_prosmotr_napr = new Intent(this, typeof(Class_Prosmotr_napravleniia));
+                //intent_to_prosmotr_napr.PutExtra("Id_napr", Id_napr);
+                //Finish();
+                //StartActivity(intent_to_prosmotr_napr);
             }
 
             void handllerNothingButton1(object sender, DialogClickEventArgs e)
@@ -171,7 +179,7 @@ namespace MCS_Trucking
 
                         string pasredContent = JsonConvert.SerializeObject(izmZayavku);
                         UTF8Encoding encoding = new UTF8Encoding();
-                        Byte[] bytes = encoding.GetBytes(pasredContent);
+                        byte[] bytes = encoding.GetBytes(pasredContent);
 
                         Stream newStream = http.GetRequestStream();
                         newStream.Write(bytes, 0, bytes.Length);
@@ -192,11 +200,11 @@ namespace MCS_Trucking
                     }
                     catch (WebException)
                     {
-                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                        alert.SetTitle("Ошибка");
-                        alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
-                        alert.SetNeutralButton("OK", handllerNothingButton);
-                        alert.Show();
+                        //AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        //alert.SetTitle("Ошибка");
+                        //alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                        //alert.SetNeutralButton("OK", handllerNothingButton);
+                        //alert.Show();
                     }
                 }
                 else
@@ -233,17 +241,17 @@ namespace MCS_Trucking
                         AlertDialog.Builder alert = new AlertDialog.Builder(this);
                         alert.SetTitle("Успешно");
                         alert.SetMessage("Заявка удалена успешно!");
-                        alert.SetNeutralButton("OK", handllerNothingButton);
+                        alert.SetNeutralButton("OK", handllerNothingButton3);
                         alert.Show();
                     }
                     catch (WebException ex)
                     {
-                        ex.ToString();
-                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                        alert.SetTitle("Ошибка");
-                        alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
-                        alert.SetNeutralButton("OK", handllerNothingButton);
-                        alert.Show();
+                        //ex.ToString();
+                        //AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        //alert.SetTitle("Ошибка");
+                        //alert.SetMessage("Произошла непредвиденная ошибка. Попробуйте повторить запрос позже.");
+                        //alert.SetNeutralButton("OK", handllerNothingButton);
+                        //alert.Show();
                     }
                 }
                 else

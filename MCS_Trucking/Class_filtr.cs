@@ -257,6 +257,15 @@ namespace MCS_Trucking
 
             button_filtr_Ok.Click += delegate
             {
+
+                var backingFile6 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh.txt");
+                using (var writer = File.CreateText(backingFile6))
+                {
+                    
+                   writer.WriteLine("");
+
+                }
+
                 var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Lot_s.txt");
                 using (var writer = File.CreateText(backingFile))
                 {
@@ -281,7 +290,7 @@ namespace MCS_Trucking
                     writer.WriteLine(editText_ves_do.Text);
                 }
 
-                Intent intent_start = new Intent(this, typeof(MainActivity));
+                Intent intent_start = new Intent(this, typeof(MainActivity_old));
                 StartActivity(intent_start);
             };
 
@@ -366,7 +375,7 @@ namespace MCS_Trucking
                     }
                 }
 
-                Intent intent_start = new Intent(this, typeof(MainActivity));
+                Intent intent_start = new Intent(this, typeof(MainActivity_old));
                 StartActivity(intent_start);
             };
         }

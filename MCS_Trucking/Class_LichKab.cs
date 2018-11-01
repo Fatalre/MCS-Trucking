@@ -108,7 +108,7 @@ namespace MCS_Trucking
                 {
                     writer.WriteLine("");
                 }
-                Intent To_First_Activity = new Intent(this, typeof(MainActivity));
+                Intent To_First_Activity = new Intent(this, typeof(MainActivity_old));
                 StartActivity(To_First_Activity);
             }
 
@@ -134,7 +134,7 @@ namespace MCS_Trucking
                     {
                         writer.WriteLine("");
                     }
-                    Intent To_First_Activity = new Intent(this, typeof(MainActivity));
+                    Intent To_First_Activity = new Intent(this, typeof(MainActivity_old));
                     StartActivity(To_First_Activity);
                 }
                 catch (Exception)
@@ -144,7 +144,7 @@ namespace MCS_Trucking
                     {
                         writer.WriteLine("");
                     }
-                    Intent To_First_Activity = new Intent(this, typeof(MainActivity));
+                    Intent To_First_Activity = new Intent(this, typeof(MainActivity_old));
                     StartActivity(To_First_Activity);
                 }
 
