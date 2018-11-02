@@ -73,6 +73,7 @@
     <Compile Include="Class_new_version.cs" />
     <Compile Include="Class_no_internet.cs" />
     <Compile Include="Class_podat_zayavku.cs" />
+    <Compile Include="Class_prosmotr_month_calendar.cs" />
     <Compile Include="Class_prosmotr_napravleniia_os.cs" />
     <Compile Include="Class_Registration.cs" />
     <Compile Include="Class_LichKab.cs" />
@@ -251,6 +252,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Activity_vid_calendar.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Activity_prosmotr_month_calendar.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -66,6 +66,7 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\lay
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_prosmotr_napravleniia_os.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\drawable\splash_screen.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_vid_calendar.xml
+D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\res\layout\activity_prosmotr_month_calendar.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\R.cs.flag
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\R.txt
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\uploadflags.txt
