@@ -1,0 +1,2 @@
+android.app.Application
+MCS_Trucking.MCS_Trucking
