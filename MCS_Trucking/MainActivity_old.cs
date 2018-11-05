@@ -861,6 +861,7 @@ namespace MCS_Trucking
                 if (id == Resource.Id.Vhod_LichKab)
                 {
                     Intent Activity_Vhod = new Intent(this, typeof(Class_Vhod));
+                    Activity_Vhod.PutExtra("Vid", vid);
                     StartActivity(Activity_Vhod);
 
                 }
@@ -886,6 +887,7 @@ namespace MCS_Trucking
                 else
                 {
                     Intent Activity_Vhod = new Intent(this, typeof(Class_Vhod));
+                    Activity_Vhod.PutExtra("Vid", vid);
                     StartActivity(Activity_Vhod);
                 }
 
@@ -906,8 +908,10 @@ namespace MCS_Trucking
 
             if (Vhod == true)
             {
+                string vid = "Список";
                 Intent intent_to_Prosmotr_napr = new Intent(this, typeof(Class_Prosmotr_napravleniia));
                 intent_to_Prosmotr_napr.PutExtra("Id_napr", Id_napr);
+                intent_to_Prosmotr_napr.PutExtra("Vid", vid);
                 StartActivity(intent_to_Prosmotr_napr);
             }
             else

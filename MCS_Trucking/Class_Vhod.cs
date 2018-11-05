@@ -21,6 +21,7 @@ namespace MCS_Trucking
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Activity_Vhod);
 
+            string vid = Intent.GetStringExtra("Vid" ?? "Vid");
             bool isConnected;
             var ping = new Ping();
             String host = "google.com";
@@ -90,10 +91,19 @@ namespace MCS_Trucking
                         writer.WriteLine(jsonNew.data.userToken.ToString());
                     }
 
+                    if(vid == "Список")
+                    {
+                        Intent intent_to_first_Activity = new Intent(this, typeof(MainActivity_old));
+                        Finish();
+                        StartActivity(intent_to_first_Activity);
+                    }
+                    else
+                    {
+                        Intent intent_to_first_Activity = new Intent(this, typeof(Class_Vid_Calendar));
+                        Finish();
+                        StartActivity(intent_to_first_Activity);
+                    }
 
-                    Intent intent_to_first_Activity = new Intent(this, typeof(MainActivity_old));
-                    Finish();
-                    StartActivity(intent_to_first_Activity);
                 }
                 catch(Exception)
                 {

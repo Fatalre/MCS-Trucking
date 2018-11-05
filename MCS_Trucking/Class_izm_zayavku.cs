@@ -244,7 +244,7 @@ namespace MCS_Trucking
                         alert.SetNeutralButton("OK", handllerNothingButton3);
                         alert.Show();
                     }
-                    catch (WebException ex)
+                    catch (WebException)
                     {
                         //ex.ToString();
                         //AlertDialog.Builder alert = new AlertDialog.Builder(this);

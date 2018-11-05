@@ -181,12 +181,6 @@ namespace MCS_Trucking
                     Finish();
                     StartActivity(intent_to_prosmotr_napr);
                 }
-
-
-                void handllerNothingButton1(object sender, DialogClickEventArgs e)
-                {
-
-                }
             };
         }
 

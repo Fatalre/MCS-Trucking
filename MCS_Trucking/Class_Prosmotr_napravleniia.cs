@@ -15,9 +15,11 @@ using System.Net.NetworkInformation;
 
 namespace MCS_Trucking
 {
-    [Activity(Label = "@string/app_name", ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/app_name", NoHistory = true, ConfigurationChanges = Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Class_Prosmotr_napravleniia:Activity
     {
+        string Vid = "Список";
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -49,6 +51,8 @@ namespace MCS_Trucking
             }
 
             string Id_napr = Intent.GetStringExtra("Id_napr" ?? "Id_napr");
+            string vid = Intent.GetStringExtra("Vid" ?? "Vid");
+            Vid = vid;
 
             TextView textView_id_napr = FindViewById<TextView>(Resource.Id.textView_idnapr_activity_prosmotr_napr);
             textView_id_napr.Text = Id_napr;
@@ -189,9 +193,18 @@ namespace MCS_Trucking
 
         private void OnButtonClick1(object sender, System.EventArgs e)
         {
-            Intent intent_to_start = new Intent(this, typeof(MainActivity_old));
-            Finish();
-            StartActivity(intent_to_start);
+            if(Vid == "Список")
+            {
+                Intent intent_to_start = new Intent(this, typeof(MainActivity_old));
+                Finish();
+                StartActivity(intent_to_start);
+            }
+            else
+            {
+                Intent intent_to_start = new Intent(this, typeof(Class_Vid_Calendar));
+                Finish();
+                StartActivity(intent_to_start);
+            }
         }
 
         private void OnButtonClick(object sender, System.EventArgs e)
