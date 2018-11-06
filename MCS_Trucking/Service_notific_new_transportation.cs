@@ -76,7 +76,7 @@ namespace MCS_Trucking
                 count_old = 0;
             }
 
-            if (count_new > count_old)
+            if (count_new == count_old+1)
             {
                 var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Count_old.txt");
                 using (var writer = File.CreateText(backingFile))
@@ -105,6 +105,38 @@ namespace MCS_Trucking
                     .SetSmallIcon(Resource.Mipmap.ic_launcher_round)
                     .SetContentText(jsonNew.data.transportations[count_new-1].cityOfLoading + " - " 
                     + jsonNew.data.transportations[count_new-1].deliveryCity)
+                    .SetVibrate(new long[] { 1000, 1000 })
+                    .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification));
+
+                NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
+                notificationManager.Notify(BTC, builder.Build());
+            }
+            else
+            {
+                var backingFile = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "Count_old.txt");
+                using (var writer = File.CreateText(backingFile))
+                {
+                    writer.WriteLine(count_new);
+                }
+
+                count_old = count_new;
+
+                Bundle valuesSand = new Bundle();
+
+                Intent newIntent = new Intent(this, typeof(MainActivity_old));
+                newIntent.PutExtras(valuesSand);
+
+                Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
+                stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(MainActivity_old)));
+                stackBuilder.AddNextIntent(newIntent);
+
+                PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                    .SetAutoCancel(true)
+                    .SetContentIntent(resultPendingIntent)
+                    .SetContentTitle("Добавлены новые перевозки!")
+                    .SetSmallIcon(Resource.Mipmap.ic_launcher_round)
                     .SetVibrate(new long[] { 1000, 1000 })
                     .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification));
 

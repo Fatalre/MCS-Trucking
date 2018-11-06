@@ -106,19 +106,27 @@ namespace MCS_Trucking
             }
 
 
-            if (cash == "true")
+            H1: if (cash == "true")
             {
-                string napr = "";
                 int i = 0;
-                var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "napr_new1.txt");
-                using (var reader = new StreamReader(backingFile1, true))
+                try
                 {
-                    string line1;
-                    while ((line1 = reader.ReadLine()) != null)
+                    string napr = "";
+                    var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "napr_new1.txt");
+                    using (var reader = new StreamReader(backingFile1, true))
                     {
-                        napr = line1;
-                        transport = JsonConvert.DeserializeObject<RootObject>(napr);
+                        string line1;
+                        while ((line1 = reader.ReadLine()) != null)
+                        {
+                            napr = line1;
+                            transport = JsonConvert.DeserializeObject<RootObject>(napr);
+                        }
                     }
+                }
+                catch (Exception)
+                {
+                    cash = "";
+                    goto H1;
                 }
 
                 for (i = 0; i < month_count.Length; i++)
@@ -337,6 +345,12 @@ namespace MCS_Trucking
                 vid = po_chemu_vubranVAR.ToString();
                 if (vid == "Список")
                 {
+                    string str = "false";
+                    var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh.txt");
+                    using (var writer = File.CreateText(backingFile1))
+                    {
+                        writer.WriteLine(str);
+                    }
                     Intent intent_vid_spisok = new Intent(this, typeof(MainActivity_old));
                     StartActivity(intent_vid_spisok);
                 }

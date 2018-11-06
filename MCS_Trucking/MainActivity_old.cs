@@ -210,6 +210,12 @@ namespace MCS_Trucking
             var adapter_vid = ArrayAdapter.CreateFromResource(this, Resource.Array.vid, Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner_vid.Adapter = adapter_vid;
 
+            string version_SDK = Build.VERSION.Sdk;
+            if (Convert.ToInt32(version_SDK) < 22)
+            {
+                spinner_vid.Visibility = ViewStates.Invisible;
+            }
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -238,7 +244,13 @@ namespace MCS_Trucking
                 else
                 {
                     Intent intent_vid_calendar = new Intent(this, typeof(Class_Vid_Calendar));
-                    Finish();
+                    string str = "true";
+                    var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh1.txt");
+                    using (var writer = File.CreateText(backingFile1))
+                    {
+                        writer.WriteLine(str);
+                    }
+                    FinishAffinity();
                     StartActivity(intent_vid_calendar);
                 }
             }
@@ -362,6 +374,16 @@ namespace MCS_Trucking
                         writer.WriteLine(tmp[i]);
                     }
                     
+                }
+
+                backingFile2 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "napr_new1.txt");
+                using (var writer = File.CreateText(backingFile2))
+                {
+                    for (int i = 0; i < tmp.Length; i++)
+                    {
+                        writer.WriteLine(tmp[i]);
+                    }
+
                 }
 
                 mySwipeRefreshLayout.Refreshing = false;
