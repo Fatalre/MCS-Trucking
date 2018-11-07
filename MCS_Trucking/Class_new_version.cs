@@ -6,6 +6,7 @@ using System.Net;
 using Android;
 using Android.Content;
 using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace MCS_Trucking
 {
@@ -71,17 +72,17 @@ namespace MCS_Trucking
                     DownloadManager manager = (DownloadManager)GetSystemService(DownloadService);
                     manager.Enqueue(request);
 
-                    //Thread.Sleep(15000);
+                    Thread.Sleep(15000);
 
-                    //var tmp = System.IO.Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, Android.OS.Environment.DirectoryDownloads);
-                    //var str = System.IO.Path.Combine(tmp, "new_version.apk");
-                    //var open_file = Android.Net.Uri.Parse(str);
+                    var tmp = System.IO.Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, Android.OS.Environment.DirectoryDownloads);
+                    var str = System.IO.Path.Combine(tmp, "new_version.apk");
+                    var open_file = Android.Net.Uri.Parse(str);
 
-                    //Intent intent = new Intent(Intent.ActionView);
-                    //intent.SetDataAndType(open_file, "application/vnd.android.package-archive");
-                    //intent.SetFlags(ActivityFlags.ClearWhenTaskReset | ActivityFlags.NewTask);
+                    Intent intent = new Intent(Intent.ActionView);
+                    intent.SetDataAndType(open_file, "application/vnd.android.package-archive");
+                    intent.SetFlags(ActivityFlags.ClearWhenTaskReset | ActivityFlags.NewTask);
 
-                    //StartActivity(intent);
+                    StartActivity(intent);
                 }
                 catch (Exception ex)
                 {
