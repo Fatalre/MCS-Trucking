@@ -247,6 +247,22 @@
           "build/MonoAndroid81/Xamarin.Android.Support.v7.AppCompat.targets": {}
         }
       },
+      "Xamarin.Android.Support.v7.GridLayout/27.0.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "[27.0.2.1]",
+          "Xamarin.Android.Support.Core.UI": "[27.0.2.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid81/Xamarin.Android.Support.v7.GridLayout.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid81/Xamarin.Android.Support.v7.GridLayout.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid81/Xamarin.Android.Support.v7.GridLayout.targets": {}
+        }
+      },
       "Xamarin.Android.Support.v7.RecyclerView/27.0.2.1": {
         "type": "package",
         "dependencies": {
@@ -525,6 +541,19 @@
         "xamarin.android.support.v7.appcompat.nuspec"
       ]
     },
+    "Xamarin.Android.Support.v7.GridLayout/27.0.2.1": {
+      "sha512": "w3Wc9EOSwFu/0bU2S/SYfiRszPYxP/TOQ95dhEczOGzF8AfqNJI2rDUPdJ66m+5PussXk6AKfisJ+eH9qmBzUQ==",
+      "type": "package",
+      "path": "xamarin.android.support.v7.gridlayout/27.0.2.1",
+      "files": [
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/MonoAndroid81/Xamarin.Android.Support.v7.GridLayout.targets",
+        "lib/MonoAndroid81/Xamarin.Android.Support.v7.GridLayout.dll",
+        "xamarin.android.support.v7.gridlayout.27.0.2.1.nupkg.sha512",
+        "xamarin.android.support.v7.gridlayout.nuspec"
+      ]
+    },
     "Xamarin.Android.Support.v7.RecyclerView/27.0.2.1": {
       "sha512": "hQ/QOBgFuutFS0TG0zzRrWu679cOFsVChkKoWsaIdzRgTSCZKgBJb0hX96PLxdAJZFG5B0GvZ0YpTexYRxzYdw==",
       "type": "package",
@@ -558,7 +587,8 @@
     "MonoAndroid,Version=v8.1": [
       "Newtonsoft.Json >= 11.0.2",
       "System.Net.Http >= 4.3.4",
-      "Xamarin.Android.Support.Design >= 27.0.2.1"
+      "Xamarin.Android.Support.Design >= 27.0.2.1",
+      "Xamarin.Android.Support.v7.GridLayout >= 27.0.2.1"
     ]
   },
   "packageFolders": {
@@ -603,6 +633,10 @@
             "version": "[4.3.4, )"
           },
           "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v7.GridLayout": {
             "target": "Package",
             "version": "[27.0.2.1, )"
           }

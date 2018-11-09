@@ -247,6 +247,9 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F040026
 			public const int alertDialogTheme = 2130968614;
 			
+			// aapt resource value: 0x7F040001
+			public const int alignmentMode = 2130968577;
+			
 			// aapt resource value: 0x7F040027
 			public const int allowStacking = 2130968615;
 			
@@ -414,6 +417,12 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F04005E
 			public const int colorSwitchThumbNormal = 2130968670;
+			
+			// aapt resource value: 0x7F040002
+			public const int columnCount = 2130968578;
+			
+			// aapt resource value: 0x7F040003
+			public const int columnOrderPreserved = 2130968579;
 			
 			// aapt resource value: 0x7F04005F
 			public const int commitIcon = 2130968671;
@@ -688,14 +697,35 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0400B9
 			public const int layout_collapseParallaxMultiplier = 2130968761;
 			
+			// aapt resource value: 0x7F04000D
+			public const int layout_column = 2130968589;
+			
+			// aapt resource value: 0x7F04000E
+			public const int layout_columnSpan = 2130968590;
+			
+			// aapt resource value: 0x7F04000F
+			public const int layout_columnWeight = 2130968591;
+			
 			// aapt resource value: 0x7F0400BA
 			public const int layout_dodgeInsetEdges = 2130968762;
+			
+			// aapt resource value: 0x7F040010
+			public const int layout_gravity = 2130968592;
 			
 			// aapt resource value: 0x7F0400BB
 			public const int layout_insetEdge = 2130968763;
 			
 			// aapt resource value: 0x7F0400BC
 			public const int layout_keyline = 2130968764;
+			
+			// aapt resource value: 0x7F040011
+			public const int layout_row = 2130968593;
+			
+			// aapt resource value: 0x7F040012
+			public const int layout_rowSpan = 2130968594;
+			
+			// aapt resource value: 0x7F040013
+			public const int layout_rowWeight = 2130968595;
 			
 			// aapt resource value: 0x7F0400BD
 			public const int layout_scrollFlags = 2130968765;
@@ -768,6 +798,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0400D4
 			public const int numericModifiers = 2130968788;
+			
+			// aapt resource value: 0x7F040014
+			public const int orientation = 2130968596;
 			
 			// aapt resource value: 0x7F0400D5
 			public const int overlapAnchor = 2130968789;
@@ -852,6 +885,12 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0400F0
 			public const int rippleColor = 2130968816;
+			
+			// aapt resource value: 0x7F040015
+			public const int rowCount = 2130968597;
+			
+			// aapt resource value: 0x7F040016
+			public const int rowOrderPreserved = 2130968598;
 			
 			// aapt resource value: 0x7F0400F1
 			public const int scrimAnimationDuration = 2130968817;
@@ -1137,6 +1176,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F04014F
 			public const int useCompatPadding = 2130968911;
+			
+			// aapt resource value: 0x7F040017
+			public const int useDefaultMargins = 2130968599;
 			
 			// aapt resource value: 0x7F040150
 			public const int voiceIcon = 2130968912;
@@ -1770,6 +1812,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F080005
 			public const int compat_control_corner_material = 2131230725;
+			
+			// aapt resource value: 0x7F080006
+			public const int default_gap = 2131230726;
 			
 			// aapt resource value: 0x7F080050
 			public const int design_appbar_elevation = 2131230800;
@@ -2542,6 +2587,12 @@ namespace MCS_Trucking
 			public const int alertTitle = 2131492886;
 			
 			// aapt resource value: 0x7F0C0006
+			public const int alignBounds = 2131492870;
+			
+			// aapt resource value: 0x7F0C0007
+			public const int alignMargins = 2131492871;
+			
+			// aapt resource value: 0x7F0C0006
 			public const int async = 2131492870;
 			
 			// aapt resource value: 0x7F0C0018
@@ -2604,44 +2655,44 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020119
 			public const int button_Activity_Vhod_Vhod = 2130837785;
 			
-			// aapt resource value: 0x7F020123
-			public const int button_Activity_Vid_Calendar1 = 2130837795;
-			
-			// aapt resource value: 0x7F020132
-			public const int button_Activity_Vid_Calendar10 = 2130837810;
+			// aapt resource value: 0x7F020124
+			public const int button_Activity_Vid_Calendar1 = 2130837796;
 			
 			// aapt resource value: 0x7F020133
-			public const int button_Activity_Vid_Calendar11 = 2130837811;
+			public const int button_Activity_Vid_Calendar10 = 2130837811;
 			
 			// aapt resource value: 0x7F020134
-			public const int button_Activity_Vid_Calendar12 = 2130837812;
+			public const int button_Activity_Vid_Calendar11 = 2130837812;
 			
 			// aapt resource value: 0x7F020135
-			public const int button_Activity_Vid_Calendar13 = 2130837813;
+			public const int button_Activity_Vid_Calendar12 = 2130837813;
 			
-			// aapt resource value: 0x7F020124
-			public const int button_Activity_Vid_Calendar2 = 2130837796;
+			// aapt resource value: 0x7F020136
+			public const int button_Activity_Vid_Calendar13 = 2130837814;
 			
 			// aapt resource value: 0x7F020125
-			public const int button_Activity_Vid_Calendar3 = 2130837797;
+			public const int button_Activity_Vid_Calendar2 = 2130837797;
 			
 			// aapt resource value: 0x7F020126
-			public const int button_Activity_Vid_Calendar4 = 2130837798;
+			public const int button_Activity_Vid_Calendar3 = 2130837798;
 			
 			// aapt resource value: 0x7F020127
-			public const int button_Activity_Vid_Calendar5 = 2130837799;
+			public const int button_Activity_Vid_Calendar4 = 2130837799;
 			
 			// aapt resource value: 0x7F020128
-			public const int button_Activity_Vid_Calendar6 = 2130837800;
+			public const int button_Activity_Vid_Calendar5 = 2130837800;
 			
 			// aapt resource value: 0x7F020129
-			public const int button_Activity_Vid_Calendar7 = 2130837801;
+			public const int button_Activity_Vid_Calendar6 = 2130837801;
 			
 			// aapt resource value: 0x7F020130
-			public const int button_Activity_Vid_Calendar8 = 2130837808;
+			public const int button_Activity_Vid_Calendar7 = 2130837808;
 			
 			// aapt resource value: 0x7F020131
-			public const int button_Activity_Vid_Calendar9 = 2130837809;
+			public const int button_Activity_Vid_Calendar8 = 2130837809;
+			
+			// aapt resource value: 0x7F020132
+			public const int button_Activity_Vid_Calendar9 = 2130837810;
 			
 			// aapt resource value: 0x7F020011
 			public const int button_Container_Filter = 2130837521;
@@ -2838,14 +2889,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C002F
 			public const int expand_activities_button = 2131492911;
 			
-			// aapt resource value: 0x7F020137
-			public const int fab = 2130837815;
+			// aapt resource value: 0x7F020138
+			public const int fab = 2130837816;
 			
 			// aapt resource value: 0x7F0C0031
 			public const int fill = 2131492913;
 			
-			// aapt resource value: 0x7F020145
-			public const int filtr = 2130837829;
+			// aapt resource value: 0x7F020146
+			public const int filtr = 2130837830;
 			
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
@@ -2856,11 +2907,17 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
 			
+			// aapt resource value: 0x7F020122
+			public const int gridLayout1 = 2130837794;
+			
 			// aapt resource value: 0x7F020058
-			public const int gridLayout1 = 2130837592;
+			public const int gridLayout2 = 2130837592;
 			
 			// aapt resource value: 0x7F0C0035
 			public const int home = 2131492917;
+			
+			// aapt resource value: 0x7F0C000C
+			public const int horizontal = 2131492876;
 			
 			// aapt resource value: 0x7F0C000A
 			public const int icon = 2131492874;
@@ -2871,8 +2928,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0038
 			public const int image = 2131492920;
 			
-			// aapt resource value: 0x7F020142
-			public const int imageView = 2130837826;
+			// aapt resource value: 0x7F020143
+			public const int imageView = 2130837827;
 			
 			// aapt resource value: 0x7F0C000C
 			public const int info = 2131492876;
@@ -2904,8 +2961,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020020
 			public const int linearLayout_ActivityFiltrTypeContainer = 2130837536;
 			
-			// aapt resource value: 0x7F020140
-			public const int linearLayout_ActivityStart = 2130837824;
+			// aapt resource value: 0x7F020141
+			public const int linearLayout_ActivityStart = 2130837825;
 			
 			// aapt resource value: 0x7F020003
 			public const int linearLayout_Activity_filtr = 2130837507;
@@ -2940,8 +2997,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0045
 			public const int mini = 2131492933;
 			
-			// aapt resource value: 0x7F020144
-			public const int Moi_zayavki = 2130837828;
+			// aapt resource value: 0x7F020145
+			public const int Moi_zayavki = 2130837829;
 			
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
@@ -3027,8 +3084,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020019
 			public const int scrollView8 = 2130837529;
 			
-			// aapt resource value: 0x7F020139
-			public const int scrollView_ActivityStart = 2130837817;
+			// aapt resource value: 0x7F020140
+			public const int scrollView_ActivityStart = 2130837824;
 			
 			// aapt resource value: 0x7F020096
 			public const int scrollView_Activity_moi_zayavki = 2130837654;
@@ -3087,14 +3144,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C006D
 			public const int snackbar_text = 2131492973;
 			
-			// aapt resource value: 0x7F020146
-			public const int sortirovka = 2130837830;
+			// aapt resource value: 0x7F020147
+			public const int sortirovka = 2130837831;
 			
 			// aapt resource value: 0x7F0C006E
 			public const int spacer = 2131492974;
 			
-			// aapt resource value: 0x7F020141
-			public const int spinner_ActivityStart = 2130837825;
+			// aapt resource value: 0x7F020142
+			public const int spinner_ActivityStart = 2130837826;
 			
 			// aapt resource value: 0x7F020108
 			public const int spinner_Activity_sortirovka_po_chemu = 2130837768;
@@ -3102,8 +3159,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F020109
 			public const int spinner_Activity_sortirovka_ub_voz = 2130837769;
 			
-			// aapt resource value: 0x7F020122
-			public const int spinner_Activity_Vid_Calendar = 2130837794;
+			// aapt resource value: 0x7F020123
+			public const int spinner_Activity_Vid_Calendar = 2130837795;
 			
 			// aapt resource value: 0x7F0C006F
 			public const int split_action_bar = 2131492975;
@@ -3129,8 +3186,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0076
 			public const int submit_area = 2131492982;
 			
-			// aapt resource value: 0x7F020138
-			public const int swipeRefreshLayout1 = 2130837816;
+			// aapt resource value: 0x7F020139
+			public const int swipeRefreshLayout1 = 2130837817;
 			
 			// aapt resource value: 0x7F0C0077
 			public const int tabMode = 2131492983;
@@ -3204,8 +3261,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0083
 			public const int title_template = 2131492995;
 			
-			// aapt resource value: 0x7F020136
-			public const int toolbar = 2130837814;
+			// aapt resource value: 0x7F020137
+			public const int toolbar = 2130837815;
 			
 			// aapt resource value: 0x7F0C0084
 			public const int top = 2131492996;
@@ -3237,8 +3294,11 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C008D
 			public const int up = 2131493005;
 			
-			// aapt resource value: 0x7F020143
-			public const int Vhod_LichKab = 2130837827;
+			// aapt resource value: 0x7F0C001E
+			public const int vertical = 2131492894;
+			
+			// aapt resource value: 0x7F020144
+			public const int Vhod_LichKab = 2130837828;
 			
 			// aapt resource value: 0x7F0C008E
 			public const int view_offset_helper = 2131493006;
@@ -6097,6 +6157,94 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
+			
+			public static int[] GridLayout = new int[] {
+					2130968577,
+					2130968578,
+					2130968579,
+					2130968596,
+					2130968597,
+					2130968598,
+					2130968599};
+			
+			// aapt resource value: 0x7F110541
+			public const int GridLayout_alignmentMode = 2131821889;
+			
+			// aapt resource value: 0x1
+			public const int GridLayout_columnCount = 1;
+			
+			// aapt resource value: 0x2
+			public const int GridLayout_columnOrderPreserved = 2;
+			
+			public static int[] GridLayout_Layout = new int[] {
+					16842997,
+					16842998,
+					16843002,
+					16842999,
+					16843001,
+					16843000,
+					16842996,
+					2130968589,
+					2130968590,
+					2130968591,
+					2130968592,
+					2130968593,
+					2130968594,
+					2130968595};
+			
+			// aapt resource value: 0x7F110549
+			public const int GridLayout_Layout_android_layout_height = 2131821897;
+			
+			// aapt resource value: 0x1
+			public const int GridLayout_Layout_android_layout_margin = 1;
+			
+			// aapt resource value: 0x2
+			public const int GridLayout_Layout_android_layout_marginBottom = 2;
+			
+			// aapt resource value: 0x3
+			public const int GridLayout_Layout_android_layout_marginLeft = 3;
+			
+			// aapt resource value: 0x4
+			public const int GridLayout_Layout_android_layout_marginRight = 4;
+			
+			// aapt resource value: 0x5
+			public const int GridLayout_Layout_android_layout_marginTop = 5;
+			
+			// aapt resource value: 0x6
+			public const int GridLayout_Layout_android_layout_width = 6;
+			
+			// aapt resource value: 0x7
+			public const int GridLayout_Layout_layout_column = 7;
+			
+			// aapt resource value: 0x8
+			public const int GridLayout_Layout_layout_columnSpan = 8;
+			
+			// aapt resource value: 0x9
+			public const int GridLayout_Layout_layout_columnWeight = 9;
+			
+			// aapt resource value: 0x10
+			public const int GridLayout_Layout_layout_gravity = 16;
+			
+			// aapt resource value: 0x11
+			public const int GridLayout_Layout_layout_row = 17;
+			
+			// aapt resource value: 0x12
+			public const int GridLayout_Layout_layout_rowSpan = 18;
+			
+			// aapt resource value: 0x13
+			public const int GridLayout_Layout_layout_rowWeight = 19;
+			
+			// aapt resource value: 0x3
+			public const int GridLayout_orientation = 3;
+			
+			// aapt resource value: 0x4
+			public const int GridLayout_rowCount = 4;
+			
+			// aapt resource value: 0x5
+			public const int GridLayout_rowOrderPreserved = 5;
+			
+			// aapt resource value: 0x6
+			public const int GridLayout_useDefaultMargins = 6;
 			
 			public static int[] LinearLayoutCompat = new int[] {
 					16843046,

@@ -133,69 +133,77 @@ namespace MCS_Trucking
                 {
                     month_count[i] = 0;
                 }
-
-                for (i = 0; i < transport.data.transportations.Count; i++)
+                try
                 {
-                    if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.01") &&
-                        Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.02"))
+                    for (i = 0; i < transport.data.transportations.Count; i++)
                     {
-                        month_count[0]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.02") &&
-                             Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.03"))
-                    {
-                        month_count[1]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.03") &&
-                                     Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.04"))
-                    {
-                        month_count[2]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.04") &&
-                          Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.05"))
-                    {
-                        month_count[3]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.05") &&
-                                     Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.06"))
-                    {
-                        month_count[4]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.06") &&
-                          Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.07"))
-                    {
-                        month_count[5]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.07") &&
-                          Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.08"))
-                    {
-                        month_count[6]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.08") &&
-                                     Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.09"))
-                    {
-                        month_count[7]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.09") &&
-                          Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.10"))
-                    {
-                        month_count[8]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.10") &&
-                                     Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.11"))
-                    {
-                        month_count[9]++;
-                    }
-                    else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.11") &&
-                          Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.12"))
-                    {
-                        month_count[10]++;
-                    }
-                    else
-                    {
-                        month_count[11]++;
+                        if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.01") &&
+                            Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.02"))
+                        {
+                            month_count[0]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.02") &&
+                                 Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.03"))
+                        {
+                            month_count[1]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.03") &&
+                                         Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.04"))
+                        {
+                            month_count[2]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.04") &&
+                              Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.05"))
+                        {
+                            month_count[3]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.05") &&
+                                         Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.06"))
+                        {
+                            month_count[4]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.06") &&
+                              Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.07"))
+                        {
+                            month_count[5]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.07") &&
+                              Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.08"))
+                        {
+                            month_count[6]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.08") &&
+                                         Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.09"))
+                        {
+                            month_count[7]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.09") &&
+                              Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.10"))
+                        {
+                            month_count[8]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.10") &&
+                                         Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.11"))
+                        {
+                            month_count[9]++;
+                        }
+                        else if (Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) >= Convert.ToDateTime("01.11") &&
+                              Convert.ToDateTime(transport.data.transportations[i].carDeliveryDate) <= Convert.ToDateTime("01.12"))
+                        {
+                            month_count[10]++;
+                        }
+                        else
+                        {
+                            month_count[11]++;
+                        }
                     }
                 }
+                catch (Exception)
+                {
+                    cash = "";
+                    goto H1;
+                }
+                
 
 
                 button_Vid_Calendar1.Text = "Январь \n(" + month_count[0].ToString() + ")";
@@ -430,6 +438,16 @@ namespace MCS_Trucking
 
         }
 
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+            string str = "";
+            var backingFile1 = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "refresh1.txt");
+            using (var writer = File.CreateText(backingFile1))
+            {
+                writer.WriteLine(str);
+            }
+        }
         protected override void OnDestroy()
         {
             base.OnDestroy();

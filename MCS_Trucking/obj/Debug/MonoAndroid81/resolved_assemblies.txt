@@ -20,6 +20,7 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.Media.Compat.dll
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.Transition.dll
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.v7.AppCompat.dll
+D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.v7.GridLayout.dll
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.v7.RecyclerView.dll
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\Xamarin.Android.Support.Vector.Drawable.dll
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\MonoAndroid81\android\assets\System.Runtime.dll

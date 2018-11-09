@@ -8,6 +8,7 @@
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\14\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\15\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\16\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\\Release\MonoAndroid81\lp\17\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\4\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\5\jl\AndroidManifest.xml</ManifestDocument>
     <ManifestDocument>obj\\Release\MonoAndroid81\lp\7\jl\AndroidManifest.xml</ManifestDocument>
@@ -23,6 +24,7 @@
     <Jar>obj\\Release\MonoAndroid81\lp\14\jl\bin\classes.jar</Jar>
     <Jar>obj\\Release\MonoAndroid81\lp\15\jl\bin\classes.jar</Jar>
     <Jar>obj\\Release\MonoAndroid81\lp\16\jl\bin\classes.jar</Jar>
+    <Jar>obj\\Release\MonoAndroid81\lp\17\jl\bin\classes.jar</Jar>
     <Jar>obj\\Release\MonoAndroid81\lp\2\jl\arch-core-common.jar</Jar>
     <Jar>obj\\Release\MonoAndroid81\lp\3\jl\arch-lifecycle-common.jar</Jar>
     <Jar>obj\\Release\MonoAndroid81\lp\4\jl\bin\classes.jar</Jar>

@@ -210,11 +210,11 @@ namespace MCS_Trucking
             var adapter_vid = ArrayAdapter.CreateFromResource(this, Resource.Array.vid, Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner_vid.Adapter = adapter_vid;
 
-            string version_SDK = Build.VERSION.Sdk;
-            if (Convert.ToInt32(version_SDK) < 22)
-            {
-                spinner_vid.Visibility = ViewStates.Invisible;
-            }
+            //string version_SDK = Build.VERSION.Sdk;
+            //if (Convert.ToInt32(version_SDK) < 22)
+            //{
+            //    spinner_vid.Visibility = ViewStates.Invisible;
+            //}
 
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
