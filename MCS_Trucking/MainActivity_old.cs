@@ -23,15 +23,17 @@ namespace MCS_Trucking
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", ConfigurationChanges =
         Android.Content.PM.ConfigChanges.ScreenSize | Android.Content.PM.ConfigChanges.Orientation, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class MainActivity_old : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
+    public class MainActivity_old : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener, ViewTreeObserver.IOnScrollChangedListener
     {
 
         bool Vhod = false;
         SwipeRefreshLayout mySwipeRefreshLayout;
         int count = 0;
+        int count_new = 0;
         string[] id_ID = new string[100000];
         string refresh_ = "";
         string vid = "Список";
+        string[] tmp = new string[100000];
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -51,6 +53,9 @@ namespace MCS_Trucking
             byte[] buffer = new byte[32];
             int timeout = 1000;
             var options = new PingOptions();
+
+            ScrollView scrollView = FindViewById<ScrollView>(Resource.Id.scrollView_ActivityStart);
+            scrollView.ViewTreeObserver.AddOnScrollChangedListener(this);
 
             try
             {
@@ -210,12 +215,6 @@ namespace MCS_Trucking
             var adapter_vid = ArrayAdapter.CreateFromResource(this, Resource.Array.vid, Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner_vid.Adapter = adapter_vid;
 
-            //string version_SDK = Build.VERSION.Sdk;
-            //if (Convert.ToInt32(version_SDK) < 22)
-            //{
-            //    spinner_vid.Visibility = ViewStates.Invisible;
-            //}
-
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -258,6 +257,11 @@ namespace MCS_Trucking
 
         private void MySwipeRefreshLayout_Refresh(object sender, EventArgs e)
         {
+            LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_ActivityStart);
+            if (ll.ChildCount > 0)
+            {
+                ll.RemoveAllViews();
+            }
             BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWork;
             worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
@@ -268,14 +272,12 @@ namespace MCS_Trucking
         {
             RunOnUiThread(() =>
             {
-                string[] tmp = new string[100000];
-
                 for (int i = 0; i < count; i++)
                 {
-
+                    
                     RootObject1 napr_new = new RootObject1();
 
-                M2: try
+                    M2: try
                     {
                         var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/transportation/" + id_ID[i]);
                         httpWebRequest.Accept = "application/json";
@@ -303,60 +305,65 @@ namespace MCS_Trucking
                         alert.Show();
                     }
 
-                    Button myButton = new Button(this);
-                    myButton.Text = napr_new.data.transportation.cityOfLoading + " - " + napr_new.data.transportation.deliveryCity;
-                    myButton.TextAlignment = Android.Views.TextAlignment.Center;
-                    myButton.SetTextColor(Color.ParseColor("#ff274284"));
-
-                    if (napr_new.data.transportation.status.name == "Перевозка отменена")
+                    if (i < 5)
                     {
-                        myButton.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
-                    }
-                    else if (napr_new.data.transportation.status.name == "Завершена")
-                    {
-                        myButton.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
-                    }
-                    else if (napr_new.data.transportation.status.name == "Ожидания заявок")
-                    {
-                        myButton.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
-                    }
-                    else if (napr_new.data.transportation.status.name == "Заявки рассмотрено")
-                    {
-                        myButton.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
-                    }
-                    else
-                    {
-                        myButton.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                        count_new++;
+                        Button myButton = new Button(this);
+                        myButton.Text = napr_new.data.transportation.cityOfLoading + " - " + napr_new.data.transportation.deliveryCity;
+                        myButton.TextAlignment = Android.Views.TextAlignment.Center;
+                        myButton.SetTextColor(Color.ParseColor("#ff274284"));
+
+                        if (napr_new.data.transportation.status.name == "Перевозка отменена")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Завершена")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Ожидания заявок")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Заявки рассмотрено")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                        }
+                        else
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                        }
+
+                        myButton.SetTextSize(ComplexUnitType.Dip, 15);
+                        myButton.Id = View.GenerateViewId();
+                        myButton.Click += OnButtonClick;
+
+                        TextView mytextView = new TextView(this);
+                        mytextView.Text = "Дата постановки машины: "
+                            + napr_new.data.transportation.carDeliveryDate + "\n" + "Лот: "
+                            + napr_new.data.transportation.lot + "\n" + "Вес контейнера: "
+                            + napr_new.data.transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + napr_new.data.transportation.containerType.name + "\n" + "Линия: "
+                            + napr_new.data.transportation.line.name + "\n" + "Направление: "
+                            + napr_new.data.transportation.transportationType.name + "\n" + "Статус: "
+                            + napr_new.data.transportation.status.name;
+                        mytextView.SetTextColor(Color.Black);
+                        mytextView.Id = View.GenerateViewId();
+
+                        TextView textView_id = new TextView(this);
+                        textView_id.Text = napr_new.data.transportation.id.ToString();
+                        textView_id.SetTextColor(Color.White);
+                        textView_id.Id = View.GenerateViewId();
+
+                        LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_ActivityStart);
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                            (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                        ll.AddView(myButton, lp);
+                        ll.AddView(mytextView, lp);
+                        ll.AddView(textView_id, lp);
                     }
 
-                    myButton.SetTextSize(ComplexUnitType.Dip, 15);
-                    myButton.Id = View.GenerateViewId();
-                    myButton.Click += OnButtonClick;
-
-                    TextView mytextView = new TextView(this);
-                    mytextView.Text = "Дата постановки машины: "
-                        + napr_new.data.transportation.carDeliveryDate + "\n" + "Лот: "
-                        + napr_new.data.transportation.lot + "\n" + "Вес контейнера: "
-                        + napr_new.data.transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
-                        + napr_new.data.transportation.containerType.name + "\n" + "Линия: "
-                        + napr_new.data.transportation.line.name + "\n" + "Направление: "
-                        + napr_new.data.transportation.transportationType.name + "\n" + "Статус: "
-                        + napr_new.data.transportation.status.name;
-                    mytextView.SetTextColor(Color.Black);
-                    mytextView.Id = View.GenerateViewId();
-
-                    TextView textView_id = new TextView(this);
-                    textView_id.Text = napr_new.data.transportation.id.ToString();
-                    textView_id.SetTextColor(Color.White);
-                    textView_id.Id = View.GenerateViewId();
-
-                    LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_ActivityStart);
-                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
-                        (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
-
-                    ll.AddView(myButton, lp);
-                    ll.AddView(mytextView, lp);
-                    ll.AddView(textView_id, lp);
                 }
 
                 string str = "false";
@@ -950,6 +957,113 @@ namespace MCS_Trucking
                 //Действие при нажатие "ОК"
             }
 
+        }
+
+        public void OnScrollChanged()
+        {
+            ScrollView scrollView = FindViewById<ScrollView>(Resource.Id.scrollView_ActivityStart);
+            double scrollingSpace = scrollView.GetChildAt(0).Height - scrollView.Height;
+
+            if (scrollingSpace <= scrollView.ScrollY)
+            {
+                RootObject1 napr_new = new RootObject1();
+                int schetchik = 0;
+                for (int i = count_new; i < count; i++)
+                {
+
+                    if (schetchik < 5)
+                    {
+                    M2: try
+                        {
+                            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://truck.mcs-bitrix.pp.ua/api/v1/transportation/" + id_ID[i]);
+                            httpWebRequest.Accept = "application/json";
+                            httpWebRequest.Method = "GET";
+                            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                            {
+                                var result = streamReader.ReadToEnd();
+
+                                napr_new = JsonConvert.DeserializeObject<RootObject1>(result);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            if (napr_new.data == null)
+                            {
+                                goto M2;
+                            }
+
+                            //AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                            //alert.SetTitle("Ошибка");
+                            //alert.SetMessage("Ошибка сервера. Попробуйте позже.");
+                            //alert.SetNeutralButton("OK", handllerNothingButton);
+                            //alert.Show();
+                        }
+
+                        Button myButton = new Button(this);
+                        myButton.Text = napr_new.data.transportation.cityOfLoading + " - " + napr_new.data.transportation.deliveryCity;
+                        myButton.TextAlignment = Android.Views.TextAlignment.Center;
+                        myButton.SetTextColor(Color.ParseColor("#ff274284"));
+
+                        if (napr_new.data.transportation.status.name == "Перевозка отменена")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ffdc0000"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Завершена")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff864d4d"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Ожидания заявок")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff9bedb1"));
+                        }
+                        else if (napr_new.data.transportation.status.name == "Заявки рассмотрено")
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ff0f909c"));
+                        }
+                        else
+                        {
+                            myButton.SetBackgroundColor(Color.ParseColor("#ffd1d6d6"));
+                        }
+
+                        myButton.SetTextSize(ComplexUnitType.Dip, 15);
+                        myButton.Id = View.GenerateViewId();
+                        myButton.Click += OnButtonClick;
+
+                        TextView mytextView = new TextView(this);
+                        mytextView.Text = "Дата постановки машины: "
+                            + napr_new.data.transportation.carDeliveryDate + "\n" + "Лот: "
+                            + napr_new.data.transportation.lot + "\n" + "Вес контейнера: "
+                            + napr_new.data.transportation.cargoWeightInContainer + "\n" + "Тип контейнера: "
+                            + napr_new.data.transportation.containerType.name + "\n" + "Линия: "
+                            + napr_new.data.transportation.line.name + "\n" + "Направление: "
+                            + napr_new.data.transportation.transportationType.name + "\n" + "Статус: "
+                            + napr_new.data.transportation.status.name;
+                        mytextView.SetTextColor(Color.Black);
+                        mytextView.Id = View.GenerateViewId();
+
+                        TextView textView_id = new TextView(this);
+                        textView_id.Text = napr_new.data.transportation.id.ToString();
+                        textView_id.SetTextColor(Color.White);
+                        textView_id.Id = View.GenerateViewId();
+
+                        LinearLayout ll = (LinearLayout)FindViewById(Resource.Id.linearLayout_ActivityStart);
+                        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams
+                            (LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent);
+
+                        ll.AddView(myButton, lp);
+                        ll.AddView(mytextView, lp);
+                        ll.AddView(textView_id, lp);
+                    }
+                    schetchik++;
+                }
+                count_new = count_new + 5;
+                //Toast.MakeText(this, "В этот день нет перевозок", ToastLength.Long).Show();
+            }
+            else
+            {
+                
+            }
         }
 
         public class ContainerType
