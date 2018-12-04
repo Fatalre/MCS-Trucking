@@ -3139,10 +3139,10 @@ containing a value of this type.
         public static final int CTRL=0x7f080044;
         public static final int FUNCTION=0x7f080045;
         public static final int META=0x7f080046;
-        public static final int Moi_zayavki=0x7f080143;
+        public static final int Moi_zayavki=0x7f080144;
         public static final int SHIFT=0x7f080047;
         public static final int SYM=0x7f080048;
-        public static final int Vhod_LichKab=0x7f080142;
+        public static final int Vhod_LichKab=0x7f080143;
         public static final int action0=0x7f08012f;
         public static final int action_bar=0x7f080080;
         public static final int action_bar_activity_content=0x7f080001;
@@ -3282,10 +3282,11 @@ containing a value of this type.
         public static final int fill=0x7f080028;
         public static final int fill_horizontal=0x7f080029;
         public static final int fill_vertical=0x7f08002a;
-        public static final int filtr=0x7f080144;
+        public static final int filtr=0x7f080145;
         public static final int fixed=0x7f080058;
         public static final int forever=0x7f08005c;
         public static final int ghost_view=0x7f08000a;
+        public static final int gifImageView=0x7f08013f;
         public static final int gridLayout1=0x7f080107;
         public static final int gridLayout2=0x7f0800c7;
         public static final int home=0x7f080005;
@@ -3315,9 +3316,9 @@ containing a value of this type.
         public static final int linearLayout_Activity_prosmotr_napravleniia_from_calendar=0x7f0800ec;
         public static final int listMode=0x7f08002f;
         public static final int list_item=0x7f080065;
-        public static final int masked=0x7f080141;
+        public static final int masked=0x7f080142;
         public static final int media_actions=0x7f080132;
-        public static final int message=0x7f08013f;
+        public static final int message=0x7f080140;
         public static final int middle=0x7f080042;
         public static final int mini=0x7f080057;
         public static final int multiply=0x7f08003a;
@@ -3374,7 +3375,7 @@ containing a value of this type.
         public static final int snackbar_action=0x7f080124;
         public static final int snackbar_text=0x7f080123;
         public static final int snap=0x7f080052;
-        public static final int sortirovka=0x7f080145;
+        public static final int sortirovka=0x7f080146;
         public static final int spacer=0x7f080068;
         public static final int spinner_ActivityStart=0x7f08011b;
         public static final int spinner_Activity_Vid_Calendar=0x7f080108;
@@ -3427,7 +3428,7 @@ containing a value of this type.
         public static final int useLogo=0x7f080038;
         public static final int vertical=0x7f08001e;
         public static final int view_offset_helper=0x7f080016;
-        public static final int visible=0x7f080140;
+        public static final int visible=0x7f080141;
         public static final int withText=0x7f08004d;
         public static final int wrap_content=0x7f080040;
     }
@@ -3528,8 +3529,9 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f040051;
         public static final int select_dialog_multichoice_material=0x7f040052;
         public static final int select_dialog_singlechoice_material=0x7f040053;
-        public static final int support_simple_spinner_dropdown_item=0x7f040054;
-        public static final int tooltip=0x7f040055;
+        public static final int splashscreen=0x7f040054;
+        public static final int support_simple_spinner_dropdown_item=0x7f040055;
+        public static final int tooltip=0x7f040056;
     }
     public static final class menu {
         public static final int activity_main_drawer=0x7f0f0000;

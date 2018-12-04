@@ -802,10 +802,10 @@ int id Activity_prosmotr_calendar_TextView9 0x7f0800d0
 int id CTRL 0x7f080044
 int id FUNCTION 0x7f080045
 int id META 0x7f080046
-int id Moi_zayavki 0x7f080143
+int id Moi_zayavki 0x7f080144
 int id SHIFT 0x7f080047
 int id SYM 0x7f080048
-int id Vhod_LichKab 0x7f080142
+int id Vhod_LichKab 0x7f080143
 int id action0 0x7f08012f
 int id action_bar 0x7f080080
 int id action_bar_activity_content 0x7f080001
@@ -945,10 +945,11 @@ int id fab 0x7f080117
 int id fill 0x7f080028
 int id fill_horizontal 0x7f080029
 int id fill_vertical 0x7f08002a
-int id filtr 0x7f080144
+int id filtr 0x7f080145
 int id fixed 0x7f080058
 int id forever 0x7f08005c
 int id ghost_view 0x7f08000a
+int id gifImageView 0x7f08013f
 int id gridLayout1 0x7f080107
 int id gridLayout2 0x7f0800c7
 int id home 0x7f080005
@@ -978,9 +979,9 @@ int id linearLayout_Activity_moi_zayavki_dop 0x7f0800b7
 int id linearLayout_Activity_prosmotr_napravleniia_from_calendar 0x7f0800ec
 int id listMode 0x7f08002f
 int id list_item 0x7f080065
-int id masked 0x7f080141
+int id masked 0x7f080142
 int id media_actions 0x7f080132
-int id message 0x7f08013f
+int id message 0x7f080140
 int id middle 0x7f080042
 int id mini 0x7f080057
 int id multiply 0x7f08003a
@@ -1037,7 +1038,7 @@ int id smallLabel 0x7f08011d
 int id snackbar_action 0x7f080124
 int id snackbar_text 0x7f080123
 int id snap 0x7f080052
-int id sortirovka 0x7f080145
+int id sortirovka 0x7f080146
 int id spacer 0x7f080068
 int id spinner_ActivityStart 0x7f08011b
 int id spinner_Activity_Vid_Calendar 0x7f080108
@@ -1090,7 +1091,7 @@ int id up 0x7f080009
 int id useLogo 0x7f080038
 int id vertical 0x7f08001e
 int id view_offset_helper 0x7f080016
-int id visible 0x7f080140
+int id visible 0x7f080141
 int id withText 0x7f08004d
 int id wrap_content 0x7f080040
 int integer abc_config_activityDefaultDur 0x7f0d0000
@@ -1187,8 +1188,9 @@ int layout notification_template_part_time 0x7f040050
 int layout select_dialog_item_material 0x7f040051
 int layout select_dialog_multichoice_material 0x7f040052
 int layout select_dialog_singlechoice_material 0x7f040053
-int layout support_simple_spinner_dropdown_item 0x7f040054
-int layout tooltip 0x7f040055
+int layout splashscreen 0x7f040054
+int layout support_simple_spinner_dropdown_item 0x7f040055
+int layout tooltip 0x7f040056
 int menu activity_main_drawer 0x7f0f0000
 int menu menu_main 0x7f0f0001
 int mipmap ic_launcher 0x7f030000

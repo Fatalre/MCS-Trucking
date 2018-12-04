@@ -74,6 +74,7 @@ D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\81\res\layout\activit
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\81\R.cs.flag
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\81\R.txt
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\81\uploadflags.txt
+D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\obj\Debug\81\res\layout\splashscreen.xml
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\bin\Debug\Mono.Android.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\bin\Debug\mscorlib.pdb
 D:\Личное\GitHub\MCS-Trucking\MCS_Trucking\bin\Debug\Newtonsoft.Json.pdb

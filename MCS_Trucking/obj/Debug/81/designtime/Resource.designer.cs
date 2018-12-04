@@ -2895,8 +2895,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0031
 			public const int fill = 2131492913;
 			
-			// aapt resource value: 0x7F020147
-			public const int filtr = 2130837831;
+			// aapt resource value: 0x7F020148
+			public const int filtr = 2130837832;
 			
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
@@ -2906,6 +2906,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
+			
+			// aapt resource value: 0x7F020145
+			public const int gifImageView = 2130837829;
 			
 			// aapt resource value: 0x7F020122
 			public const int gridLayout1 = 2130837794;
@@ -3000,8 +3003,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C0045
 			public const int mini = 2131492933;
 			
-			// aapt resource value: 0x7F020146
-			public const int Moi_zayavki = 2130837830;
+			// aapt resource value: 0x7F020147
+			public const int Moi_zayavki = 2130837831;
 			
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
@@ -3147,8 +3150,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C006D
 			public const int snackbar_text = 2131492973;
 			
-			// aapt resource value: 0x7F020148
-			public const int sortirovka = 2130837832;
+			// aapt resource value: 0x7F020149
+			public const int sortirovka = 2130837833;
 			
 			// aapt resource value: 0x7F0C006E
 			public const int spacer = 2131492974;
@@ -3300,8 +3303,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7F0C001E
 			public const int vertical = 2131492894;
 			
-			// aapt resource value: 0x7F020145
-			public const int Vhod_LichKab = 2130837829;
+			// aapt resource value: 0x7F020146
+			public const int Vhod_LichKab = 2130837830;
 			
 			// aapt resource value: 0x7F0C008E
 			public const int view_offset_helper = 2131493006;
@@ -3619,6 +3622,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7F0F003A
 			public const int select_dialog_singlechoice_material = 2131689530;
+			
+			// aapt resource value: 0x7F030028
+			public const int SplashScreen = 2130903080;
 			
 			// aapt resource value: 0x7F0F003B
 			public const int support_simple_spinner_dropdown_item = 2131689531;

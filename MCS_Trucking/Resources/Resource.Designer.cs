@@ -2547,8 +2547,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f080046
 			public const int META = 2131230790;
 			
-			// aapt resource value: 0x7f080143
-			public const int Moi_zayavki = 2131231043;
+			// aapt resource value: 0x7f080144
+			public const int Moi_zayavki = 2131231044;
 			
 			// aapt resource value: 0x7f080047
 			public const int SHIFT = 2131230791;
@@ -2556,8 +2556,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f080048
 			public const int SYM = 2131230792;
 			
-			// aapt resource value: 0x7f080142
-			public const int Vhod_LichKab = 2131231042;
+			// aapt resource value: 0x7f080143
+			public const int Vhod_LichKab = 2131231043;
 			
 			// aapt resource value: 0x7f08012f
 			public const int action0 = 2131231023;
@@ -2976,8 +2976,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f08002a
 			public const int fill_vertical = 2131230762;
 			
-			// aapt resource value: 0x7f080144
-			public const int filtr = 2131231044;
+			// aapt resource value: 0x7f080145
+			public const int filtr = 2131231045;
 			
 			// aapt resource value: 0x7f080058
 			public const int @fixed = 2131230808;
@@ -2987,6 +2987,9 @@ namespace MCS_Trucking
 			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
+			
+			// aapt resource value: 0x7f08013f
+			public const int gifImageView = 2131231039;
 			
 			// aapt resource value: 0x7f080107
 			public const int gridLayout1 = 2131230983;
@@ -3075,14 +3078,14 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f080065
 			public const int list_item = 2131230821;
 			
-			// aapt resource value: 0x7f080141
-			public const int masked = 2131231041;
+			// aapt resource value: 0x7f080142
+			public const int masked = 2131231042;
 			
 			// aapt resource value: 0x7f080132
 			public const int media_actions = 2131231026;
 			
-			// aapt resource value: 0x7f08013f
-			public const int message = 2131231039;
+			// aapt resource value: 0x7f080140
+			public const int message = 2131231040;
 			
 			// aapt resource value: 0x7f080042
 			public const int middle = 2131230786;
@@ -3252,8 +3255,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f080052
 			public const int snap = 2131230802;
 			
-			// aapt resource value: 0x7f080145
-			public const int sortirovka = 2131231045;
+			// aapt resource value: 0x7f080146
+			public const int sortirovka = 2131231046;
 			
 			// aapt resource value: 0x7f080068
 			public const int spacer = 2131230824;
@@ -3411,8 +3414,8 @@ namespace MCS_Trucking
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f080140
-			public const int visible = 2131231040;
+			// aapt resource value: 0x7f080141
+			public const int visible = 2131231041;
 			
 			// aapt resource value: 0x7f08004d
 			public const int withText = 2131230797;
@@ -3729,10 +3732,13 @@ namespace MCS_Trucking
 			public const int select_dialog_singlechoice_material = 2130968659;
 			
 			// aapt resource value: 0x7f040054
-			public const int support_simple_spinner_dropdown_item = 2130968660;
+			public const int SplashScreen = 2130968660;
 			
 			// aapt resource value: 0x7f040055
-			public const int tooltip = 2130968661;
+			public const int support_simple_spinner_dropdown_item = 2130968661;
+			
+			// aapt resource value: 0x7f040056
+			public const int tooltip = 2130968662;
 			
 			static Layout()
 			{

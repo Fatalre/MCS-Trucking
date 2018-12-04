@@ -108,6 +108,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "MCS_Trucking.dll" comes first in this list. */
 		"MCS_Trucking.dll",
 		"Newtonsoft.Json.dll",
+		"Refractored.GifImageView.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Runtime.dll",

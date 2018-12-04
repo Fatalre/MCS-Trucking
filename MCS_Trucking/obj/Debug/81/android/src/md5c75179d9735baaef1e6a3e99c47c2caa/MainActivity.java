@@ -2,7 +2,7 @@ package md5c75179d9735baaef1e6a3e99c47c2caa;
 
 
 public class MainActivity
-	extends android.app.Activity
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {
@@ -11,7 +11,6 @@ public class MainActivity
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
-			"n_onResume:()V:GetOnResumeHandler\n" +
 			"";
 		mono.android.Runtime.register ("MCS_Trucking.MainActivity, MCS_Trucking", MainActivity.class, __md_methods);
 	}
@@ -31,14 +30,6 @@ public class MainActivity
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
-
-
-	public void onResume ()
-	{
-		n_onResume ();
-	}
-
-	private native void n_onResume ();
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

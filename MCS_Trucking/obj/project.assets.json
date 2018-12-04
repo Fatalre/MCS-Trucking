@@ -11,6 +11,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Refractored.GifImageView/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/monoandroid/Refractored.GifImageView.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid/Refractored.GifImageView.dll": {}
+        }
+      },
       "System.Net.Http/4.3.4": {
         "type": "package",
         "frameworkAssemblies": [
@@ -336,6 +345,18 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "Refractored.GifImageView/2.0.0": {
+      "sha512": "c0SvPqeiPdZQAizAHPuCOV+UWEr0h5HJtkF5eAHGeJ3WR/0AsGLXCpiDUSaHODuuc4r9rlZWBfZEx/fSWd3Rhw==",
+      "type": "package",
+      "path": "refractored.gifimageview/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid/Refractored.GifImageView.dll",
+        "refractored.gifimageview.2.0.0.nupkg.sha512",
+        "refractored.gifimageview.nuspec"
+      ]
+    },
     "System.Net.Http/4.3.4": {
       "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
       "type": "package",
@@ -614,8 +635,10 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v8.1": [
       "Newtonsoft.Json >= 12.0.1",
+      "Refractored.GifImageView >= 2.0.0",
       "System.Net.Http >= 4.3.4",
       "Xamarin.Android.Support.Design >= 27.0.2.1",
+      "Xamarin.Android.Support.v7.AppCompat >= 27.0.2.1",
       "Xamarin.Android.Support.v7.GridLayout >= 27.0.2.1"
     ]
   },
@@ -656,11 +679,19 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "Refractored.GifImageView": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "System.Net.Http": {
             "target": "Package",
             "version": "[4.3.4, )"
           },
           "Xamarin.Android.Support.Design": {
+            "target": "Package",
+            "version": "[27.0.2.1, )"
+          },
+          "Xamarin.Android.Support.v7.AppCompat": {
             "target": "Package",
             "version": "[27.0.2.1, )"
           },
